@@ -1,5 +1,6 @@
 # 安装colcon 
 教程命令找不到包，使用其他教程用pip3安装
+`pip3 install -U pytest colcon-common-extensions`
 ![安装效果_教程命令不成功](src/1.png)
 ![安装效果_pip3成功](src/2.png)
 
