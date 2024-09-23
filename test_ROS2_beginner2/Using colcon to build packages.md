@@ -1,33 +1,33 @@
 # 安装colcon 
 教程命令找不到包，使用其他教程用pip3安装
-	![安装效果_教程命令不成功](src/1.png)
-	![安装效果_pip3成功](src/2.png)
+![安装效果_教程命令不成功](src/1.png)
+![安装效果_pip3成功](src/2.png)
 
 # 安装ROS2
 已经安装完成
-	![小乌龟正常运行截图](src/3.png)
+![小乌龟正常运行截图](src/3.png)
 安装步骤见 [安装ROS Humble](https://openeuler-ros-docs.readthedocs.io/en/latest/installation/install-ros-humble.html)
 
 # 创建工作区
-	`mkdir -p ~/ros2_ws/src`
-	`cd ~/ros2_ws`
+`mkdir -p ~/ros2_ws/src`
+`cd ~/ros2_ws`
 工作区状态
-	![工作区状态截图](src/4.png)
+![工作区状态截图](src/4.png)
 
 # 添加源进入工作目录
-	`git clone https://github.com/ros2/examples src/examples -b humble`
+`git clone https://github.com/ros2/examples src/examples -b humble`
 结果：
-	![git_clone结果](src/5.png)
+![git_clone结果](src/5.png)
 文件状态：
-  	![文件状态截图](src/6.png)
+![文件状态截图](src/6.png)
 
 
 # 构建工作区
-	`colcon build --symlink-install`
+`colcon build --symlink-install`
 结果：
-	![构建工作区截图](src/7.png)
+![构建工作区截图](src/7.png)
 构建结果和文件状态，构建时间很长。
-	![构建后文件状态](src/8.png)
+![构建后文件状态](src/8.png)
 	
 # 运行测试
 测试结果(文本)：
@@ -84,7 +84,7 @@ Summary: 12 packages finished [4min 36s]
   10 packages failed: examples_rclpy_executors examples_rclpy_guard_conditions examples_rclpy_minimal_action_client examples_rclpy_minimal_action_server examples_rclpy_minimal_client examples_rclpy_minimal_publisher examples_rclpy_minimal_service examples_rclpy_minimal_subscriber examples_rclpy_pointcloud_publisher launch_testing_examples
 ```
 测试结果：
-	![测试结果](src/9.png)
+![测试结果](src/9.png)
 	
 
 # 尝试运行示例程序
@@ -92,7 +92,7 @@ Summary: 12 packages finished [4min 36s]
 终端1：`ros2 run examples_rclcpp_minimal_subscriber subscriber_member_function`
 终端2：`ros2 run examples_rclcpp_minimal_publisher publisher_member_function`
 运行后可以看见不断打印hello world 并且后编号不断增长
-	![运行效果截图](src/10.png)
+![运行效果截图](src/10.png)
 
 
 
