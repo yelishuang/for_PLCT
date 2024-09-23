@@ -78,7 +78,7 @@ install 文件夹成功创建
 `source /opt/ros/humble/setup.bash`  
 `cd ~/ros2_ws`  
 `source install/local_setup.bash`  
-运行叠加层的turtlesim
+运行叠加层的turtlesim  
 `ros2 run turtlesim turtlesim_node`
 ![小乌龟出现截图](src/17.png)
 
@@ -86,7 +86,7 @@ install 文件夹成功创建
 `cd ~/ros2_ws/src/ros_tutorials/turtlesim/src`  
 `vi urtle_frame.cpp`  
 把setWindowTitle("TurtleSim")改为setWindowTitle("myTurtleSim")  
-``cd ~/ros2_ws`  
+`cd ~/ros2_ws`  
 `colcon build`  
 待叠加重新构建完成  
 `ros2 run turtlesim turtlesim_node`  
@@ -94,7 +94,7 @@ install 文件夹成功创建
 主界面运行  
 `ros2 run turtlesim turtlesim_node`  
 ![原小乌龟](src/19.png)  
-**可以确认叠加层不会影响底层内容  
+**可以确认叠加层不会影响底层内容** 
 
 
 
