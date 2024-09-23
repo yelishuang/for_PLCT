@@ -79,7 +79,9 @@ install 文件夹成功创建
 `cd ~/ros2_ws`  
 `source install/local_setup.bash`  
 运行叠加层的turtlesim  
-`ros2 run turtlesim turtlesim_node`
+
+`ros2 run turtlesim turtlesim_node`  
+
 ![小乌龟出现截图](src/17.png)
 
 # 修改叠加层进行验证  
