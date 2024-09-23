@@ -98,7 +98,7 @@ Summary: 12 packages finished [4min 36s]
 
 测试结果：
 
-![测试结果](Using colcon to build packages/9.png)
+![测试结果](src/9.png)
 	
 
 # 尝试运行示例程序
