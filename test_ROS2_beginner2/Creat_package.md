@@ -50,12 +50,12 @@ hello world my_package package
 ![终端截图](src/23.png)  
 
 # 检查包内容 
-**此处官方教程有问题，前已经把src改成mypackagel** 
+**此处官方教程有问题，前已经把src改成mypackage** 
 `cd ros2_ws/src/my_package`  
 ![包结构内容](src/24.png)  
 这是自动生成的文件和文件夹    
 
-# 自定义package.xml  s
+# 自定义package.xml
 `vi ros2_ws/src/my_package/package.xml`    
 修改以下部分：  
 ```
@@ -67,4 +67,4 @@ hello world my_package package
 `<license>Apache License 2.0</license>`
 邮箱姓名为自己邮箱姓名
 ![最终效果](src/25.png)    
-***complete!***
+**complete!!**
