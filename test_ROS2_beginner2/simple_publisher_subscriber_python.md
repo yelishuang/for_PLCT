@@ -104,8 +104,8 @@ install_scripts=$base/lib/py_pubsub
 ![检查结果截图](src/38.png)
 
 # 订阅者节点    
-`vi ros2_ws/src/py_pubsub/py_pubsub`
-`wget https://raw.githubusercontent.com/ros2/examples/humble/rclpy/topics/minimal_subscriber/examples_rclpy_minimal_subscriber/subscriber_member_function.py`
+`vi ros2_ws/src/py_pubsub/py_pubsub`    
+`wget https://raw.githubusercontent.com/ros2/examples/humble/rclpy/topics/minimal_subscriber/examples_rclpy_minimal_subscriber/subscriber_member_function.py`   
 **任然下载不了**
 
 ### 运行结果与目录格式
@@ -118,7 +118,7 @@ __init__.py  publisher_member_function.py  subscriber_member_function.py
 `vi subscriber_member_function.py`  
 
 ### 添加entry_points
-`vi setup.py`
+`vi setup.py`   
 修改entry_points如下：
 ```
 entry_points={
@@ -133,7 +133,7 @@ entry_points={
 # 构建并且运行
 终端1：
 `colcon build --packages-select py_pubsub`
-![运行效果截图](src/41.png) 
+![运行效果截图](src/41.png)     
 终端2： 
 `source install/setup.bash`
 `ros2 run py_pubsub talker`
