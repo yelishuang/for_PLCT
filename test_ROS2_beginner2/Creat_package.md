@@ -34,7 +34,7 @@ creating ./my_package/src/my_node.cpp
 `cd ~/ros2_ws`  
 由于构建会全部构建，时间很长，故添加--packages-select参数  
 `colcon build`
-需要建立一次后才可以使用指定名称构建
+需要建立一次后才可以使用指定名称构建  
 `colcon build --packages-select my_package`  
 ![构建效果](src/22.png)  
 
@@ -64,7 +64,7 @@ hello world my_package package
 <license>TODO: License declaration</license>
 ```  
 `<description>Beginner client libraries tutorials practice package</description>`  
-`<license>Apache License 2.0</license>`
+`<license>Apache License 2.0</license>`  
 邮箱姓名为自己邮箱姓名
 ![最终效果](src/25.png)    
 **complete!!**

@@ -1,7 +1,7 @@
 # 创建包  
 `cd ~/ros2_ws/src`  
 `ros2 pkg create --build-type ament_python --license Apache-2.0 py_pubsub`
-![创建效果截图](src/33.png)
+![创建效果截图](src/34.png)
 
 # 编写publisher节点
 `cd ros2_ws/src/py_pubsub/py_pubsub` 
@@ -57,7 +57,7 @@ if __name__ == '__main__':
     main()
 ``` 
 代码截图：  
-![publisher_member_function代码文件截图](src/34.png)    
+![publisher_member_function代码文件截图](src/35.png)    
 
 ### 添加依赖：
 `vi package.xml`   
@@ -75,7 +75,7 @@ if __name__ == '__main__':
 <exec_depend>std_msgs</exec_depend>
 ```
 
-![修改后状态](src/35.png) 
+![修改后状态](src/36.png) 
 
 在ROS 2中，如果你想要将你的节点（node）作为一个可执行的脚本（比如一个Python程序）分发，你可以通过在setup.py文件中添加一个入口点（entry point）来实现。这样，你就可以通过命令行直接运行你的节点了。以下是如何修改setup.py文件来添加入口点的步骤: 
 `vi setup.py` 
@@ -92,7 +92,7 @@ entry_points={
 },
 ```
 
-![修改后状态](src/36.png) 
+![修改后状态](src/37.png) 
 
 检查setup.cfg
 ```
@@ -101,7 +101,7 @@ script_dir=$base/lib/py_pubsub
 [install]
 install_scripts=$base/lib/py_pubsub
 ```
-![检查结果截图](src/37.png)
+![检查结果截图](src/38.png)
 
 # 订阅者节点    
 `vi ros2_ws/src/py_pubsub/py_pubsub`
@@ -112,7 +112,7 @@ install_scripts=$base/lib/py_pubsub
 ```
 __init__.py  publisher_member_function.py  subscriber_member_function.py
 ```         
-![目录格式截图](src/38.png)     
+![目录格式截图](src/39.png)     
 
 代码检查略过，如果想了解订阅者程序运行逻辑可
 `vi subscriber_member_function.py`  
@@ -128,18 +128,18 @@ entry_points={
         ],
 },
 ```     
-![修改后截图](src/39.png)   
+![修改后截图](src/40.png)   
 
 # 构建并且运行
 终端1：
 `colcon build --packages-select py_pubsub`
-![运行效果截图](src/40.png) 
+![运行效果截图](src/41.png) 
 终端2： 
 `source install/setup.bash`
 `ros2 run py_pubsub talker`
 
 运行效果：
-![运行效果截图](src/41.png) 
+![运行效果截图](src/42.png) 
 
 talker终端应该每 0.5 秒开始发布一次信息消息,listener将开始将消息打印到控制台.
 

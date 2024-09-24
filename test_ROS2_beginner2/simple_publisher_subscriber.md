@@ -97,9 +97,9 @@ ament_package()
 `cd ros2_ws/src/cpp_pubsub/src`
 `wget -O subscriber_member_function.cpp https://raw.githubusercontent.com/ros2/examples/humble/rclcpp/topics/minimal_subscriber/member_function.cpp`  
 任然无法下载
-![无法下载截图](src./29.png)
+![无法下载截图](src/29.png) 
 直接编辑保存这些
-`vi subscriber_member_function.cpp`
+`vi subscriber_member_function.cpp` 
 *代码*
 ```
 #include <memory>
