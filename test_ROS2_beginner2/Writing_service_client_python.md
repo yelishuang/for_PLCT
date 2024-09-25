@@ -1,6 +1,6 @@
 # 创建包
 `cd ~/ros2_ws/src`
-`ros2 pkg create --build-type ament_cmake --license Apache-2.0 cpp_srvcli --dependencies rclcpp example_interfaces`
+`ros2 pkg create --build-type ament_python --license Apache-2.0 py_srvcli --dependencies rclpy example_interfaces`
 ![运行截图](src/53.png)
 
 ### 更新依赖
@@ -29,7 +29,7 @@ license='Apache License 2.0',
 粘贴代码到此文件中  
 *代码*
 ```
-from example_interfaces.srv import AddTwoInts
+ffrom example_interfaces.srv import AddTwoInts
 
 import rclpy
 from rclpy.node import Node

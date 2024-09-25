@@ -1,6 +1,8 @@
 # 创建基类包
 使用以下命令在文件夹中创建新的空包：ros2_ws/src
 `ros2 pkg create --build-type ament_cmake --license Apache-2.0 --dependencies pluginlib --node-name area_node polygon_base`     
+![创建效果](src/101.png)
+
 打开您最喜欢的编辑器， 编辑 ，并将以下内容粘贴到其中：ros2_ws/src/polygon_base/include/polygon_base/regular_polygon.hpp
 ```
 #ifndef POLYGON_BASE_REGULAR_POLYGON_HPP
@@ -22,7 +24,7 @@ namespace polygon_base
 
 #endif  // POLYGON_BASE_REGULAR_POLYGON_HPP
 ```
-![创建效果](src/.png)
+![创建效果](src/102.png)
 
 我们需要使此标头对其他类可用，因此请打开以进行编辑ros2_ws/src/polygon_base/CMakeLists.txt。 在命令ament_target_dependencies后添加以下行：
 ```
@@ -38,12 +40,12 @@ ament_export_include_directories(
   include
 )
 ```
-![创建效果](src/.png)
+![创建效果](src/103.png)
 
 # 创建插件包
 现在，我们将编写抽象类的两个非虚拟实现。 使用以下命令在您的文件夹ros2_ws/src中创建第二个空包：
 `ros2 pkg create --build-type ament_cmake --license Apache-2.0 --dependencies polygon_base pluginlib --library-name polygon_plugins polygon_plugins`
-![创建效果](src/.png)
+![创建效果](src/104.png)
 
 ## 插件源代码
 打开ros2_ws/src/polygon_plugins/src/polygon_plugins.cpp进行编辑，并在其中粘贴以下内容：
@@ -98,7 +100,7 @@ namespace polygon_plugins
 PLUGINLIB_EXPORT_CLASS(polygon_plugins::Square, polygon_base::RegularPolygon)
 PLUGINLIB_EXPORT_CLASS(polygon_plugins::Triangle, polygon_base::RegularPolygon)
 ```
-![创建效果](src/.png)
+![创建效果](src/105.png)
 
 ## 声明xml
 使用以下代码创建：
@@ -114,7 +116,7 @@ PLUGINLIB_EXPORT_CLASS(polygon_plugins::Triangle, polygon_base::RegularPolygon)
   </class>
 </library>
 ```
-![创建效果](src/.png)
+![创建效果](src/106.png)
 
 ## CMake插件声明
 这是ros1的步骤，ros2可以忽略。
@@ -155,15 +157,17 @@ int main(int argc, char** argv)
   return 0;
 }
 ```
-![创建效果](src/.png)   
+![创建效果](src/107.png)   
 
 # 构建并且运行
 导航回工作区的根目录，然后构建新包：ros2_ws
 `colcon build --packages-select polygon_base polygon_plugins`
+![构建完成](src/108.png)
+
 从ros2_ws中，确保获取安装文件：
 `source install/setup.bash`
 现在运行节点：
 `ros2 run polygon_base area_node`
-![运行效果](src/.png)   
+![运行效果](src/109.png)   
 
 ***complete!!*
