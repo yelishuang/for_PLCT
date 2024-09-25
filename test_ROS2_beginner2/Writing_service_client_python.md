@@ -1,12 +1,16 @@
 # 创建包
 `cd ~/ros2_ws/src`
 `ros2 pkg create --build-type ament_cmake --license Apache-2.0 cpp_srvcli --dependencies rclcpp example_interfaces`
+![运行截图](src/53.png)
+
 ### 更新依赖
 ```
 <description>Python client server tutorial</description>
 <maintainer email="you@email.com">Your Name</maintainer>
 <license>Apache License 2.0</license>
 ```
+![修改截图](src/54.png)
+
 ### 修改setup.py
 将以下信息添加到setup.py
 ```
@@ -15,6 +19,7 @@ maintainer_email='you@email.com',
 description='Python client server tutorial',
 license='Apache License 2.0',
 ```
+![修改截图](src/55.png)
 
 # 编写服务端节点
 
@@ -56,7 +61,7 @@ def main():
 if __name__ == '__main__':
     main()
 ```
-![添加后效果](src/.png)
+![添加后效果](src/56.png)
 
 
 ### 检查代码
@@ -67,7 +72,7 @@ if __name__ == '__main__':
 `'service = py_srvcli.service_member_function:main',`
 
 
-![添加后效果](src/.png) 
+![添加后效果](src/57.png) 
 
 # 编写客户端节点
 
@@ -115,7 +120,7 @@ def main():
 if __name__ == '__main__':
     main()
 ```
-![写入代码后截图](src/.png)
+![写入代码后截图](src/58.png)
 
 ### 理解客户端代码逻辑
 
@@ -129,12 +134,14 @@ entry_points={
     ],
 },
 ```
-![CMakeLists.txt文件截图](src/.png)
+![CMakeLists.txt文件截图](src/59.png)
 
 
 # 构建并运行代码
 终端1运行： 
 `colcon build --packages-select py_srvcli`  
+![构建完成截图](src/60.png)
+
 `source install/setup.bash` 
 `ros2 run py_srvcli service`     
 
@@ -143,7 +150,7 @@ entry_points={
 终端2输出:
 `[INFO] [minimal_client_async]: Result of add_two_ints: for 2 + 3 = 5`
 
-![终端2输出效果](src/.png)
+![终端2输出效果](src/61.png)
 
 
 返回到运行服务节点的终端。 您将看到它在收到请求时发布了日志消息、收到的数据以及发回的响应：
@@ -151,7 +158,7 @@ entry_points={
 [INFO] [minimal_service]: Incoming request
 a: 2 b: 3
 ```
-![服务终端节点截图](src/.png)
+![服务终端节点截图](src/62.png)
 
 **complete!!**
 
