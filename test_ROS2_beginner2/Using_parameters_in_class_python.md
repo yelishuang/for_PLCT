@@ -1,5 +1,5 @@
 # 创建功能包
-在工作空间src目录下，运行：
+在工作空间src目录下，运行： 
 `ros2 pkg create --build-type ament_python --license Apache-2.0 python_parameters --dependencies rclpy`
 ![创建效果](src/90.png)
 
@@ -68,25 +68,25 @@ entry_points={
 ![修改修改](src/92.png)
 
 
-# 编译和运行
-工作空间根目录下，运行
-`colcon build --packages-select python_parameters`
-source：
-`source install/setup.bash`
-运行：
-`ros2 run python_parameters minimal_param_node`
-终端每秒返回消息：
+# 编译和运行    
+工作空间根目录下，运行  
+`colcon build --packages-select python_parameters`  
+source：    
+`source install/setup.bash` 
+运行：  
+`ros2 run python_parameters minimal_param_node` 
+终端每秒返回消息：  
 ![运行效果](src/93.png)
 
 可以看到参数的默认值，但是希望能够自己设置它，有两种方法可以实现这一点。
 
 ## 通过consle控制台改变
-打开另一终端，再次source环境，运行以下命令：
-`ros2 param list`
-终端返回，自定义参数：my_parameter，可以在终端通过简单的命令行改变：
-`ros2 param set /parameter_node my_parameter earth`
-此时，终端输出Set parameter successful表示设置参数成功。此时，运行parameter_node节点的终端输出：
-![运行效果](src/94.png)
+打开另一终端，再次source环境，运行以下命令：    
+`ros2 param list`   
+终端返回，自定义参数：my_parameter，可以在终端通过简单的命令行改变：    
+`ros2 param set /parameter_node my_parameter earth` 
+此时，终端输出Set parameter successful表示设置参数成功。此时，运行parameter_node节点的终端输出：    
+![运行效果](src/94.png) 
 
 **complete!!**
 

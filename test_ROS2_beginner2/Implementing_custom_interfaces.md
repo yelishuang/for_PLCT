@@ -114,7 +114,7 @@ int main(int argc, char * argv[])
 
 ## 编译发布者
 需要在CMakeLists.txt中添加：
-'''
+```
 find_package(rclcpp REQUIRED)
 
 add_executable(publish_address_book
@@ -128,7 +128,7 @@ ament_target_dependencies(publish_address_book
 install(TARGETS publish_address_book
  DESTINATION lib/${PROJECT_NAME})
 
-'''
+```
 ![修改后效果](src/78.png)
 
 ## 对接接口
@@ -148,6 +148,8 @@ rosidl_target_interfaces(publish_address_book
 cd ~/ros2_ws
 colcon build --packages-up-to more_interfaces
 ```
+![运行效果](src/80.png)
+
 然后运行：
 ```
 . install/local_setup.bash
@@ -155,7 +157,7 @@ ros2 run more_interfaces publish_address_book
 
 ```
 此时会看到发布者转发自定义的msg，包括在publish_address_book.cpp中设置的值。
-![运行效果](src/80.png)
+![运行效果](src/81.png)
 
 要确认消息发布在address_book话题上，打开另一个终端(不要忘记source)，并调用topic echo:
 ```
@@ -163,6 +165,6 @@ ros2 run more_interfaces publish_address_book
 ros2 topic echo /address_book
 
 ```
-![运行效果](src/81.png)
+![运行效果](src/.png)
 
 

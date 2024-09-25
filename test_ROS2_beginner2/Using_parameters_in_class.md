@@ -1,5 +1,5 @@
 # 创建功能包
-在工作空间src目录下，运行：
+在工作空间src目录下，运行：   
 `ros2 pkg create --build-type ament_cmake cpp_parameters --dependencies rclcpp`
 ![创建效果](src/82.png)
 
@@ -120,14 +120,14 @@ install(
 )
 
 ```
-在工作空间根目录下，编译包：  
+在工作空间根目录下，编译包：   
 `colcon build --packages-select cpp_parameters` 
-source: 
-`. install/setup.bash`  
-启动launch文件：  
-`ros2 launch cpp_parameters cpp_parameters_launch.py` 
-此时终端每秒返回信息：
-![运行效果](src/89.png)
+source:     
+`. install/setup.bash`   
+启动launch文件：   
+`ros2 launch cpp_parameters cpp_parameters_launch.py`   
+此时终端每秒返回信息：  
+![运行效果](src/89.png) 
 
 **complete!!**
 

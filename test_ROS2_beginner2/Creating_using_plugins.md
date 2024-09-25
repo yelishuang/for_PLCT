@@ -1,5 +1,5 @@
 # 创建基类包
-使用以下命令在文件夹中创建新的空包：ros2_ws/src
+使用以下命令在文件夹中创建新的空包：ros2_ws/src 
 `ros2 pkg create --build-type ament_cmake --license Apache-2.0 --dependencies pluginlib --node-name area_node polygon_base`     
 ![创建效果](src/101.png)
 
@@ -43,7 +43,7 @@ ament_export_include_directories(
 ![创建效果](src/103.png)
 
 # 创建插件包
-现在，我们将编写抽象类的两个非虚拟实现。 使用以下命令在您的文件夹ros2_ws/src中创建第二个空包：
+现在，我们将编写抽象类的两个非虚拟实现。 使用以下命令在您的文件夹ros2_ws/src中创建第二个空包：  
 `ros2 pkg create --build-type ament_cmake --license Apache-2.0 --dependencies polygon_base pluginlib --library-name polygon_plugins polygon_plugins`
 ![创建效果](src/104.png)
 
@@ -160,14 +160,14 @@ int main(int argc, char** argv)
 ![创建效果](src/107.png)   
 
 # 构建并且运行
-导航回工作区的根目录，然后构建新包：ros2_ws
-`colcon build --packages-select polygon_base polygon_plugins`
-![构建完成](src/108.png)
+导航回工作区的根目录，然后构建新包：ros2_ws   
+`colcon build --packages-select polygon_base polygon_plugins` 
+![构建完成](src/108.png)  
 
-从ros2_ws中，确保获取安装文件：
-`source install/setup.bash`
-现在运行节点：
-`ros2 run polygon_base area_node`
-![运行效果](src/109.png)   
+从ros2_ws中，确保获取安装文件： 
+`source install/setup.bash` 
+现在运行节点：  
+`ros2 run polygon_base area_node` 
+![运行效果](src/109.png)     
 
-***complete!!*
+**complete!!**
