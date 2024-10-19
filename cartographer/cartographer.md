@@ -25,7 +25,7 @@ tar xf ros-humble-cartographer-ros-msgs_2.0.9000.orig.tar.gz
 tar xf ros-humble-cartographer-rviz_2.0.9000.orig.tar.gz
 ```
 
-![运行截图](//src/1.png)
+![运行截图](./src/1.png)
 
 
 现在需要给 cartographer_ros 打上补丁。
