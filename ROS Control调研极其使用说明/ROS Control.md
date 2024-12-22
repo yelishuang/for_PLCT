@@ -145,7 +145,7 @@ ros2_control框架使用机器人URDF文件中的<ros2_control>标记来描述�
 </ros2_control>
 ```
 
-### 为机器人运行框架
+### 运行框架
 
 要运行 ros2_control 框架，请执行以下操作。示例文件可在 ros2_control_demos 资源库中找到。
 创建一个 YAML 文件，其中包含控制器管理器和两个控制器的配置。(RRBot 的配置示例）
