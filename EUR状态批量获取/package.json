@@ -1,0 +1,3271 @@
+{
+    "aandd-ekew-driver-py": [
+        "aandd-ekew-driver-py"
+    ],
+    "acado-vendor": [
+        "acado-vendor"
+    ],
+    "ackermann-msgs": [
+        "ackermann-msgs"
+    ],
+    "actuator-msgs": [
+        "actuator-msgs"
+    ],
+    "adaptive-component": [
+        "adaptive-component"
+    ],
+    "adi-3dtof-image-stitching": [
+        "adi-3dtof-image-stitching"
+    ],
+    "adi-tmcl": [
+        "adi-tmcl"
+    ],
+    "aerostack2": [
+        "aerostack2",
+        "as2-alphanumeric-viewer",
+        "as2-behavior",
+        "as2-behavior-tree",
+        "as2-behaviors-motion",
+        "as2-behaviors-path-planning",
+        "as2-behaviors-perception",
+        "as2-behaviors-platform",
+        "as2-behaviors-trajectory-generation",
+        "as2-cli",
+        "as2-core",
+        "as2-external-object-to-tf",
+        "as2-gazebo-assets",
+        "as2-geozones",
+        "as2-keyboard-teleoperation",
+        "as2-map-server",
+        "as2-motion-controller",
+        "as2-motion-reference-handlers",
+        "as2-msgs",
+        "as2-platform-gazebo",
+        "as2-platform-multirotor-simulator",
+        "as2-python-api",
+        "as2-realsense-interface",
+        "as2-rviz-plugins",
+        "as2-state-estimator",
+        "as2-usb-camera-interface",
+        "as2-visualization"
+    ],
+    "affordance-primitives": [
+        "affordance-primitives"
+    ],
+    "ai-prompt-msgs": [
+        "ai-prompt-msgs"
+    ],
+    "ament-acceleration": [
+        "ament-acceleration"
+    ],
+    "ament-black": [
+        "ament-black",
+        "ament-cmake-black"
+    ],
+    "ament-cmake": [
+        "ament-cmake",
+        "ament-cmake-auto",
+        "ament-cmake-core",
+        "ament-cmake-export-definitions",
+        "ament-cmake-export-dependencies",
+        "ament-cmake-export-include-directories",
+        "ament-cmake-export-interfaces",
+        "ament-cmake-export-libraries",
+        "ament-cmake-export-link-flags",
+        "ament-cmake-export-targets",
+        "ament-cmake-gen-version-h",
+        "ament-cmake-gmock",
+        "ament-cmake-google-benchmark",
+        "ament-cmake-gtest",
+        "ament-cmake-include-directories",
+        "ament-cmake-libraries",
+        "ament-cmake-nose",
+        "ament-cmake-pytest",
+        "ament-cmake-python",
+        "ament-cmake-target-dependencies",
+        "ament-cmake-test",
+        "ament-cmake-vendor-package",
+        "ament-cmake-version"
+    ],
+    "ament-cmake-catch2": [
+        "ament-cmake-catch2"
+    ],
+    "ament-cmake-ros": [
+        "ament-cmake-ros",
+        "domain-coordinator"
+    ],
+    "ament-download": [
+        "ament-download"
+    ],
+    "ament-index": [
+        "ament-index-cpp",
+        "ament-index-python"
+    ],
+    "ament-lint": [
+        "ament-clang-format",
+        "ament-clang-tidy",
+        "ament-cmake-clang-format",
+        "ament-cmake-clang-tidy",
+        "ament-cmake-copyright",
+        "ament-cmake-cppcheck",
+        "ament-cmake-cpplint",
+        "ament-cmake-flake8",
+        "ament-cmake-lint-cmake",
+        "ament-cmake-mypy",
+        "ament-cmake-pclint",
+        "ament-cmake-pep257",
+        "ament-cmake-pycodestyle",
+        "ament-cmake-pyflakes",
+        "ament-cmake-uncrustify",
+        "ament-cmake-xmllint",
+        "ament-copyright",
+        "ament-cppcheck",
+        "ament-cpplint",
+        "ament-flake8",
+        "ament-lint",
+        "ament-lint-auto",
+        "ament-lint-cmake",
+        "ament-lint-common",
+        "ament-mypy",
+        "ament-pclint",
+        "ament-pep257",
+        "ament-pycodestyle",
+        "ament-pyflakes",
+        "ament-uncrustify",
+        "ament-xmllint"
+    ],
+    "ament-nodl": [
+        "ament-nodl"
+    ],
+    "ament-package": [
+        "ament-package"
+    ],
+    "ament-vitis": [
+        "ament-vitis"
+    ],
+    "andino": [
+        "andino-apps",
+        "andino-base",
+        "andino-bringup",
+        "andino-control",
+        "andino-description",
+        "andino-firmware",
+        "andino-gz-classic",
+        "andino-hardware",
+        "andino-navigation",
+        "andino-slam"
+    ],
+    "andino-gz": [
+        "andino-gz"
+    ],
+    "angles": [
+        "angles"
+    ],
+    "apex-containers": [
+        "apex-containers"
+    ],
+    "apex-test-tools": [
+        "apex-test-tools",
+        "test-apex-test-tools"
+    ],
+    "apriltag": [
+        "apriltag"
+    ],
+    "apriltag-detector": [
+        "apriltag-detector",
+        "apriltag-detector-mit",
+        "apriltag-detector-umich",
+        "apriltag-draw"
+    ],
+    "apriltag-mit": [
+        "apriltag-mit"
+    ],
+    "apriltag-msgs": [
+        "apriltag-msgs"
+    ],
+    "apriltag-ros": [
+        "apriltag-ros"
+    ],
+    "aruco-opencv": [
+        "aruco-opencv",
+        "aruco-opencv-msgs"
+    ],
+    "aruco-ros": [
+        "aruco",
+        "aruco-msgs",
+        "aruco-ros"
+    ],
+    "as2-platform-crazyflie": [
+        "as2-platform-crazyflie"
+    ],
+    "as2-platform-dji-osdk": [
+        "as2-platform-dji-osdk"
+    ],
+    "as2-platform-dji-psdk": [
+        "as2-platform-dji-psdk"
+    ],
+    "as2-platform-mavlink": [
+        "as2-platform-mavlink"
+    ],
+    "as2-platform-pixhawk": [
+        "as2-platform-pixhawk"
+    ],
+    "as2-platform-tello": [
+        "as2-platform-tello"
+    ],
+    "astuff-sensor-msgs": [
+        "delphi-esr-msgs",
+        "delphi-mrr-msgs",
+        "delphi-srr-msgs",
+        "derived-object-msgs",
+        "ibeo-msgs",
+        "kartech-linear-actuator-msgs",
+        "mobileye-560-660-msgs",
+        "neobotix-usboard-msgs"
+    ],
+    "async-web-server-cpp": [
+        "async-web-server-cpp"
+    ],
+    "automatika-embodied-agents": [
+        "automatika-embodied-agents"
+    ],
+    "automatika-ros-sugar": [
+        "automatika-ros-sugar"
+    ],
+    "automotive-autonomy-msgs": [
+        "automotive-autonomy-msgs",
+        "automotive-navigation-msgs",
+        "automotive-platform-msgs"
+    ],
+    "autoware-adapi-msgs": [
+        "autoware-adapi-v1-msgs",
+        "autoware-adapi-version-msgs"
+    ],
+    "autoware-auto-msgs": [
+        "autoware-auto-msgs"
+    ],
+    "autoware-cmake": [
+        "autoware-cmake",
+        "autoware-lint-common"
+    ],
+    "autoware-internal-msgs": [
+        "autoware-internal-debug-msgs",
+        "autoware-internal-msgs",
+        "autoware-internal-perception-msgs",
+        "autoware-internal-planning-msgs"
+    ],
+    "autoware-lanelet2-extension": [
+        "autoware-lanelet2-extension",
+        "autoware-lanelet2-extension-python"
+    ],
+    "autoware-msgs": [
+        "autoware-common-msgs",
+        "autoware-control-msgs",
+        "autoware-localization-msgs",
+        "autoware-map-msgs",
+        "autoware-perception-msgs",
+        "autoware-planning-msgs",
+        "autoware-sensing-msgs",
+        "autoware-system-msgs",
+        "autoware-v2x-msgs",
+        "autoware-vehicle-msgs"
+    ],
+    "autoware-utils": [
+        "autoware-utils"
+    ],
+    "avt-vimba-camera": [
+        "avt-vimba-camera"
+    ],
+    "aws-robomaker-small-warehouse-world": [
+        "aws-robomaker-small-warehouse-world"
+    ],
+    "aws-sdk-cpp-vendor": [
+        "aws-sdk-cpp-vendor"
+    ],
+    "axis-camera": [
+        "axis-camera",
+        "axis-description",
+        "axis-msgs"
+    ],
+    "backward-ros": [
+        "backward-ros"
+    ],
+    "bag2-to-image": [
+        "bag2-to-image"
+    ],
+    "bcr-bot": [
+        "bcr-bot"
+    ],
+    "behaviortree-cpp-v3": [
+        "behaviortree-cpp-v3"
+    ],
+    "behaviortree-cpp-v4": [
+        "behaviortree-cpp"
+    ],
+    "beluga": [
+        "beluga",
+        "beluga-amcl",
+        "beluga-ros"
+    ],
+    "bno055": [
+        "bno055"
+    ],
+    "bond-core": [
+        "bond",
+        "bond-core",
+        "bondcpp",
+        "bondpy",
+        "smclib"
+    ],
+    "boost-geometry-util": [
+        "boost-geometry-util"
+    ],
+    "boost-plugin-loader": [
+        "boost-plugin-loader"
+    ],
+    "camera-aravis2": [
+        "camera-aravis2",
+        "camera-aravis2-msgs"
+    ],
+    "camera-ros": [
+        "camera-ros"
+    ],
+    "caret-analyze": [
+        "caret-analyze"
+    ],
+    "caret-analyze-cpp-impl": [
+        "caret-analyze-cpp-impl"
+    ],
+    "caret-trace": [
+        "caret-msgs"
+    ],
+    "cartographer": [
+        "cartographer"
+    ],
+    "cartographer-ros": [
+        "cartographer-ros",
+        "cartographer-ros-msgs",
+        "cartographer-rviz"
+    ],
+    "cascade-lifecycle": [
+        "cascade-lifecycle-msgs",
+        "rclcpp-cascade-lifecycle"
+    ],
+    "catch-ros2": [
+        "catch-ros2"
+    ],
+    "class-loader": [
+        "class-loader"
+    ],
+    "classic-bags": [
+        "classic-bags"
+    ],
+    "clearpath-common": [
+        "clearpath-common",
+        "clearpath-control",
+        "clearpath-customization",
+        "clearpath-description",
+        "clearpath-generator-common",
+        "clearpath-manipulators",
+        "clearpath-manipulators-description",
+        "clearpath-mounts-description",
+        "clearpath-platform-description",
+        "clearpath-sensors-description"
+    ],
+    "clearpath-config": [
+        "clearpath-config"
+    ],
+    "clearpath-desktop": [
+        "clearpath-config-live",
+        "clearpath-desktop",
+        "clearpath-viz"
+    ],
+    "clearpath-mecanum-drive-controller": [
+        "clearpath-mecanum-drive-controller"
+    ],
+    "clearpath-msgs": [
+        "clearpath-motor-msgs",
+        "clearpath-msgs",
+        "clearpath-platform-msgs"
+    ],
+    "clearpath-nav2-demos": [
+        "clearpath-nav2-demos"
+    ],
+    "clearpath-ros2-socketcan-interface": [
+        "clearpath-ros2-socketcan-interface"
+    ],
+    "clearpath-simulator": [
+        "clearpath-generator-gz",
+        "clearpath-gz",
+        "clearpath-simulator"
+    ],
+    "clips-vendor": [
+        "clips-vendor"
+    ],
+    "coal": [
+        "coal"
+    ],
+    "cob-common": [
+        "cob-actions",
+        "cob-msgs",
+        "cob-srvs"
+    ],
+    "color-names": [
+        "color-names"
+    ],
+    "color-util": [
+        "color-util"
+    ],
+    "common-interfaces": [
+        "actionlib-msgs",
+        "common-interfaces",
+        "diagnostic-msgs",
+        "geometry-msgs",
+        "nav-msgs",
+        "sensor-msgs",
+        "sensor-msgs-py",
+        "shape-msgs",
+        "std-msgs",
+        "std-srvs",
+        "stereo-msgs",
+        "trajectory-msgs",
+        "visualization-msgs"
+    ],
+    "console-bridge-vendor": [
+        "console-bridge-vendor"
+    ],
+    "control-box-rst": [
+        "control-box-rst"
+    ],
+    "control-msgs": [
+        "control-msgs"
+    ],
+    "control-toolbox": [
+        "control-toolbox"
+    ],
+    "cpp-polyfills": [
+        "tcb-span",
+        "tl-expected"
+    ],
+    "crane-plus": [
+        "crane-plus",
+        "crane-plus-control",
+        "crane-plus-description",
+        "crane-plus-examples",
+        "crane-plus-gazebo",
+        "crane-plus-moveit-config"
+    ],
+    "create3-examples": [
+        "create3-coverage",
+        "create3-examples-msgs",
+        "create3-examples-py",
+        "create3-lidar-slam",
+        "create3-republisher",
+        "create3-teleop"
+    ],
+    "create3-sim": [
+        "irobot-create-common-bringup",
+        "irobot-create-control",
+        "irobot-create-description",
+        "irobot-create-gazebo-bringup",
+        "irobot-create-gazebo-plugins",
+        "irobot-create-gazebo-sim",
+        "irobot-create-ignition-bringup",
+        "irobot-create-ignition-plugins",
+        "irobot-create-ignition-sim",
+        "irobot-create-ignition-toolbox",
+        "irobot-create-nodes",
+        "irobot-create-toolbox"
+    ],
+    "create-robot": [
+        "create-bringup",
+        "create-description",
+        "create-driver",
+        "create-msgs",
+        "create-robot"
+    ],
+    "cudnn-cmake-module": [
+        "cudnn-cmake-module"
+    ],
+    "cyclonedds": [
+        "cyclonedds"
+    ],
+    "data-tamer": [
+        "data-tamer-cpp",
+        "data-tamer-msgs"
+    ],
+    "dataspeed-can": [
+        "dataspeed-can",
+        "dataspeed-can-msg-filters",
+        "dataspeed-can-msgs",
+        "dataspeed-can-tools",
+        "dataspeed-can-usb"
+    ],
+    "dbw-ros": [
+        "dataspeed-dbw-common",
+        "dataspeed-ulc",
+        "dataspeed-ulc-can",
+        "dataspeed-ulc-msgs",
+        "dbw-fca",
+        "dbw-fca-can",
+        "dbw-fca-description",
+        "dbw-fca-joystick-demo",
+        "dbw-fca-msgs",
+        "dbw-ford",
+        "dbw-ford-can",
+        "dbw-ford-description",
+        "dbw-ford-joystick-demo",
+        "dbw-ford-msgs",
+        "dbw-polaris",
+        "dbw-polaris-can",
+        "dbw-polaris-description",
+        "dbw-polaris-joystick-demo",
+        "dbw-polaris-msgs",
+        "ds-dbw",
+        "ds-dbw-can",
+        "ds-dbw-joystick-demo",
+        "ds-dbw-msgs"
+    ],
+    "demos": [
+        "action-tutorials-cpp",
+        "action-tutorials-interfaces",
+        "action-tutorials-py",
+        "composition",
+        "demo-nodes-cpp",
+        "demo-nodes-cpp-native",
+        "demo-nodes-py",
+        "dummy-map-server",
+        "dummy-robot-bringup",
+        "dummy-sensors",
+        "image-tools",
+        "intra-process-demo",
+        "lifecycle",
+        "lifecycle-py",
+        "logging-demo",
+        "pendulum-control",
+        "pendulum-msgs",
+        "quality-of-service-demo-cpp",
+        "quality-of-service-demo-py",
+        "topic-monitor",
+        "topic-statistics-demo"
+    ],
+    "depthai": [
+        "depthai"
+    ],
+    "depthai-ros": [
+        "depthai-ros",
+        "depthai-bridge",
+        "depthai-descriptions",
+        "depthai-examples",
+        "depthai-filters",
+        "depthai-ros-driver",
+        "depthai-ros-msgs"
+    ],
+    "depthimage-to-laserscan": [
+        "depthimage-to-laserscan"
+    ],
+    "diagnostics": [
+        "diagnostic-aggregator",
+        "diagnostic-common-diagnostics",
+        "diagnostic-updater",
+        "diagnostics",
+        "self-test"
+    ],
+    "dolly": [
+        "dolly",
+        "dolly-follow",
+        "dolly-gazebo",
+        "dolly-ignition"
+    ],
+    "domain-bridge": [
+        "domain-bridge"
+    ],
+    "dual-laser-merger": [
+        "dual-laser-merger"
+    ],
+    "dynamixel-hardware": [
+        "dynamixel-hardware"
+    ],
+    "dynamixel-hardware-interface": [
+        "dynamixel-hardware-interface"
+    ],
+    "dynamixel-interfaces": [
+        "dynamixel-interfaces"
+    ],
+    "dynamixel-sdk": [
+        "dynamixel-sdk",
+        "dynamixel-sdk-custom-interfaces",
+        "dynamixel-sdk-examples"
+    ],
+    "dynamixel-workbench": [
+        "dynamixel-workbench",
+        "dynamixel-workbench-toolbox"
+    ],
+    "dynamixel-workbench-msgs": [
+        "dynamixel-workbench-msgs"
+    ],
+    "ecal": [
+        "ecal"
+    ],
+    "ecl-core": [
+        "ecl-command-line",
+        "ecl-concepts",
+        "ecl-containers",
+        "ecl-converters",
+        "ecl-core",
+        "ecl-core-apps",
+        "ecl-devices",
+        "ecl-eigen",
+        "ecl-exceptions",
+        "ecl-filesystem",
+        "ecl-formatters",
+        "ecl-geometry",
+        "ecl-ipc",
+        "ecl-linear-algebra",
+        "ecl-manipulators",
+        "ecl-math",
+        "ecl-mobile-robot",
+        "ecl-mpl",
+        "ecl-sigslots",
+        "ecl-statistics",
+        "ecl-streams",
+        "ecl-threads",
+        "ecl-time",
+        "ecl-type-traits",
+        "ecl-utilities"
+    ],
+    "ecl-lite": [
+        "ecl-config",
+        "ecl-console",
+        "ecl-converters-lite",
+        "ecl-errors",
+        "ecl-io",
+        "ecl-lite",
+        "ecl-sigslots-lite",
+        "ecl-time-lite"
+    ],
+    "ecl-tools": [
+        "ecl-build",
+        "ecl-license",
+        "ecl-tools"
+    ],
+    "eigen3-cmake-module": [
+        "eigen3-cmake-module"
+    ],
+    "eigen-stl-containers": [
+        "eigen-stl-containers"
+    ],
+    "eigenpy": [
+        "eigenpy"
+    ],
+    "eiquadprog": [
+        "eiquadprog"
+    ],
+    "ess-imu-driver2": [
+        "ess-imu-driver2"
+    ],
+    "etsi-its-messages": [
+        "etsi-its-cam-coding",
+        "etsi-its-cam-conversion",
+        "etsi-its-cam-msgs",
+        "etsi-its-cam-ts-coding",
+        "etsi-its-cam-ts-conversion",
+        "etsi-its-cam-ts-msgs",
+        "etsi-its-coding",
+        "etsi-its-conversion",
+        "etsi-its-cpm-ts-coding",
+        "etsi-its-cpm-ts-conversion",
+        "etsi-its-cpm-ts-msgs",
+        "etsi-its-denm-coding",
+        "etsi-its-denm-conversion",
+        "etsi-its-denm-msgs",
+        "etsi-its-denm-ts-coding",
+        "etsi-its-denm-ts-conversion",
+        "etsi-its-denm-ts-msgs",
+        "etsi-its-mapem-ts-coding",
+        "etsi-its-mapem-ts-conversion",
+        "etsi-its-mapem-ts-msgs",
+        "etsi-its-messages",
+        "etsi-its-msgs",
+        "etsi-its-msgs-utils",
+        "etsi-its-primitives-conversion",
+        "etsi-its-rviz-plugins",
+        "etsi-its-spatem-ts-coding",
+        "etsi-its-spatem-ts-conversion",
+        "etsi-its-spatem-ts-msgs",
+        "etsi-its-vam-ts-coding",
+        "etsi-its-vam-ts-conversion",
+        "etsi-its-vam-ts-msgs"
+    ],
+    "event-camera-codecs": [
+        "event-camera-codecs"
+    ],
+    "event-camera-msgs": [
+        "event-camera-msgs"
+    ],
+    "event-camera-py": [
+        "event-camera-py"
+    ],
+    "event-camera-renderer": [
+        "event-camera-renderer"
+    ],
+    "example-interfaces": [
+        "example-interfaces"
+    ],
+    "examples": [
+        "examples-rclcpp-async-client",
+        "examples-rclcpp-cbg-executor",
+        "examples-rclcpp-minimal-action-client",
+        "examples-rclcpp-minimal-action-server",
+        "examples-rclcpp-minimal-client",
+        "examples-rclcpp-minimal-composition",
+        "examples-rclcpp-minimal-publisher",
+        "examples-rclcpp-minimal-service",
+        "examples-rclcpp-minimal-subscriber",
+        "examples-rclcpp-minimal-timer",
+        "examples-rclcpp-multithreaded-executor",
+        "examples-rclcpp-wait-set",
+        "examples-rclpy-executors",
+        "examples-rclpy-guard-conditions",
+        "examples-rclpy-minimal-action-client",
+        "examples-rclpy-minimal-action-server",
+        "examples-rclpy-minimal-client",
+        "examples-rclpy-minimal-publisher",
+        "examples-rclpy-minimal-service",
+        "examples-rclpy-minimal-subscriber",
+        "examples-rclpy-pointcloud-publisher",
+        "launch-testing-examples"
+    ],
+    "extrinsic-calibrator": [
+        "extrinsic-calibrator"
+    ],
+    "fadecandy-ros": [
+        "fadecandy-driver",
+        "fadecandy-msgs"
+    ],
+    "fast-gicp": [
+        "fast-gicp"
+    ],
+    "fastcdr": [
+        "fastcdr"
+    ],
+    "fastrtps": [
+        "fastrtps"
+    ],
+    "feetech-ros2-driver": [
+        "feetech-ros2-driver"
+    ],
+    "ffmpeg-encoder-decoder": [
+        "ffmpeg-encoder-decoder"
+    ],
+    "ffmpeg-image-transport": [
+        "ffmpeg-image-transport"
+    ],
+    "ffmpeg-image-transport-msgs": [
+        "ffmpeg-image-transport-msgs"
+    ],
+    "ffmpeg-image-transport-tools": [
+        "ffmpeg-image-transport-tools"
+    ],
+    "fields2cover": [
+        "fields2cover"
+    ],
+    "filters": [
+        "filters"
+    ],
+    "find-object-2d": [
+        "find-object-2d"
+    ],
+    "flex-sync": [
+        "flex-sync"
+    ],
+    "flexbe-app": [
+        "flexbe-app"
+    ],
+    "flexbe-behavior-engine": [
+        "flexbe-behavior-engine",
+        "flexbe-core",
+        "flexbe-input",
+        "flexbe-mirror",
+        "flexbe-msgs",
+        "flexbe-onboard",
+        "flexbe-states",
+        "flexbe-testing",
+        "flexbe-widget"
+    ],
+    "flir-camera-driver": [
+        "flir-camera-description",
+        "flir-camera-msgs",
+        "spinnaker-camera-driver",
+        "spinnaker-synchronized-camera-driver"
+    ],
+    "fluent-bit-vendor": [
+        "fluent-bit-vendor"
+    ],
+    "fluent-rviz": [
+        "fluent-rviz"
+    ],
+    "fmi-adapter": [
+        "fmi-adapter",
+        "fmi-adapter-examples"
+    ],
+    "fmilibrary-vendor": [
+        "fmilibrary-vendor"
+    ],
+    "fogros2": [
+        "fogros2",
+        "fogros2-examples"
+    ],
+    "foonathan-memory-vendor": [
+        "foonathan-memory-vendor"
+    ],
+    "foros": [
+        "foros",
+        "foros-examples",
+        "foros-inspector",
+        "foros-msgs"
+    ],
+    "four-wheel-steering-msgs": [
+        "four-wheel-steering-msgs"
+    ],
+    "foxglove-bridge": [
+        "foxglove-bridge"
+    ],
+    "foxglove-compressed-video-transport": [
+        "foxglove-compressed-video-transport"
+    ],
+    "foxglove-msgs": [
+        "foxglove-msgs"
+    ],
+    "franka-description": [
+        "franka-description"
+    ],
+    "franka-ros2": [
+        "franka-bringup",
+        "franka-example-controllers",
+        "franka-fr3-moveit-config",
+        "franka-gazebo-bringup",
+        "franka-gripper",
+        "franka-hardware",
+        "franka-ign-ros2-control",
+        "franka-msgs",
+        "franka-robot-state-broadcaster",
+        "franka-ros2",
+        "franka-semantic-components",
+        "integration-launch-testing"
+    ],
+    "game-controller-spl": [
+        "game-controller-spl",
+        "game-controller-spl-interfaces",
+        "gc-spl",
+        "gc-spl-2022",
+        "gc-spl-interfaces",
+        "rcgcd-spl-14",
+        "rcgcd-spl-14-conversion",
+        "rcgcrd-spl-4",
+        "rcgcrd-spl-4-conversion"
+    ],
+    "gazebo-model-attachment-plugin": [
+        "gazebo-model-attachment-plugin",
+        "gazebo-model-attachment-plugin-msgs"
+    ],
+    "gazebo-no-physics-plugin": [
+        "gazebo-no-physics-plugin"
+    ],
+    "gazebo-planar-move-plugin": [
+        "gazebo-planar-move-plugin"
+    ],
+    "gazebo-ros2-control": [
+        "gazebo-ros2-control",
+        "gazebo-ros2-control-demos"
+    ],
+    "gazebo-ros-pkgs": [
+        "gazebo-dev",
+        "gazebo-msgs",
+        "gazebo-plugins",
+        "gazebo-ros",
+        "gazebo-ros-pkgs"
+    ],
+    "gazebo-set-joint-positions-plugin": [
+        "gazebo-set-joint-positions-plugin"
+    ],
+    "gazebo-video-monitors": [
+        "gazebo-video-monitor-interfaces",
+        "gazebo-video-monitor-plugins",
+        "gazebo-video-monitor-utils",
+        "gazebo-video-monitors"
+    ],
+    "generate-parameter-library": [
+        "cmake-generate-parameter-module-example",
+        "generate-parameter-library",
+        "generate-parameter-library-example",
+        "generate-parameter-library-example-external",
+        "generate-parameter-library-py",
+        "generate-parameter-module-example",
+        "parameter-traits"
+    ],
+    "geographic-info": [
+        "geodesy",
+        "geographic-info",
+        "geographic-msgs"
+    ],
+    "geometric-shapes": [
+        "geometric-shapes"
+    ],
+    "geometry2": [
+        "examples-tf2-py",
+        "geometry2",
+        "tf2",
+        "tf2-bullet",
+        "tf2-eigen",
+        "tf2-eigen-kdl",
+        "tf2-geometry-msgs",
+        "tf2-kdl",
+        "tf2-msgs",
+        "tf2-py",
+        "tf2-ros",
+        "tf2-ros-py",
+        "tf2-sensor-msgs",
+        "tf2-tools"
+    ],
+    "geometry-tutorials": [
+        "geometry-tutorials",
+        "turtle-tf2-cpp",
+        "turtle-tf2-py"
+    ],
+    "google-benchmark-vendor": [
+        "google-benchmark-vendor"
+    ],
+    "googletest": [
+        "gmock-vendor",
+        "gtest-vendor"
+    ],
+    "gps-umd": [
+        "gps-msgs",
+        "gps-tools",
+        "gps-umd",
+        "gpsd-client"
+    ],
+    "graph-msgs": [
+        "graph-msgs"
+    ],
+    "grasping-msgs": [
+        "grasping-msgs"
+    ],
+    "grbl-msgs": [
+        "grbl-msgs"
+    ],
+    "grbl-ros": [
+        "grbl-ros"
+    ],
+    "grid-map": [
+        "grid-map",
+        "grid-map-cmake-helpers",
+        "grid-map-core",
+        "grid-map-costmap-2d",
+        "grid-map-cv",
+        "grid-map-demos",
+        "grid-map-filters",
+        "grid-map-loader",
+        "grid-map-msgs",
+        "grid-map-octomap",
+        "grid-map-pcl",
+        "grid-map-ros",
+        "grid-map-rviz-plugin",
+        "grid-map-sdf",
+        "grid-map-visualization"
+    ],
+    "grid-map-geo": [
+        "grid-map-geo"
+    ],
+    "gscam": [
+        "gscam"
+    ],
+    "gtsam": [
+        "gtsam"
+    ],
+    "hash-library-vendor": [
+        "hash-library-vendor"
+    ],
+    "hatchbed-common": [
+        "hatchbed-common"
+    ],
+    "heaphook": [
+        "heaphook"
+    ],
+    "hebi-cpp-api": [
+        "hebi-cpp-api"
+    ],
+    "heightmap-spawner": [
+        "heightmap-spawner"
+    ],
+    "hey5-description": [
+        "hey5-description"
+    ],
+    "hls-lfcd-lds-driver": [
+        "hls-lfcd-lds-driver"
+    ],
+    "homing-local-planner": [
+        "homing-local-planner"
+    ],
+    "hpp-fcl": [
+        "hpp-fcl"
+    ],
+    "hri": [
+        "hri",
+        "pyhri"
+    ],
+    "hri-actions-msgs": [
+        "hri-actions-msgs"
+    ],
+    "hri-face-body-matcher": [
+        "hri-face-body-matcher"
+    ],
+    "hri-face-detect": [
+        "hri-face-detect"
+    ],
+    "hri-msgs": [
+        "hri-msgs"
+    ],
+    "hri-privacy-msgs": [
+        "hri-privacy-msgs"
+    ],
+    "hri-rviz": [
+        "hri-rviz"
+    ],
+    "human-description": [
+        "human-description"
+    ],
+    "iceoryx": [
+        "iceoryx-binding-c",
+        "iceoryx-hoofs",
+        "iceoryx-introspection",
+        "iceoryx-posh"
+    ],
+    "ifm3d-core": [
+        "ifm3d-core"
+    ],
+    "ign-ros2-control": [
+        "gz-ros2-control-tests",
+        "ign-ros2-control",
+        "ign-ros2-control-demos"
+    ],
+    "ign-rviz": [
+        "ign-rviz",
+        "ign-rviz-common",
+        "ign-rviz-plugins"
+    ],
+    "ignition-cmake2-vendor": [
+        "ignition-cmake2-vendor"
+    ],
+    "ignition-math6-vendor": [
+        "ignition-math6-vendor"
+    ],
+    "image-common": [
+        "camera-calibration-parsers",
+        "camera-info-manager",
+        "camera-info-manager-py",
+        "image-common",
+        "image-transport"
+    ],
+    "image-pipeline": [
+        "camera-calibration",
+        "depth-image-proc",
+        "image-pipeline",
+        "image-proc",
+        "image-publisher",
+        "image-rotate",
+        "image-view",
+        "stereo-image-proc",
+        "tracetools-image-pipeline"
+    ],
+    "image-transport-plugins": [
+        "compressed-depth-image-transport",
+        "compressed-image-transport",
+        "image-transport-plugins",
+        "theora-image-transport"
+    ],
+    "imu-pipeline": [
+        "imu-pipeline",
+        "imu-processors",
+        "imu-transformer"
+    ],
+    "imu-tools": [
+        "imu-complementary-filter",
+        "imu-filter-madgwick",
+        "imu-tools",
+        "rviz-imu-plugin"
+    ],
+    "interactive-marker-twist-server": [
+        "interactive-marker-twist-server"
+    ],
+    "interactive-markers": [
+        "interactive-markers"
+    ],
+    "irobot-create-msgs": [
+        "irobot-create-msgs"
+    ],
+    "jacro": [
+        "jacro"
+    ],
+    "joint-state-publisher": [
+        "joint-state-publisher",
+        "joint-state-publisher-gui"
+    ],
+    "joy-tester": [
+        "joy-tester"
+    ],
+    "joystick-drivers": [
+        "joy",
+        "joy-linux",
+        "sdl2-vendor",
+        "spacenav",
+        "wiimote",
+        "wiimote-msgs"
+    ],
+    "kdl-parser": [
+        "kdl-parser"
+    ],
+    "keyboard-handler": [
+        "keyboard-handler"
+    ],
+    "kinematics-interface": [
+        "kinematics-interface",
+        "kinematics-interface-kdl"
+    ],
+    "kinematics-interface-pinocchio": [
+        "kinematics-interface-pinocchio"
+    ],
+    "kobuki-core": [
+        "kobuki-core"
+    ],
+    "kobuki-ros-interfaces": [
+        "kobuki-ros-interfaces"
+    ],
+    "kobuki-velocity-smoother": [
+        "kobuki-velocity-smoother"
+    ],
+    "kompass": [
+        "kompass",
+        "kompass-interfaces"
+    ],
+    "kuka-drivers": [
+        "fri-configuration-controller",
+        "fri-state-broadcaster",
+        "iiqka-moveit-example",
+        "joint-group-impedance-controller",
+        "kuka-control-mode-handler",
+        "kuka-controllers",
+        "kuka-driver-interfaces",
+        "kuka-drivers",
+        "kuka-drivers-core",
+        "kuka-event-broadcaster",
+        "kuka-iiqka-eac-driver",
+        "kuka-kss-rsi-driver",
+        "kuka-rsi-simulator",
+        "kuka-sunrise-fri-driver"
+    ],
+    "kuka-external-control-sdk": [
+        "kuka-external-control-sdk",
+        "kuka-external-control-sdk-examples"
+    ],
+    "kuka-robot-descriptions": [
+        "kuka-agilus-support",
+        "kuka-cybertech-support",
+        "kuka-fortec-support",
+        "kuka-iontec-support",
+        "kuka-kr-moveit-config",
+        "kuka-lbr-iisy-moveit-config",
+        "kuka-lbr-iisy-support",
+        "kuka-lbr-iiwa-moveit-config",
+        "kuka-lbr-iiwa-support",
+        "kuka-mock-hardware-interface",
+        "kuka-quantec-support",
+        "kuka-resources",
+        "kuka-robot-descriptions"
+    ],
+    "lanelet2": [
+        "lanelet2",
+        "lanelet2-core",
+        "lanelet2-examples",
+        "lanelet2-io",
+        "lanelet2-maps",
+        "lanelet2-matching",
+        "lanelet2-projection",
+        "lanelet2-python",
+        "lanelet2-routing",
+        "lanelet2-traffic-rules",
+        "lanelet2-validation"
+    ],
+    "laser-filters": [
+        "laser-filters"
+    ],
+    "laser-geometry": [
+        "laser-geometry"
+    ],
+    "laser-proc": [
+        "laser-proc"
+    ],
+    "laser-segmentation": [
+        "laser-segmentation"
+    ],
+    "launch": [
+        "launch",
+        "launch-pytest",
+        "launch-testing",
+        "launch-testing-ament-cmake",
+        "launch-xml",
+        "launch-yaml"
+    ],
+    "launch-pal": [
+        "launch-pal"
+    ],
+    "launch-param-builder": [
+        "launch-param-builder"
+    ],
+    "launch-ros": [
+        "launch-ros",
+        "launch-testing-ros",
+        "ros2launch"
+    ],
+    "leo-common": [
+        "leo",
+        "leo-description",
+        "leo-msgs",
+        "leo-teleop"
+    ],
+    "leo-desktop": [
+        "leo-desktop",
+        "leo-viz"
+    ],
+    "leo-robot": [
+        "leo-bringup",
+        "leo-fw",
+        "leo-robot"
+    ],
+    "leo-simulator": [
+        "leo-gz-bringup",
+        "leo-gz-plugins",
+        "leo-gz-worlds",
+        "leo-simulator"
+    ],
+    "lgsvl-msgs": [
+        "lgsvl-msgs"
+    ],
+    "libcaer": [
+        "libcaer"
+    ],
+    "libcaer-driver": [
+        "libcaer-driver"
+    ],
+    "libcaer-vendor": [
+        "libcaer-vendor"
+    ],
+    "libcamera": [
+        "libcamera"
+    ],
+    "libcreate": [
+        "libcreate"
+    ],
+    "libfranka": [
+        "libfranka"
+    ],
+    "libg2o": [
+        "libg2o"
+    ],
+    "libnabo": [
+        "libnabo"
+    ],
+    "libpointmatcher": [
+        "libpointmatcher"
+    ],
+    "librealsense2": [
+        "librealsense2"
+    ],
+    "libstatistics-collector": [
+        "libstatistics-collector"
+    ],
+    "libyaml-vendor": [
+        "libyaml-vendor"
+    ],
+    "lidar-situational-graphs": [
+        "lidar-situational-graphs"
+    ],
+    "lms1xx": [
+        "lms1xx"
+    ],
+    "locator-ros-bridge": [
+        "bosch-locator-bridge",
+        "bosch-locator-bridge-utils"
+    ],
+    "log-view": [
+        "log-view"
+    ],
+    "lsc-ros2-driver": [
+        "lsc-ros2-driver"
+    ],
+    "lusb": [
+        "lusb"
+    ],
+    "magic-enum": [
+        "magic-enum"
+    ],
+    "mapviz": [
+        "mapviz",
+        "mapviz-interfaces",
+        "mapviz-plugins",
+        "multires-image",
+        "tile-map"
+    ],
+    "marine-msgs": [
+        "marine-acoustic-msgs",
+        "marine-sensor-msgs"
+    ],
+    "marker-msgs": [
+        "marker-msgs"
+    ],
+    "marti-common": [
+        "swri-cli-tools",
+        "swri-console-util",
+        "swri-dbw-interface",
+        "swri-geometry-util",
+        "swri-image-util",
+        "swri-math-util",
+        "swri-opencv-util",
+        "swri-roscpp",
+        "swri-route-util",
+        "swri-serial-util",
+        "swri-system-util",
+        "swri-transform-util"
+    ],
+    "marti-messages": [
+        "marti-can-msgs",
+        "marti-common-msgs",
+        "marti-dbw-msgs",
+        "marti-introspection-msgs",
+        "marti-nav-msgs",
+        "marti-perception-msgs",
+        "marti-sensor-msgs",
+        "marti-status-msgs",
+        "marti-visualization-msgs"
+    ],
+    "marvelmind-ros2-msgs": [
+        "marvelmind-ros2-msgs"
+    ],
+    "marvelmind-ros2-release": [
+        "marvelmind-ros2"
+    ],
+    "mavlink": [
+        "mavlink"
+    ],
+    "mavros": [
+        "libmavconn",
+        "mavros",
+        "mavros-extras",
+        "mavros-msgs"
+    ],
+    "menge-vendor": [
+        "menge-vendor"
+    ],
+    "message-filters": [
+        "message-filters"
+    ],
+    "message-tf-frame-transformer": [
+        "message-tf-frame-transformer"
+    ],
+    "metavision-driver": [
+        "metavision-driver"
+    ],
+    "metrics-msgs": [
+        "collision-log-msgs",
+        "metro-benchmark-msgs",
+        "metro-benchmark-pub"
+    ],
+    "metro-gazebo-plugins": [
+        "metro-gazebo-plugins"
+    ],
+    "metro-nav": [
+        "base2d-kinematics",
+        "base2d-kinematics-msgs"
+    ],
+    "micro-ros-diagnostics": [
+        "micro-ros-diagnostic-bridge",
+        "micro-ros-diagnostic-msgs"
+    ],
+    "micro-ros-msgs": [
+        "micro-ros-msgs"
+    ],
+    "microstrain-inertial": [
+        "microstrain-inertial-description",
+        "microstrain-inertial-driver",
+        "microstrain-inertial-examples",
+        "microstrain-inertial-msgs",
+        "microstrain-inertial-rqt"
+    ],
+    "mimick-vendor": [
+        "mimick-vendor"
+    ],
+    "mir-robot": [
+        "mir-robot"
+    ],
+    "mocap4r2": [
+        "mocap4r2-control",
+        "mocap4r2-control-msgs",
+        "mocap4r2-dummy-driver",
+        "mocap4r2-marker-publisher",
+        "mocap4r2-marker-viz",
+        "mocap4r2-marker-viz-srvs",
+        "mocap4r2-robot-gt",
+        "mocap4r2-robot-gt-msgs",
+        "rqt-mocap4r2-control"
+    ],
+    "mocap4r2-msgs": [
+        "mocap4r2-msgs"
+    ],
+    "mocap-optitrack": [
+        "mocap-optitrack"
+    ],
+    "mod": [
+        "mod"
+    ],
+    "mola": [
+        "kitti-metrics-eval",
+        "mola",
+        "mola-bridge-ros2",
+        "mola-demos",
+        "mola-input-euroc-dataset",
+        "mola-input-kitti360-dataset",
+        "mola-input-kitti-dataset",
+        "mola-input-mulran-dataset",
+        "mola-input-paris-luco-dataset",
+        "mola-input-rawlog",
+        "mola-input-rosbag2",
+        "mola-kernel",
+        "mola-launcher",
+        "mola-metric-maps",
+        "mola-msgs",
+        "mola-pose-list",
+        "mola-relocalization",
+        "mola-traj-tools",
+        "mola-viz",
+        "mola-yaml"
+    ],
+    "mola-common": [
+        "mola-common"
+    ],
+    "mola-lidar-odometry": [
+        "mola-lidar-odometry"
+    ],
+    "mola-state-estimation": [
+        "mola-imu-preintegration",
+        "mola-state-estimation",
+        "mola-state-estimation-simple",
+        "mola-state-estimation-smoother"
+    ],
+    "mola-test-datasets": [
+        "mola-test-datasets"
+    ],
+    "motion-capture-tracking": [
+        "motion-capture-tracking",
+        "motion-capture-tracking-interfaces"
+    ],
+    "moveit": [
+        "chomp-motion-planner",
+        "moveit",
+        "moveit-chomp-optimizer-adapter",
+        "moveit-common",
+        "moveit-configs-utils",
+        "moveit-core",
+        "moveit-hybrid-planning",
+        "moveit-kinematics",
+        "moveit-planners",
+        "moveit-planners-chomp",
+        "moveit-planners-ompl",
+        "moveit-plugins",
+        "moveit-resources-prbt-ikfast-manipulator-plugin",
+        "moveit-resources-prbt-moveit-config",
+        "moveit-resources-prbt-pg70-support",
+        "moveit-resources-prbt-support",
+        "moveit-ros",
+        "moveit-ros-benchmarks",
+        "moveit-ros-control-interface",
+        "moveit-ros-move-group",
+        "moveit-ros-occupancy-map-monitor",
+        "moveit-ros-perception",
+        "moveit-ros-planning",
+        "moveit-ros-planning-interface",
+        "moveit-ros-robot-interaction",
+        "moveit-ros-visualization",
+        "moveit-ros-warehouse",
+        "moveit-runtime",
+        "moveit-servo",
+        "moveit-setup-app-plugins",
+        "moveit-setup-assistant",
+        "moveit-setup-controllers",
+        "moveit-setup-core-plugins",
+        "moveit-setup-framework",
+        "moveit-setup-srdf-plugins",
+        "moveit-simple-controller-manager",
+        "pilz-industrial-motion-planner",
+        "pilz-industrial-motion-planner-testutils"
+    ],
+    "moveit-msgs": [
+        "moveit-msgs"
+    ],
+    "moveit-resources": [
+        "moveit-resources",
+        "moveit-resources-fanuc-description",
+        "moveit-resources-fanuc-moveit-config",
+        "moveit-resources-panda-description",
+        "moveit-resources-panda-moveit-config",
+        "moveit-resources-pr2-description"
+    ],
+    "moveit-visual-tools": [
+        "moveit-visual-tools"
+    ],
+    "mp2p-icp": [
+        "mp2p-icp"
+    ],
+    "mqtt-client": [
+        "mqtt-client",
+        "mqtt-client-interfaces"
+    ],
+    "mrpt-msgs": [
+        "mrpt-msgs"
+    ],
+    "mrpt-navigation": [
+        "mrpt-map-server",
+        "mrpt-msgs-bridge",
+        "mrpt-nav-interfaces",
+        "mrpt-navigation",
+        "mrpt-pf-localization",
+        "mrpt-pointcloud-pipeline",
+        "mrpt-rawlog",
+        "mrpt-reactivenav2d",
+        "mrpt-tps-astar-planner",
+        "mrpt-tutorials"
+    ],
+    "mrpt-path-planning": [
+        "mrpt-path-planning"
+    ],
+    "mrpt-ros": [
+        "mrpt-apps",
+        "mrpt-libapps",
+        "mrpt-libbase",
+        "mrpt-libgui",
+        "mrpt-libhwdrivers",
+        "mrpt-libmaps",
+        "mrpt-libmath",
+        "mrpt-libnav",
+        "mrpt-libobs",
+        "mrpt-libopengl",
+        "mrpt-libposes",
+        "mrpt-libros-bridge",
+        "mrpt-libslam",
+        "mrpt-libtclap"
+    ],
+    "mrpt-sensors": [
+        "mrpt-generic-sensor",
+        "mrpt-sensor-bumblebee-stereo",
+        "mrpt-sensor-gnss-nmea",
+        "mrpt-sensor-gnss-novatel",
+        "mrpt-sensor-imu-taobotics",
+        "mrpt-sensorlib",
+        "mrpt-sensors"
+    ],
+    "mrt-cmake-modules": [
+        "mrt-cmake-modules"
+    ],
+    "multiple-topic-monitor": [
+        "multiple-topic-monitor"
+    ],
+    "mvsim": [
+        "mvsim"
+    ],
+    "myactuator-rmd": [
+        "myactuator-rmd"
+    ],
+    "nao-button-sim": [
+        "nao-button-sim"
+    ],
+    "nao-interfaces": [
+        "nao-command-msgs",
+        "nao-sensor-msgs"
+    ],
+    "nao-lola": [
+        "nao-lola"
+    ],
+    "nao-meshes": [
+        "nao-meshes"
+    ],
+    "naoqi-bridge-msgs2": [
+        "naoqi-bridge-msgs"
+    ],
+    "naoqi-driver": [
+        "naoqi-driver"
+    ],
+    "naoqi-libqi": [
+        "naoqi-libqi"
+    ],
+    "naoqi-libqicore": [
+        "naoqi-libqicore"
+    ],
+    "navigation2": [
+        "costmap-queue",
+        "dwb-core",
+        "dwb-critics",
+        "dwb-msgs",
+        "dwb-plugins",
+        "nav2-amcl",
+        "nav2-behavior-tree",
+        "nav2-behaviors",
+        "nav2-bringup",
+        "nav2-bt-navigator",
+        "nav2-collision-monitor",
+        "nav2-common",
+        "nav2-constrained-smoother",
+        "nav2-controller",
+        "nav2-core",
+        "nav2-costmap-2d",
+        "nav2-dwb-controller",
+        "nav2-graceful-controller",
+        "nav2-lifecycle-manager",
+        "nav2-map-server",
+        "nav2-mppi-controller",
+        "nav2-msgs",
+        "nav2-navfn-planner",
+        "nav2-planner",
+        "nav2-regulated-pure-pursuit-controller",
+        "nav2-rotation-shim-controller",
+        "nav2-rviz-plugins",
+        "nav2-simple-commander",
+        "nav2-smac-planner",
+        "nav2-smoother",
+        "nav2-system-tests",
+        "nav2-theta-star-planner",
+        "nav2-util",
+        "nav2-velocity-smoother",
+        "nav2-voxel-grid",
+        "nav2-waypoint-follower",
+        "nav-2d-msgs",
+        "nav-2d-utils",
+        "navigation2"
+    ],
+    "navigation-msgs": [
+        "map-msgs"
+    ],
+    "ndt-omp": [
+        "ndt-omp"
+    ],
+    "neo-nav2-bringup": [
+        "neo-nav2-bringup"
+    ],
+    "neo-simulation2": [
+        "neo-simulation2"
+    ],
+    "nerian-stereo-ros2": [
+        "nerian-stereo"
+    ],
+    "network-interface": [
+        "network-interface"
+    ],
+    "nicla-vision-ros2": [
+        "nicla-vision-ros2"
+    ],
+    "nlohmann-json-schema-validator-vendor": [
+        "nlohmann-json-schema-validator-vendor"
+    ],
+    "nmea-hardware-interface": [
+        "nmea-hardware-interface"
+    ],
+    "nmea-msgs": [
+        "nmea-msgs"
+    ],
+    "nmea-navsat-driver": [
+        "nmea-navsat-driver"
+    ],
+    "nobleo-socketcan-bridge": [
+        "nobleo-socketcan-bridge"
+    ],
+    "nodl": [
+        "nodl-python",
+        "ros2nodl"
+    ],
+    "nodl-to-policy": [
+        "nodl-to-policy"
+    ],
+    "nonpersistent-voxel-layer": [
+        "nonpersistent-voxel-layer"
+    ],
+    "novatel-gps-driver": [
+        "novatel-gps-driver",
+        "novatel-gps-msgs"
+    ],
+    "novatel-oem7-driver": [
+        "novatel-oem7-driver",
+        "novatel-oem7-msgs"
+    ],
+    "ntpd-driver": [
+        "ntpd-driver"
+    ],
+    "ntrip-client": [
+        "ntrip-client"
+    ],
+    "object-recognition-msgs": [
+        "object-recognition-msgs"
+    ],
+    "octomap": [
+        "dynamic-edt-3d",
+        "octomap",
+        "octovis"
+    ],
+    "octomap-mapping": [
+        "octomap-mapping",
+        "octomap-server"
+    ],
+    "octomap-msgs": [
+        "octomap-msgs"
+    ],
+    "octomap-ros": [
+        "octomap-ros"
+    ],
+    "octomap-rviz-plugins": [
+        "octomap-rviz-plugins"
+    ],
+    "odom-to-tf-ros2": [
+        "odom-to-tf-ros2"
+    ],
+    "off-highway-sensor-drivers": [
+        "off-highway-can",
+        "off-highway-general-purpose-radar",
+        "off-highway-general-purpose-radar-msgs",
+        "off-highway-premium-radar-sample",
+        "off-highway-premium-radar-sample-msgs",
+        "off-highway-radar",
+        "off-highway-radar-msgs",
+        "off-highway-sensor-drivers",
+        "off-highway-sensor-drivers-examples",
+        "off-highway-uss",
+        "off-highway-uss-msgs"
+    ],
+    "omni-base-navigation": [
+        "omni-base-2dnav",
+        "omni-base-laser-sensors",
+        "omni-base-navigation",
+        "omni-base-rgbd-sensors"
+    ],
+    "omni-base-robot": [
+        "omni-base-bringup",
+        "omni-base-controller-configuration",
+        "omni-base-description",
+        "omni-base-robot"
+    ],
+    "omni-base-simulation": [
+        "omni-base-gazebo",
+        "omni-base-simulation"
+    ],
+    "ompl": [
+        "ompl"
+    ],
+    "openeb-vendor": [
+        "openeb-vendor"
+    ],
+    "opennav-docking": [
+        "opennav-docking",
+        "opennav-docking-bt",
+        "opennav-docking-core",
+        "opennav-docking-msgs"
+    ],
+    "openni2-camera": [
+        "openni2-camera"
+    ],
+    "orocos-kdl-vendor": [
+        "orocos-kdl-vendor",
+        "python-orocos-kdl-vendor"
+    ],
+    "ortools-vendor": [
+        "ortools-vendor"
+    ],
+    "osqp-vendor": [
+        "osqp-vendor"
+    ],
+    "osrf-pycommon": [
+        "osrf-pycommon"
+    ],
+    "osrf-testing-tools-cpp": [
+        "osrf-testing-tools-cpp"
+    ],
+    "ouxt-common": [
+        "ouxt-common",
+        "ouxt-lint-common"
+    ],
+    "pal-gazebo-plugins": [
+        "pal-gazebo-plugins"
+    ],
+    "pal-gazebo-worlds": [
+        "pal-gazebo-worlds"
+    ],
+    "pal-gripper": [
+        "pal-gripper",
+        "pal-gripper-controller-configuration",
+        "pal-gripper-description",
+        "pal-gripper-simulation"
+    ],
+    "pal-hey5": [
+        "pal-hey5",
+        "pal-hey5-controller-configuration",
+        "pal-hey5-description"
+    ],
+    "pal-maps": [
+        "pal-maps"
+    ],
+    "pal-navigation-cfg-public": [
+        "pal-navigation-cfg",
+        "pal-navigation-cfg-bringup",
+        "pal-navigation-cfg-params"
+    ],
+    "pal-robotiq-gripper": [
+        "pal-robotiq-controller-configuration",
+        "pal-robotiq-description",
+        "pal-robotiq-gripper"
+    ],
+    "pal-statistics": [
+        "pal-statistics",
+        "pal-statistics-msgs"
+    ],
+    "pal-urdf-utils": [
+        "pal-urdf-utils"
+    ],
+    "pangolin": [
+        "pangolin"
+    ],
+    "pcl-msgs": [
+        "pcl-msgs"
+    ],
+    "pepper-meshes": [
+        "pepper-meshes"
+    ],
+    "perception-open3d": [
+        "open3d-conversions"
+    ],
+    "perception-pcl": [
+        "pcl-conversions",
+        "pcl-ros",
+        "perception-pcl"
+    ],
+    "performance-test": [
+        "performance-test"
+    ],
+    "performance-test-fixture": [
+        "performance-test-fixture"
+    ],
+    "phidgets-drivers": [
+        "libphidget22",
+        "phidgets-accelerometer",
+        "phidgets-analog-inputs",
+        "phidgets-analog-outputs",
+        "phidgets-api",
+        "phidgets-digital-inputs",
+        "phidgets-digital-outputs",
+        "phidgets-drivers",
+        "phidgets-gyroscope",
+        "phidgets-high-speed-encoder",
+        "phidgets-ik",
+        "phidgets-magnetometer",
+        "phidgets-motors",
+        "phidgets-msgs",
+        "phidgets-spatial",
+        "phidgets-temperature"
+    ],
+    "pick-ik": [
+        "pick-ik"
+    ],
+    "picknik-ament-copyright": [
+        "picknik-ament-copyright"
+    ],
+    "picknik-controllers": [
+        "picknik-reset-fault-controller",
+        "picknik-twist-controller"
+    ],
+    "pinocchio": [
+        "pinocchio"
+    ],
+    "play-motion2": [
+        "play-motion2",
+        "play-motion2-msgs"
+    ],
+    "plotjuggler": [
+        "plotjuggler"
+    ],
+    "plotjuggler-msgs": [
+        "plotjuggler-msgs"
+    ],
+    "plotjuggler-ros": [
+        "plotjuggler-ros"
+    ],
+    "pluginlib": [
+        "pluginlib"
+    ],
+    "pmb2-navigation": [
+        "pmb2-2dnav",
+        "pmb2-laser-sensors",
+        "pmb2-navigation"
+    ],
+    "pmb2-robot": [
+        "pmb2-bringup",
+        "pmb2-controller-configuration",
+        "pmb2-description",
+        "pmb2-robot"
+    ],
+    "pmb2-simulation": [
+        "pmb2-gazebo",
+        "pmb2-simulation"
+    ],
+    "point-cloud-msg-wrapper": [
+        "point-cloud-msg-wrapper"
+    ],
+    "point-cloud-transport": [
+        "point-cloud-transport",
+        "point-cloud-transport-py"
+    ],
+    "point-cloud-transport-plugins": [
+        "draco-point-cloud-transport",
+        "point-cloud-interfaces",
+        "point-cloud-transport-plugins",
+        "zlib-point-cloud-transport",
+        "zstd-point-cloud-transport"
+    ],
+    "pointcloud-to-laserscan": [
+        "pointcloud-to-laserscan"
+    ],
+    "polygon-ros": [
+        "polygon-demos",
+        "polygon-msgs",
+        "polygon-rviz-plugins",
+        "polygon-utils"
+    ],
+    "popf": [
+        "popf"
+    ],
+    "pose-cov-ops": [
+        "pose-cov-ops"
+    ],
+    "proto2ros": [
+        "proto2ros"
+    ],
+    "proxsuite": [
+        "proxsuite"
+    ],
+    "psdk-ros2": [
+        "psdk-interfaces",
+        "psdk-wrapper"
+    ],
+    "ptz-action-server": [
+        "ptz-action-server-msgs"
+    ],
+    "puma-motor-driver": [
+        "clearpath-socketcan-interface",
+        "puma-motor-driver",
+        "puma-motor-msgs"
+    ],
+    "py-binding-tools": [
+        "py-binding-tools"
+    ],
+    "py-trees": [
+        "py-trees"
+    ],
+    "py-trees-js": [
+        "py-trees-js"
+    ],
+    "py-trees-ros": [
+        "py-trees-ros"
+    ],
+    "py-trees-ros-interfaces": [
+        "py-trees-ros-interfaces"
+    ],
+    "py-trees-ros-tutorials": [
+        "py-trees-ros-tutorials"
+    ],
+    "py-trees-ros-viewer": [
+        "py-trees-ros-viewer"
+    ],
+    "pybind11-json-vendor": [
+        "pybind11-json-vendor"
+    ],
+    "pybind11-vendor": [
+        "pybind11-vendor"
+    ],
+    "python-cmake-module": [
+        "python-cmake-module"
+    ],
+    "python-mrpt-ros": [
+        "python-mrpt"
+    ],
+    "python-qt-binding": [
+        "python-qt-binding"
+    ],
+    "qb-device": [
+        "qb-device",
+        "qb-device-bringup",
+        "qb-device-driver",
+        "qb-device-msgs",
+        "qb-device-ros2-control",
+        "qb-device-test-controllers"
+    ],
+    "qb-softhand-industry": [
+        "qb-softhand-industry",
+        "qb-softhand-industry-description",
+        "qb-softhand-industry-driver",
+        "qb-softhand-industry-msgs",
+        "qb-softhand-industry-ros2-control",
+        "qb-softhand-industry-srvs"
+    ],
+    "qml-ros2-plugin": [
+        "qml-ros2-plugin"
+    ],
+    "qpoases-vendor": [
+        "qpoases-vendor"
+    ],
+    "qt-gui-core": [
+        "qt-dotgraph",
+        "qt-gui",
+        "qt-gui-app",
+        "qt-gui-core",
+        "qt-gui-cpp",
+        "qt-gui-py-common"
+    ],
+    "quaternion-operation": [
+        "quaternion-operation"
+    ],
+    "r2r-spl": [
+        "r2r-spl",
+        "r2r-spl-7",
+        "r2r-spl-8",
+        "r2r-spl-test-interfaces",
+        "splsm-7",
+        "splsm-7-conversion",
+        "splsm-8",
+        "splsm-8-conversion"
+    ],
+    "radar-msgs": [
+        "radar-msgs"
+    ],
+    "random-numbers": [
+        "random-numbers"
+    ],
+    "raspimouse2": [
+        "raspimouse",
+        "raspimouse-msgs"
+    ],
+    "raspimouse-description": [
+        "raspimouse-description"
+    ],
+    "raspimouse-ros2-examples": [
+        "raspimouse-ros2-examples"
+    ],
+    "raspimouse-sim": [
+        "raspimouse-fake",
+        "raspimouse-gazebo",
+        "raspimouse-sim"
+    ],
+    "raspimouse-slam-navigation-ros2": [
+        "raspimouse-navigation",
+        "raspimouse-slam",
+        "raspimouse-slam-navigation"
+    ],
+    "rc-common-msgs": [
+        "rc-common-msgs"
+    ],
+    "rc-dynamics-api": [
+        "rc-dynamics-api"
+    ],
+    "rc-genicam-api": [
+        "rc-genicam-api"
+    ],
+    "rc-genicam-driver": [
+        "rc-genicam-driver"
+    ],
+    "rc-reason-clients": [
+        "rc-reason-clients",
+        "rc-reason-msgs"
+    ],
+    "rcdiscover": [
+        "rcdiscover"
+    ],
+    "rcl": [
+        "rcl",
+        "rcl-action",
+        "rcl-lifecycle",
+        "rcl-yaml-param-parser"
+    ],
+    "rcl-interfaces": [
+        "action-msgs",
+        "builtin-interfaces",
+        "composition-interfaces",
+        "lifecycle-msgs",
+        "rcl-interfaces",
+        "rosgraph-msgs",
+        "statistics-msgs",
+        "test-msgs"
+    ],
+    "rcl-logging": [
+        "rcl-logging-interface",
+        "rcl-logging-noop",
+        "rcl-logging-spdlog"
+    ],
+    "rclc": [
+        "rclc",
+        "rclc-examples",
+        "rclc-lifecycle",
+        "rclc-parameter"
+    ],
+    "rclcpp": [
+        "rclcpp",
+        "rclcpp-action",
+        "rclcpp-components",
+        "rclcpp-lifecycle"
+    ],
+    "rclpy": [
+        "rclpy"
+    ],
+    "rcpputils": [
+        "rcpputils"
+    ],
+    "rcss3d-agent": [
+        "rcss3d-agent",
+        "rcss3d-agent-basic",
+        "rcss3d-agent-msgs"
+    ],
+    "rcutils": [
+        "rcutils"
+    ],
+    "reach": [
+        "reach"
+    ],
+    "reach-ros": [
+        "reach-ros"
+    ],
+    "realsense2-camera": [
+        "realsense2-camera",
+        "realsense2-camera-msgs",
+        "realsense2-description"
+    ],
+    "realtime-support": [
+        "rttest",
+        "tlsf-cpp"
+    ],
+    "realtime-tools": [
+        "realtime-tools"
+    ],
+    "resource-retriever": [
+        "libcurl-vendor",
+        "resource-retriever"
+    ],
+    "rig-reconfigure": [
+        "rig-reconfigure"
+    ],
+    "rmf-api-msgs": [
+        "rmf-api-msgs"
+    ],
+    "rmf-battery": [
+        "rmf-battery"
+    ],
+    "rmf-building-map-msgs": [
+        "rmf-building-map-msgs"
+    ],
+    "rmf-cmake-uncrustify": [
+        "rmf-cmake-uncrustify"
+    ],
+    "rmf-demos": [
+        "rmf-demos"
+    ],
+    "rmf-internal-msgs": [
+        "rmf-charger-msgs",
+        "rmf-dispenser-msgs",
+        "rmf-door-msgs",
+        "rmf-fleet-msgs",
+        "rmf-ingestor-msgs",
+        "rmf-lift-msgs",
+        "rmf-obstacle-msgs",
+        "rmf-scheduler-msgs",
+        "rmf-site-map-msgs",
+        "rmf-task-msgs",
+        "rmf-traffic-msgs",
+        "rmf-workcell-msgs"
+    ],
+    "rmf-ros2": [
+        "rmf-fleet-adapter",
+        "rmf-fleet-adapter-python",
+        "rmf-task-ros2",
+        "rmf-traffic-ros2",
+        "rmf-websocket"
+    ],
+    "rmf-simulation": [
+        "rmf-building-sim-common",
+        "rmf-building-sim-gz-classic-plugins",
+        "rmf-building-sim-gz-plugins",
+        "rmf-robot-sim-common",
+        "rmf-robot-sim-gz-classic-plugins",
+        "rmf-robot-sim-gz-plugins"
+    ],
+    "rmf-task": [
+        "rmf-task",
+        "rmf-task-sequence"
+    ],
+    "rmf-traffic": [
+        "rmf-traffic",
+        "rmf-traffic-examples"
+    ],
+    "rmf-traffic-editor": [
+        "rmf-building-map-tools",
+        "rmf-traffic-editor",
+        "rmf-traffic-editor-assets",
+        "rmf-traffic-editor-test-maps"
+    ],
+    "rmf-utils": [
+        "rmf-utils"
+    ],
+    "rmf-variants": [
+        "rmf-dev"
+    ],
+    "rmf-visualization": [
+        "rmf-visualization",
+        "rmf-visualization-building-systems",
+        "rmf-visualization-fleet-states",
+        "rmf-visualization-floorplans",
+        "rmf-visualization-navgraphs",
+        "rmf-visualization-obstacles",
+        "rmf-visualization-rviz2-plugins",
+        "rmf-visualization-schedule"
+    ],
+    "rmf-visualization-msgs": [
+        "rmf-visualization-msgs"
+    ],
+    "rmw": [
+        "rmw",
+        "rmw-implementation-cmake"
+    ],
+    "rmw-connextdds": [
+        "rmw-connextdds",
+        "rmw-connextdds-common",
+        "rti-connext-dds-cmake-module"
+    ],
+    "rmw-cyclonedds": [
+        "rmw-cyclonedds-cpp"
+    ],
+    "rmw-dds-common": [
+        "rmw-dds-common"
+    ],
+    "rmw-fastrtps": [
+        "rmw-fastrtps-cpp",
+        "rmw-fastrtps-dynamic-cpp",
+        "rmw-fastrtps-shared-cpp"
+    ],
+    "rmw-gurumdds": [
+        "gurumdds-cmake-module",
+        "rmw-gurumdds-cpp"
+    ],
+    "rmw-implementation": [
+        "rmw-implementation"
+    ],
+    "rmw-zenoh": [
+        "rmw-zenoh-cpp",
+        "zenoh-cpp-vendor"
+    ],
+    "robosoft-openai": [
+        "robosoft-openai"
+    ],
+    "robot-calibration": [
+        "robot-calibration",
+        "robot-calibration-msgs"
+    ],
+    "robot-controllers": [
+        "robot-controllers",
+        "robot-controllers-interface",
+        "robot-controllers-msgs"
+    ],
+    "robot-localization": [
+        "robot-localization"
+    ],
+    "robot-state-publisher": [
+        "robot-state-publisher"
+    ],
+    "robot-upstart": [
+        "robot-upstart"
+    ],
+    "robotont-driver": [
+        "robotont-driver"
+    ],
+    "robotraconteur": [
+        "robotraconteur"
+    ],
+    "ros1-bridge": [
+        "ros1-bridge"
+    ],
+    "ros2-canopen": [
+        "canopen",
+        "canopen-402-driver",
+        "canopen-base-driver",
+        "canopen-core",
+        "canopen-fake-slaves",
+        "canopen-interfaces",
+        "canopen-master-driver",
+        "canopen-proxy-driver",
+        "canopen-ros2-control",
+        "canopen-ros2-controllers",
+        "canopen-tests",
+        "canopen-utils",
+        "lely-core-libraries"
+    ],
+    "ros2-control": [
+        "controller-interface",
+        "controller-manager",
+        "controller-manager-msgs",
+        "hardware-interface",
+        "hardware-interface-testing",
+        "joint-limits",
+        "ros2-control",
+        "ros2-control-test-assets",
+        "ros2controlcli",
+        "rqt-controller-manager",
+        "transmission-interface"
+    ],
+    "ros2-controllers": [
+        "ackermann-steering-controller",
+        "admittance-controller",
+        "bicycle-steering-controller",
+        "diff-drive-controller",
+        "effort-controllers",
+        "force-torque-sensor-broadcaster",
+        "forward-command-controller",
+        "gpio-controllers",
+        "gripper-controllers",
+        "imu-sensor-broadcaster",
+        "joint-state-broadcaster",
+        "joint-trajectory-controller",
+        "pid-controller",
+        "pose-broadcaster",
+        "position-controllers",
+        "range-sensor-broadcaster",
+        "ros2-controllers",
+        "ros2-controllers-test-nodes",
+        "rqt-joint-trajectory-controller",
+        "steering-controllers-library",
+        "tricycle-controller",
+        "tricycle-steering-controller",
+        "velocity-controllers"
+    ],
+    "ros2-kortex": [
+        "kinova-gen3-6dof-robotiq-2f-85-moveit-config",
+        "kinova-gen3-7dof-robotiq-2f-85-moveit-config",
+        "kortex-api",
+        "kortex-bringup",
+        "kortex-description",
+        "kortex-driver"
+    ],
+    "ros2-ouster-drivers": [
+        "ouster-msgs",
+        "ros2-ouster"
+    ],
+    "ros2-planning-system": [
+        "plansys2-bringup",
+        "plansys2-bt-actions",
+        "plansys2-core",
+        "plansys2-domain-expert",
+        "plansys2-executor",
+        "plansys2-lifecycle-manager",
+        "plansys2-msgs",
+        "plansys2-pddl-parser",
+        "plansys2-planner",
+        "plansys2-popf-plan-solver",
+        "plansys2-problem-expert",
+        "plansys2-terminal",
+        "plansys2-tools"
+    ],
+    "ros2-robotiq-gripper": [
+        "robotiq-controllers",
+        "robotiq-description"
+    ],
+    "ros2-socketcan": [
+        "ros2-socketcan",
+        "ros2-socketcan-msgs"
+    ],
+    "ros2-tracing": [
+        "ros2trace",
+        "tracetools",
+        "tracetools-launch",
+        "tracetools-read",
+        "tracetools-test",
+        "tracetools-trace"
+    ],
+    "ros2acceleration": [
+        "ros2acceleration"
+    ],
+    "ros2caret": [
+        "ros2caret"
+    ],
+    "ros2cli": [
+        "ros2action",
+        "ros2cli",
+        "ros2cli-test-interfaces",
+        "ros2component",
+        "ros2doctor",
+        "ros2interface",
+        "ros2lifecycle",
+        "ros2lifecycle-test-fixtures",
+        "ros2multicast",
+        "ros2node",
+        "ros2param",
+        "ros2pkg",
+        "ros2run",
+        "ros2service",
+        "ros2topic"
+    ],
+    "ros2cli-common-extensions": [
+        "ros2cli-common-extensions"
+    ],
+    "ros2launch-security": [
+        "ros2launch-security",
+        "ros2launch-security-examples"
+    ],
+    "ros-babel-fish": [
+        "ros-babel-fish",
+        "ros-babel-fish-test-msgs"
+    ],
+    "ros-canopen": [
+        "can-msgs"
+    ],
+    "ros-environment": [
+        "ros-environment"
+    ],
+    "ros-gz": [
+        "ros-gz",
+        "ros-gz-bridge",
+        "ros-gz-image",
+        "ros-gz-interfaces",
+        "ros-gz-sim",
+        "ros-gz-sim-demos",
+        "ros-ign",
+        "ros-ign-bridge",
+        "ros-ign-gazebo",
+        "ros-ign-gazebo-demos",
+        "ros-ign-image",
+        "ros-ign-interfaces",
+        "test-ros-gz-bridge"
+    ],
+    "ros-image-to-qimage": [
+        "ros-image-to-qimage"
+    ],
+    "ros-industrial-cmake-boilerplate": [
+        "ros-industrial-cmake-boilerplate"
+    ],
+    "ros-testing": [
+        "ros2test",
+        "ros-testing"
+    ],
+    "ros-tutorials": [
+        "turtlesim"
+    ],
+    "ros-workspace": [
+        "ros-workspace"
+    ],
+    "rosbag2": [
+        "mcap-vendor",
+        "ros2bag",
+        "rosbag2",
+        "rosbag2-compression",
+        "rosbag2-compression-zstd",
+        "rosbag2-cpp",
+        "rosbag2-interfaces",
+        "rosbag2-performance-benchmarking",
+        "rosbag2-py",
+        "rosbag2-storage",
+        "rosbag2-storage-default-plugins",
+        "rosbag2-storage-mcap",
+        "rosbag2-storage-mcap-testdata",
+        "rosbag2-test-common",
+        "rosbag2-tests",
+        "rosbag2-transport",
+        "shared-queues-vendor",
+        "sqlite3-vendor",
+        "zstd-vendor"
+    ],
+    "rosbag2-bag-v2": [
+        "ros1-rosbag-storage-vendor",
+        "rosbag2-bag-v2-plugins"
+    ],
+    "rosbag2-to-video": [
+        "rosbag2-to-video"
+    ],
+    "rosbridge-suite": [
+        "rosapi",
+        "rosapi-msgs",
+        "rosbridge-library",
+        "rosbridge-msgs",
+        "rosbridge-server",
+        "rosbridge-suite",
+        "rosbridge-test-msgs"
+    ],
+    "rosidl": [
+        "rosidl-adapter",
+        "rosidl-cli",
+        "rosidl-cmake",
+        "rosidl-generator-c",
+        "rosidl-generator-cpp",
+        "rosidl-parser",
+        "rosidl-runtime-c",
+        "rosidl-runtime-cpp",
+        "rosidl-typesupport-interface",
+        "rosidl-typesupport-introspection-c",
+        "rosidl-typesupport-introspection-cpp"
+    ],
+    "rosidl-dds": [
+        "rosidl-generator-dds-idl"
+    ],
+    "rosidl-defaults": [
+        "rosidl-default-generators",
+        "rosidl-default-runtime"
+    ],
+    "rosidl-python": [
+        "rosidl-generator-py"
+    ],
+    "rosidl-runtime-py": [
+        "rosidl-runtime-py"
+    ],
+    "rosidl-typesupport": [
+        "rosidl-typesupport-c",
+        "rosidl-typesupport-cpp"
+    ],
+    "rosidl-typesupport-fastrtps": [
+        "fastrtps-cmake-module",
+        "rosidl-typesupport-fastrtps-c",
+        "rosidl-typesupport-fastrtps-cpp"
+    ],
+    "rospy-message-converter": [
+        "rclpy-message-converter",
+        "rclpy-message-converter-msgs"
+    ],
+    "rosx-introspection": [
+        "rosx-introspection"
+    ],
+    "rot-conv-lib": [
+        "rot-conv"
+    ],
+    "rplidar-ros": [
+        "rplidar-ros"
+    ],
+    "rpyutils": [
+        "rpyutils"
+    ],
+    "rqt": [
+        "rqt",
+        "rqt-gui",
+        "rqt-gui-cpp",
+        "rqt-gui-py",
+        "rqt-py-common"
+    ],
+    "rqt-action": [
+        "rqt-action"
+    ],
+    "rqt-bag": [
+        "rqt-bag",
+        "rqt-bag-plugins"
+    ],
+    "rqt-common-plugins": [
+        "rqt-common-plugins"
+    ],
+    "rqt-console": [
+        "rqt-console"
+    ],
+    "rqt-dotgraph": [
+        "rqt-dotgraph"
+    ],
+    "rqt-gauges": [
+        "rqt-gauges"
+    ],
+    "rqt-graph": [
+        "rqt-graph"
+    ],
+    "rqt-image-overlay": [
+        "rqt-image-overlay",
+        "rqt-image-overlay-layer"
+    ],
+    "rqt-image-view": [
+        "rqt-image-view"
+    ],
+    "rqt-moveit": [
+        "rqt-moveit"
+    ],
+    "rqt-msg": [
+        "rqt-msg"
+    ],
+    "rqt-plot": [
+        "rqt-plot"
+    ],
+    "rqt-publisher": [
+        "rqt-publisher"
+    ],
+    "rqt-py-console": [
+        "rqt-py-console"
+    ],
+    "rqt-reconfigure": [
+        "rqt-reconfigure"
+    ],
+    "rqt-robot-dashboard": [
+        "rqt-robot-dashboard"
+    ],
+    "rqt-robot-monitor": [
+        "rqt-robot-monitor"
+    ],
+    "rqt-robot-steering": [
+        "rqt-robot-steering"
+    ],
+    "rqt-runtime-monitor": [
+        "rqt-runtime-monitor"
+    ],
+    "rqt-service-caller": [
+        "rqt-service-caller"
+    ],
+    "rqt-shell": [
+        "rqt-shell"
+    ],
+    "rqt-srv": [
+        "rqt-srv"
+    ],
+    "rqt-tf-tree": [
+        "rqt-tf-tree"
+    ],
+    "rqt-topic": [
+        "rqt-topic"
+    ],
+    "rsl": [
+        "rsl"
+    ],
+    "rt-manipulators-cpp": [
+        "rt-manipulators-cpp",
+        "rt-manipulators-examples"
+    ],
+    "rt-usb-9axisimu-driver": [
+        "rt-usb-9axisimu-driver"
+    ],
+    "rtabmap": [
+        "rtabmap"
+    ],
+    "rtabmap-ros": [
+        "rtabmap-conversions",
+        "rtabmap-demos",
+        "rtabmap-examples",
+        "rtabmap-launch",
+        "rtabmap-msgs",
+        "rtabmap-odom",
+        "rtabmap-python",
+        "rtabmap-ros",
+        "rtabmap-rviz-plugins",
+        "rtabmap-slam",
+        "rtabmap-sync",
+        "rtabmap-util",
+        "rtabmap-viz"
+    ],
+    "rtcm-msgs": [
+        "rtcm-msgs"
+    ],
+    "ruckig": [
+        "ruckig"
+    ],
+    "rviz": [
+        "rviz2",
+        "rviz-assimp-vendor",
+        "rviz-common",
+        "rviz-default-plugins",
+        "rviz-ogre-vendor",
+        "rviz-rendering",
+        "rviz-rendering-tests",
+        "rviz-visual-testing-framework"
+    ],
+    "rviz-2d-overlay-plugins": [
+        "rviz-2d-overlay-msgs",
+        "rviz-2d-overlay-plugins"
+    ],
+    "rviz-satellite": [
+        "rviz-satellite"
+    ],
+    "rviz-visual-tools": [
+        "rviz-visual-tools"
+    ],
+    "sbg-driver": [
+        "sbg-driver"
+    ],
+    "scenario-execution": [
+        "scenario-execution",
+        "scenario-execution-control",
+        "scenario-execution-coverage",
+        "scenario-execution-gazebo",
+        "scenario-execution-interfaces",
+        "scenario-execution-nav2",
+        "scenario-execution-os",
+        "scenario-execution-py-trees-ros",
+        "scenario-execution-ros",
+        "scenario-execution-rviz",
+        "scenario-execution-x11"
+    ],
+    "schunk-svh-library": [
+        "schunk-svh-library"
+    ],
+    "schunk-svh-ros-driver": [
+        "schunk-svh-description",
+        "schunk-svh-driver",
+        "schunk-svh-tests"
+    ],
+    "sdformat-urdf": [
+        "sdformat-test-files",
+        "sdformat-urdf"
+    ],
+    "septentrio-gnss-driver": [
+        "septentrio-gnss-driver"
+    ],
+    "sick-safetyscanners2": [
+        "sick-safetyscanners2"
+    ],
+    "sick-safetyscanners2-interfaces": [
+        "sick-safetyscanners2-interfaces"
+    ],
+    "sick-safetyscanners-base": [
+        "sick-safetyscanners-base"
+    ],
+    "sick-safevisionary-base": [
+        "sick-safevisionary-base"
+    ],
+    "sick-safevisionary-ros2": [
+        "sick-safevisionary-driver",
+        "sick-safevisionary-interfaces",
+        "sick-safevisionary-tests"
+    ],
+    "sick-scan-xd": [
+        "sick-scan-xd"
+    ],
+    "sicks300-2": [
+        "sicks300-2"
+    ],
+    "simple-actions": [
+        "simple-actions"
+    ],
+    "simple-grasping": [
+        "simple-grasping"
+    ],
+    "simple-launch": [
+        "simple-launch"
+    ],
+    "simple-term-menu-vendor": [
+        "simple-term-menu-vendor"
+    ],
+    "situational-graphs-datasets": [
+        "situational-graphs-datasets"
+    ],
+    "situational-graphs-msgs": [
+        "situational-graphs-msgs"
+    ],
+    "situational-graphs-reasoning": [
+        "situational-graphs-reasoning"
+    ],
+    "situational-graphs-reasoning-msgs": [
+        "situational-graphs-reasoning-msgs"
+    ],
+    "situational-graphs-wrapper": [
+        "situational-graphs-wrapper"
+    ],
+    "slam-toolbox": [
+        "slam-toolbox"
+    ],
+    "slg-msgs": [
+        "slg-msgs"
+    ],
+    "slider-publisher": [
+        "slider-publisher"
+    ],
+    "smacc2": [
+        "smacc2",
+        "smacc2-msgs"
+    ],
+    "smach": [
+        "executive-smach",
+        "smach",
+        "smach-msgs",
+        "smach-ros"
+    ],
+    "snowbot-operating-system": [
+        "snowbot-operating-system"
+    ],
+    "soar-ros": [
+        "soar-ros"
+    ],
+    "soccer-interfaces": [
+        "soccer-interfaces",
+        "soccer-vision-2d-msgs",
+        "soccer-vision-3d-msgs",
+        "soccer-vision-attribute-msgs"
+    ],
+    "soccer-object-msgs": [
+        "soccer-object-msgs"
+    ],
+    "soccer-visualization": [
+        "soccer-marker-generation"
+    ],
+    "social-nav-ros": [
+        "social-nav-msgs",
+        "social-nav-util"
+    ],
+    "sol-vendor": [
+        "sol-vendor"
+    ],
+    "sophus": [
+        "sophus"
+    ],
+    "spatio-temporal-voxel-layer": [
+        "openvdb-vendor",
+        "spatio-temporal-voxel-layer"
+    ],
+    "spdlog-vendor": [
+        "spdlog-vendor"
+    ],
+    "srdfdom": [
+        "srdfdom"
+    ],
+    "sros2": [
+        "sros2",
+        "sros2-cmake"
+    ],
+    "stcamera-ros2": [
+        "stcamera-ros2"
+    ],
+    "stomp": [
+        "stomp"
+    ],
+    "stubborn-buddies": [
+        "stubborn-buddies",
+        "stubborn-buddies-msgs"
+    ],
+    "swri-console": [
+        "swri-console"
+    ],
+    "synapticon-ros2-control": [
+        "synapticon-ros2-control"
+    ],
+    "sync-parameter-server": [
+        "sync-parameter-server"
+    ],
+    "system-fingerprint": [
+        "system-fingerprint"
+    ],
+    "system-modes": [
+        "launch-system-modes",
+        "system-modes",
+        "system-modes-examples",
+        "system-modes-msgs"
+    ],
+    "system-tests": [
+        "system-tests"
+    ],
+    "talos-moveit-config": [
+        "talos-moveit-config"
+    ],
+    "talos-robot": [
+        "talos-bringup",
+        "talos-controller-configuration",
+        "talos-description",
+        "talos-description-calibration",
+        "talos-description-inertial",
+        "talos-robot"
+    ],
+    "talos-simulation": [
+        "talos-gazebo"
+    ],
+    "tango-icons-vendor": [
+        "tango-icons-vendor"
+    ],
+    "teleop-tools": [
+        "joy-teleop",
+        "key-teleop",
+        "mouse-teleop",
+        "teleop-tools",
+        "teleop-tools-msgs"
+    ],
+    "teleop-twist-joy": [
+        "teleop-twist-joy"
+    ],
+    "teleop-twist-keyboard": [
+        "teleop-twist-keyboard"
+    ],
+    "tensorrt-cmake-module": [
+        "tensorrt-cmake-module"
+    ],
+    "test-interface-files": [
+        "test-interface-files"
+    ],
+    "tf-transformations": [
+        "tf-transformations"
+    ],
+    "the-navigation-gauntlet": [
+        "the-navigation-gauntlet"
+    ],
+    "tiago-moveit-config": [
+        "tiago-moveit-config"
+    ],
+    "tiago-navigation": [
+        "tiago-2dnav",
+        "tiago-laser-sensors",
+        "tiago-navigation"
+    ],
+    "tiago-robot": [
+        "tiago-bringup",
+        "tiago-controller-configuration",
+        "tiago-description",
+        "tiago-robot"
+    ],
+    "tiago-simulation": [
+        "tiago-gazebo",
+        "tiago-simulation"
+    ],
+    "tinyspline-vendor": [
+        "tinyspline-vendor"
+    ],
+    "tinyxml2-vendor": [
+        "tinyxml2-vendor"
+    ],
+    "tinyxml-vendor": [
+        "tinyxml-vendor"
+    ],
+    "tlsf": [
+        "tlsf"
+    ],
+    "topic-based-ros2-control": [
+        "topic-based-ros2-control"
+    ],
+    "topic-tools": [
+        "topic-tools",
+        "topic-tools-interfaces"
+    ],
+    "tracetools-acceleration": [
+        "tracetools-acceleration"
+    ],
+    "tracetools-analysis": [
+        "ros2trace-analysis",
+        "tracetools-analysis"
+    ],
+    "transport-drivers": [
+        "asio-cmake-module",
+        "io-context",
+        "serial-driver",
+        "udp-driver"
+    ],
+    "turbojpeg-compressed-image-transport": [
+        "turbojpeg-compressed-image-transport"
+    ],
+    "turtle-nest": [
+        "turtle-nest"
+    ],
+    "turtlebot3": [
+        "turtlebot3",
+        "turtlebot3-bringup",
+        "turtlebot3-cartographer",
+        "turtlebot3-description",
+        "turtlebot3-example",
+        "turtlebot3-navigation2",
+        "turtlebot3-node",
+        "turtlebot3-teleop"
+    ],
+    "turtlebot3-manipulation": [
+        "turtlebot3-manipulation",
+        "turtlebot3-manipulation-bringup",
+        "turtlebot3-manipulation-cartographer",
+        "turtlebot3-manipulation-description",
+        "turtlebot3-manipulation-hardware",
+        "turtlebot3-manipulation-moveit-config",
+        "turtlebot3-manipulation-navigation2",
+        "turtlebot3-manipulation-teleop"
+    ],
+    "turtlebot3-msgs": [
+        "turtlebot3-msgs"
+    ],
+    "turtlebot3-simulations": [
+        "turtlebot3-fake-node",
+        "turtlebot3-gazebo",
+        "turtlebot3-simulations"
+    ],
+    "turtlebot4": [
+        "turtlebot4-description",
+        "turtlebot4-msgs",
+        "turtlebot4-navigation",
+        "turtlebot4-node"
+    ],
+    "turtlebot4-desktop": [
+        "turtlebot4-desktop",
+        "turtlebot4-viz"
+    ],
+    "turtlebot4-robot": [
+        "turtlebot4-base",
+        "turtlebot4-bringup",
+        "turtlebot4-diagnostics",
+        "turtlebot4-robot",
+        "turtlebot4-tests"
+    ],
+    "turtlebot4-setup": [
+        "turtlebot4-setup"
+    ],
+    "turtlebot4-simulator": [
+        "turtlebot4-ignition-bringup",
+        "turtlebot4-ignition-gui-plugins",
+        "turtlebot4-ignition-toolbox",
+        "turtlebot4-simulator"
+    ],
+    "turtlebot4-tutorials": [
+        "turtlebot4-cpp-tutorials",
+        "turtlebot4-python-tutorials",
+        "turtlebot4-tutorials"
+    ],
+    "tuw-geometry": [
+        "tuw-geometry"
+    ],
+    "tuw-msgs": [
+        "tuw-airskin-msgs",
+        "tuw-geo-msgs",
+        "tuw-geometry-msgs",
+        "tuw-graph-msgs",
+        "tuw-msgs",
+        "tuw-multi-robot-msgs",
+        "tuw-nav-msgs",
+        "tuw-object-map-msgs",
+        "tuw-object-msgs",
+        "tuw-std-msgs"
+    ],
+    "tvm-vendor": [
+        "tvm-vendor"
+    ],
+    "twist-mux": [
+        "twist-mux"
+    ],
+    "twist-mux-msgs": [
+        "twist-mux-msgs"
+    ],
+    "twist-stamper": [
+        "twist-stamper"
+    ],
+    "ublox": [
+        "ublox",
+        "ublox-gps",
+        "ublox-msgs",
+        "ublox-serialization"
+    ],
+    "ublox-dgnss": [
+        "ntrip-client-node",
+        "ublox-dgnss",
+        "ublox-dgnss-node",
+        "ublox-nav-sat-fix-hp-node",
+        "ublox-ubx-interfaces",
+        "ublox-ubx-msgs"
+    ],
+    "udp-msgs": [
+        "udp-msgs"
+    ],
+    "uncrustify-vendor": [
+        "uncrustify-vendor"
+    ],
+    "unique-identifier-msgs": [
+        "unique-identifier-msgs"
+    ],
+    "unitree-ros": [
+        "unitree-ros"
+    ],
+    "ur-client-library": [
+        "ur-client-library"
+    ],
+    "ur-description": [
+        "ur-description"
+    ],
+    "ur-msgs": [
+        "ur-msgs"
+    ],
+    "ur-robot-driver": [
+        "ur",
+        "ur-bringup",
+        "ur-calibration",
+        "ur-controllers",
+        "ur-dashboard-msgs",
+        "ur-moveit-config",
+        "ur-robot-driver"
+    ],
+    "ur-simulation-gz": [
+        "ur-simulation-gz"
+    ],
+    "urdf": [
+        "urdf",
+        "urdf-parser-plugin"
+    ],
+    "urdf-launch": [
+        "urdf-launch"
+    ],
+    "urdf-parser-py": [
+        "urdfdom-py"
+    ],
+    "urdf-sim-tutorial": [
+        "urdf-sim-tutorial"
+    ],
+    "urdf-test": [
+        "urdf-test"
+    ],
+    "urdf-tutorial": [
+        "urdf-tutorial"
+    ],
+    "urdfdom": [
+        "urdfdom"
+    ],
+    "urdfdom-headers": [
+        "urdfdom-headers"
+    ],
+    "urg-c": [
+        "urg-c"
+    ],
+    "urg-node": [
+        "urg-node"
+    ],
+    "urg-node-msgs": [
+        "urg-node-msgs"
+    ],
+    "urinterfaces": [
+        "urinterfaces"
+    ],
+    "usb-cam": [
+        "usb-cam"
+    ],
+    "v4l2-camera": [
+        "v4l2-camera"
+    ],
+    "variants": [
+        "desktop",
+        "desktop-full",
+        "perception",
+        "ros-base",
+        "ros-core",
+        "simulation"
+    ],
+    "vector-pursuit-controller": [
+        "vector-pursuit-controller"
+    ],
+    "velodyne": [
+        "velodyne",
+        "velodyne-driver",
+        "velodyne-laserscan",
+        "velodyne-msgs",
+        "velodyne-pointcloud"
+    ],
+    "velodyne-simulator": [
+        "velodyne-description",
+        "velodyne-gazebo-plugins",
+        "velodyne-simulator"
+    ],
+    "vimbax-ros2-driver": [
+        "vimbax-camera",
+        "vimbax-camera-events",
+        "vimbax-camera-examples",
+        "vimbax-camera-msgs",
+        "vmbc-interface"
+    ],
+    "vision-msgs": [
+        "vision-msgs",
+        "vision-msgs-rviz-plugins"
+    ],
+    "vision-msgs-layers": [
+        "vision-msgs-layers"
+    ],
+    "vision-opencv": [
+        "cv-bridge",
+        "image-geometry",
+        "vision-opencv"
+    ],
+    "visp": [
+        "visp"
+    ],
+    "vitis-common": [
+        "vitis-common"
+    ],
+    "vizanti": [
+        "vizanti"
+    ],
+    "vrpn": [
+        "vrpn"
+    ],
+    "vrpn-mocap": [
+        "vrpn-mocap"
+    ],
+    "wall-follower-ros2": [
+        "wall-follower-ros2"
+    ],
+    "warehouse-ros": [
+        "warehouse-ros"
+    ],
+    "warehouse-ros-mongo": [
+        "warehouse-ros-mongo"
+    ],
+    "warehouse-ros-sqlite": [
+        "warehouse-ros-sqlite"
+    ],
+    "web-video-server": [
+        "web-video-server"
+    ],
+    "webots-ros2": [
+        "webots-ros2",
+        "webots-ros2-control",
+        "webots-ros2-crazyflie",
+        "webots-ros2-driver",
+        "webots-ros2-epuck",
+        "webots-ros2-husarion",
+        "webots-ros2-importer",
+        "webots-ros2-mavic",
+        "webots-ros2-msgs",
+        "webots-ros2-tesla",
+        "webots-ros2-tests",
+        "webots-ros2-tiago",
+        "webots-ros2-turtlebot",
+        "webots-ros2-universal-robot"
+    ],
+    "weight-scale-interfaces": [
+        "weight-scale-interfaces"
+    ],
+    "whill": [
+        "whill"
+    ],
+    "whill-msgs": [
+        "whill-msgs"
+    ],
+    "wireless": [
+        "wireless-msgs",
+        "wireless-watcher"
+    ],
+    "wrapyfi-ros2-interfaces": [
+        "wrapyfi-ros2-interfaces"
+    ],
+    "xacro": [
+        "xacro"
+    ],
+    "yaml-cpp-vendor": [
+        "yaml-cpp-vendor"
+    ],
+    "yasmin": [
+        "yasmin",
+        "yasmin-demos",
+        "yasmin-msgs",
+        "yasmin-ros",
+        "yasmin-viewer"
+    ],
+    "zbar-ros": [
+        "zbar-ros"
+    ],
+    "zed-ros2-interfaces": [
+        "zed-msgs"
+    ],
+    "zenoh-bridge-dds": [
+        "zenoh-bridge-dds"
+    ],
+    "zmqpp-vendor": [
+        "zmqpp-vendor"
+    ]
+}
