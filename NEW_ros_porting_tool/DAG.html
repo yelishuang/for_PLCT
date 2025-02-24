@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Package Dependency Graph</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f9;
+        }
+
+        svg {
+            width: calc(100vw - 200px);
+            height: 100vh;
+        }
+
+       .node circle {
+            fill: #add8e6;
+            stroke: white;
+            stroke-width: 1.5px;
+            cursor: pointer;
+            transition: fill 0.3s ease-in-out;
+        }
+
+       .node text {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            fill: #fff;
+            opacity: 1;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+       .link {
+            fill: none;
+            stroke: #aaa;
+            stroke-width: 2px;
+            transition: stroke 0.3s ease-in-out;
+        }
+
+       .selected-node circle {
+            fill: #ff7f0e;
+            stroke-width: 3px;
+        }
+
+       .highlighted-node text {
+            opacity: 1;
+            font-weight: bold;
+            fill: #fff;
+        }
+
+       .link.dependency {
+            stroke: #ff7f0e;
+            stroke-width: 3px;
+        }
+
+       .link.support {
+            stroke: #2ecc71;
+            stroke-width: 3px;
+        }
+
+        #dependency-info {
+            width: 200px;
+            height: 100vh;
+            background-color: #fff;
+            border-left: 1px solid #ccc;
+            padding: 10px;
+            overflow-y: auto;
+        }
+
+        #search-input {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            padding: 5px;
+        }
+
+        #zoom-scale {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 5px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="search-input" placeholder="查找节点">
+    <svg></svg>
+    <div id="dependency-info"></div>
+    <div id="zoom-scale"></div>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script>
+        d3.json('build_requires_dag.json').then(function (data) {
+            const dependencies = data.dependencies;
+
+            const nodesMap = new Map();
+            const links = [];
+
+            for (const [source, targets] of Object.entries(dependencies)) {
+                if (!nodesMap.has(source)) {
+                    nodesMap.set(source, { id: source });
+                }
+                for (const target of targets) {
+                    if (!nodesMap.has(target)) {
+                        nodesMap.set(target, { id: target });
+                    }
+                    links.push({ source, target });
+                }
+            }
+
+            const nodeArray = Array.from(nodesMap.values());
+            const width = window.innerWidth - 200;
+            const height = window.innerHeight;
+
+            const charWidth = 8;
+
+            nodeArray.forEach(node => {
+                node.radius = Math.max(15, node.id.length * charWidth / 2 + 10);
+            });
+
+            const simulation = d3.forceSimulation(nodeArray)
+               .force("link", d3.forceLink(links).id(d => d.id).distance(800))
+               .force("charge", d3.forceManyBody().strength(-20000))
+               .force("center", d3.forceCenter(width / 2, height / 2));
+
+            const svg = d3.select("svg")
+               .attr("viewBox", [0, 0, width, height])
+               .call(d3.zoom()
+                   .scaleExtent([0.1, 10])
+                   .on("zoom", zoomed));
+
+            const g = svg.append("g");
+
+            const link = g.append("g")
+               .selectAll("line")
+               .data(links)
+               .join("line")
+               .attr("class", "link")
+               .attr("id", d => `${d.source.id}-${d.target.id}`);
+
+            const node = g.append("g")
+               .selectAll("circle")
+               .data(nodeArray)
+               .join("circle")
+               .style("fill", "#add8e6")
+               .attr("r", d => d.radius)
+               .attr("class", "node")
+               .call(drag(simulation))
+               .on("click", selectNode);
+
+            const labels = g.append("g")
+               .selectAll("text")
+               .data(nodeArray)
+               .join("text")
+               .text(d => d.id)
+               .attr("x", d => d.x)
+               .attr("y", d => d.y)
+               .attr("text-anchor", "middle")
+               .attr("dominant-baseline", "middle")
+               .attr("pointer-events", "none");
+
+            simulation.on("tick", () => {
+                link.attr("x1", d => d.source.x)
+                   .attr("y1", d => d.source.y)
+                   .attr("x2", d => d.target.x)
+                   .attr("y2", d => d.target.y);
+
+                node.attr("cx", d => d.x)
+                   .attr("cy", d => d.y);
+
+                labels.attr("x", d => d.x)
+                      .attr("y", d => d.y);
+            });
+
+            function zoomed(event) {
+                g.attr("transform", event.transform);
+                const scale = event.transform.k.toFixed(2);
+                d3.select("#zoom-scale").text(`缩放比例: ${scale}`);
+            }
+
+            function drag(simulation) {
+                function dragstarted(event, d) {
+                    if (!event.active) simulation.alphaTarget(0.3).restart();
+                    d.fx = d.x;
+                    d.fy = d.y;
+                }
+
+                function dragged(event, d) {
+                    d.fx = event.x;
+                    d.fy = event.y;
+                }
+
+                function dragended(event, d) {
+                    if (!event.active) simulation.alphaTarget(0);
+                }
+
+                return d3.drag()
+                   .on("start", dragstarted)
+                   .on("drag", dragged)
+                   .on("end", dragended);
+            }
+
+            let selectedNodeId = null;
+            const originalLinkDistance = 800;
+            const shortLinkDistance = 1;
+            const relatedNodeColor = "#ffc0cb";
+
+            function selectNode(event, d) {
+                if (selectedNodeId === d.id) {
+                    resetSelection();
+                    selectedNodeId = null;
+                    d3.select("#dependency-info").html("");
+                    simulation.force("link").distance(originalLinkDistance);
+                } else {
+                    highlightConnections(d.id);
+                    showDependencies(d.id);
+                    selectedNodeId = d.id;
+                    simulation.force("link").distance(l =>
+                        (l.source.id === d.id || l.target.id === d.id) ? shortLinkDistance : originalLinkDistance
+                    );
+                    getRelatedNodes(d.id).forEach(id =>
+                        node.filter(n => n.id === id).style("fill", relatedNodeColor)
+                    );
+                }
+                simulation.alpha(0.3).restart();
+            }
+
+            function highlightConnections(id) {
+                resetSelection();
+
+                node.filter(d => d.id === id).classed("selected-node", true);
+                link.each(function(d) {
+                    const currentLink = d3.select(this);
+                    if (d.source.id === id || d.target.id === id) {
+                        currentLink.classed(d.source.id === id ? "dependency" : "support", true);
+                    }
+                });
+
+                getRelatedNodes(id).forEach(id =>
+                    node.filter(n => n.id === id).classed("highlighted-node", true)
+                );
+            }
+
+            function getRelatedNodes(id) {
+                const relatedNodes = new Set();
+                links.forEach(link => {
+                    if (link.source.id === id || link.target.id === id) {
+                        relatedNodes.add(link.source.id);
+                        relatedNodes.add(link.target.id);
+                    }
+                });
+                return Array.from(relatedNodes);
+            }
+
+            function resetSelection() {
+                node.classed("selected-node highlighted-node", false).style("fill", "#add8e6");
+                link.classed("dependency support", false);
+            }
+
+            function showDependencies(id) {
+                const dependencyInfo = d3.select("#dependency-info").html("");
+                const allVisited = new Set();
+                const dependencies = [];
+                const queue = [];
+
+                // 初始化队列，从当前节点的直接依赖开始
+                links.forEach(link => {
+                    if (link.source.id === id) {
+                        queue.push({ id: link.target.id, level: 1 });
+                    }
+                });
+
+                while (queue.length > 0) {
+                    const current = queue.shift();
+                    const currentId = current.id;
+                    const currentLevel = current.level;
+
+                    if (!allVisited.has(currentId)) {
+                        allVisited.add(currentId);
+                        dependencies.push({ id: currentId, level: currentLevel });
+                        links.forEach(link => {
+                            if (link.source.id === currentId) {
+                                queue.push({ id: link.target.id, level: currentLevel + 1 });
+                            }
+                        });
+                    }
+                }
+
+                if (dependencies.length === 0) {
+                    dependencyInfo.append("p").text("这是根节点");
+                } else {
+                    // 找到最大层级
+                    const maxLevel = Math.max(...dependencies.map(dep => dep.level));
+                    // 反转层级编号
+                    dependencies.forEach(dep => dep.level = maxLevel - dep.level + 1);
+                    // 按新的层级排序
+                    dependencies.sort((a, b) => a.level - b.level);
+
+                    let currentLevel = null;
+                    dependencies.forEach(dependency => {
+                        if (dependency.level!== currentLevel) {
+                            dependencyInfo.append("p").text(`层级 ${dependency.level}:`);
+                            currentLevel = dependency.level;
+                        }
+                        const indent = "    ".repeat(dependency.level - 1);
+                        dependencyInfo.append("p").text(`${indent}${dependency.id}`);
+                    });
+                }
+            }
+
+            // 查找功能
+            d3.select("#search-input").on("keydown", function (event) {
+                if (event.key === "Enter") {
+                    const searchTerm = this.value.trim();
+                    if (searchTerm) {
+                        const foundNode = nodeArray.find(node => node.id === searchTerm);
+                        if (foundNode) {
+                            selectNode(null, foundNode);
+                            // 获取当前的缩放变换信息
+                            const currentTransform = d3.zoomTransform(svg.node());
+                            const currentScale = currentTransform.k; // 当前缩放比例
+                            // 计算将目标节点移动到屏幕中心的平移量
+                            const targetX = width / 2 - foundNode.x * currentScale;
+                            const targetY = height / 2 - foundNode.y * currentScale;
+                            const zoom = d3.zoom()
+                              .scaleExtent([0.1, 10])
+                              .on("zoom", zoomed);
+
+                            svg.call(zoom);
+                            svg.zoom = zoom; // 手动将 zoom 实例赋值给 svg.zoom
+                            // 平滑移动到目标节点
+                            svg.transition()
+                               .duration(1000) // 过渡时间 1 秒
+                               .call(svg.zoom.transform, d3.zoomIdentity.translate(targetX, targetY).scale(currentScale));
+                        }
+                    }
+                }
+            });
+        }).catch(error => console.error("Error loading the JSON file:", error));
+    </script>
+</body>
+
+</html>
