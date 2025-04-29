@@ -1,0 +1,228 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-image: url('login_background.jpeg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  .container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10%;
+  }
+  
+  .logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-height: calc(100% - 40px);
+  }
+  
+  .logo1 {
+    width: 300px;
+    height: 200px;
+    margin-bottom: 20px;
+    object-fit: contain;
+  }
+
+  .logo2 {
+    width: 300px;
+    height: 200px;
+    margin-bottom: 20px;
+    object-fit: contain;
+  }
+  
+  .login-box {
+    background-color: white;
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  h3 .server-info .deviceName{
+    text-align: left;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 28px;
+  }
+  
+  .error-message {
+    color: #ff3b30;
+    font-size: 16px;
+    background-color: #ffebe9;
+    padding: 8px 12px;
+    border-radius: 5px;
+    margin-top: 8px;
+    display: block;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  .error-message.show {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .form-group {
+    margin-bottom: 30px;
+    position: relative;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 10px;
+    color: #333;
+    font-size: 20px;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 18px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-group input:focus {
+    outline: none;
+    border-color: rgba(0, 0, 0, 0.3);
+    border-bottom-color: #007bff;
+    border-bottom-width: 2px;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
+  }
+  
+  .password-container {
+    position: relative;
+  }
+  
+  .show-password {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 20px;
+  }
+  
+  .eye-toggle {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+ /* 眼睛图标 */
+ .eye-toggle::before {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #666;
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+ }
+
+ /* 瞳孔 */
+ .eye-toggle::after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: #666;
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+ }
+
+ /* 隐藏时的斜线效果 */
+ .eye-toggle.active::before {
+    background: linear-gradient(45deg, transparent 45%, #666 45%, #666 55%, transparent 55%);
+ }
+  
+  .login-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  
+  .server-info {
+    background-color: #f0f0f0;
+    margin: 50px -50px -50px -50px;
+    padding: 20px 50px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+  
+  .server-info p {
+    text-align: left;
+    color: #333;
+    font-size: 18px;
+  }
+
+  /* 加载动画样式 */
+.loader {
+    text-align: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.loader-spinner {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto 10px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.loader-text {
+    color: #666;
+    font-size: 14px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* 数据加载状态 */
+[data-field].data-loaded {
+    color: #2c3e50;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+      

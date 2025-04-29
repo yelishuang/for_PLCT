@@ -1,0 +1,54 @@
+<div class="page-content" id="storage">
+    <header class="dashboard-header">
+        <h1>磁盘监控系统</h1>
+    </header>
+
+    <!-- 磁盘分区信息 -->
+    <table class="info-table" id="diskInfoTable">
+        <thead>
+            <tr>
+                <th>设备</th>
+                <th>挂载点</th>
+                <th>类型</th>
+                <th>总容量</th>
+                <th>已用空间</th>
+                <th>可用空间</th>
+                <th>使用率</th>
+            </tr>
+        </thead>
+        <tbody id="diskInfoBody"></tbody>
+    </table>
+
+    <!-- 实时监控面板 -->
+    <div class="io-container">
+        <div class="io-panel">
+            <div class="metric-display">
+                <div>
+                    <div>读取速度</div>
+                    <div>
+                        <span class="metric-value" id="readSpeed">0</span>
+                        <span class="metric-unit" id="readUnit">B/s</span>
+                    </div>
+                </div>
+            </div>
+            <div class="chart-container">
+                <canvas id="readChart" width="500" height="200"></canvas>
+            </div>
+        </div>
+
+        <div class="io-panel">
+            <div class="metric-display">
+                <div>
+                    <div>写入速度</div>
+                    <div>
+                        <span class="metric-value" id="writeSpeed">0</span>
+                        <span class="metric-unit" id="writeUnit">B/s</span>
+                    </div>
+                </div>
+            </div>
+            <div class="chart-container">
+                <canvas id="writeChart" width="500" height="200"></canvas>
+            </div>
+        </div>
+    </div>
+</div>

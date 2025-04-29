@@ -1,0 +1,26 @@
+
+2025-04-29 20:41:03.508761: 开始日志同步...
+ * Serving Flask app 'login'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://10.0.2.15:8000
+Press CTRL+C to quit
+127.0.0.1 - - [29/Apr/2025 20:41:56] "GET /api/check-auth HTTP/1.1" 401 -
+127.0.0.1 - - [29/Apr/2025 20:41:56] "GET /api/system-info HTTP/1.1" 200 -
+127.0.0.1 - - [29/Apr/2025 20:42:13] "POST /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [29/Apr/2025 20:42:13] "GET /api/check-auth HTTP/1.1" 200 -
+127.0.0.1 - - [29/Apr/2025 20:42:13] "GET /api/pollingdata HTTP/1.1" 200 -
+127.0.0.1 - - [29/Apr/2025 20:42:13] "GET /api/overview HTTP/1.1" 200 -
+127.0.0.1 - - [29/Apr/2025 20:42:13] "GET /metrics/stream HTTP/1.1" 200 -
+127.0.0.1 - - [29/Apr/2025 20:42:27] "GET /search?start_time=1970-01-01+00:00:00&end_time=2025-04-29+12:42:27&priority=5&identifier=&offset=0 HTTP/1.1" 200 -
+127.0.0.1 - - [29/Apr/2025 20:42:41] "GET /api/disk_info HTTP/1.1" 200 -
+127.0.0.1 - - [29/Apr/2025 20:42:42] "GET /stream/disk HTTP/1.1" 200 -
+127.0.0.1 - - [29/Apr/2025 20:43:11] "GET /api/disk_info HTTP/1.1" 200 -
+127.0.0.1 - - [29/Apr/2025 20:43:41] "GET /api/disk_info HTTP/1.1" 200 -
+127.0.0.1 - - [29/Apr/2025 20:44:06] "GET /api/network_info HTTP/1.1" 200 -
+127.0.0.1 - - [29/Apr/2025 20:44:07] "GET /stream/network HTTP/1.1" 200 -
+127.0.0.1 - - [29/Apr/2025 20:44:11] "GET /api/disk_info HTTP/1.1" 200 -
+127.0.0.1 - - [29/Apr/2025 20:44:36] "GET /api/network_info HTTP/1.1" 200 -
+127.0.0.1 - - [29/Apr/2025 20:44:41] "GET /api/disk_info HTTP/1.1" 200 -

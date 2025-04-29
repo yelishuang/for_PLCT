@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>服务器管理系统</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <nav class="sidebar">
+        <!-- 原有侧边栏内容... -->
+        <div class="user-info">
+            <div class="username">openeuler</div>
+            <span class="system-id btn-edit" data-editable="false">ye-CNP6S</span>
+        </div>
+        <hr class="divider">
+        <!-- 系统分类 -->
+        <div class="category-block">
+            <div class="category-title">系统</div>
+            <ul class="submenu">
+                <li class="submenu-item" onclick="loadContent('overview.html', this)">概览</li> 
+                <li class="submenu-item" onclick="loadContent('logs.html', this)" >日志</li>
+                <li class="submenu-item" onclick="loadContent('storage.html', this)" >存储</li>
+                <li class="submenu-item" onclick="loadContent('network.html', this)" >网络</li>
+                <li class="submenu-item" onclick="loadContent('services.html', this)">服务</li>
+                <li class="submenu-item" onclick="loadContent('users.html', this)">用户</li>
+            </ul>
+        </div>
+        <hr class="divider">
+        <!-- 工具分类 -->
+        <div class="category-block">
+            <div class="category-title">工具</div>
+            <ul class="submenu">
+                <li class="submenu-item" onclick="loadContent('software-updates.html', this)">软件更新</li>
+                <li class="submenu-item" onclick="loadContent('terminal.html', this)">终端</li>
+                <li class="submenu-item" onclick="loadContent('file-transfer.html', this)">文件传输</li>
+            </ul>
+        </div>
+        <hr class="divider">
+        <!-- ROS分类 -->
+        <div class="category-block">
+            <div class="category-title">ROS</div>
+            <ul class="submenu">
+                <li class="submenu-item" onclick="loadContent('ros-overview.html', this)">概览</li>
+            </ul>
+        </div>
+
+        <!-- 重启按钮 -->
+        <div class="power-actions">
+            <div class="power-btn">
+                <div class="power-btn-main">
+                    重启
+                    <span class="dropdown-arrow">▲</span>
+                </div>
+                <div class="power-dropdown">
+                    <div class="power-option" data-action="restart">重启系统</div>
+                    <div class="power-option" data-action="shutdown">关闭系统</div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 原有主容器内容保持不变 -->
+    <div class="main-container">
+        <header class="top-bar">
+            <div class="time-display">
+                <span id="real-time">2024-04-13 14:30</span>
+                <span id="uptime"></span>
+            </div>
+            <button class="admin-mode">
+                管理员模式
+                <span class="status-dot"></span>
+            </button>
+        </header>
+        <div class="content-area"></div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>

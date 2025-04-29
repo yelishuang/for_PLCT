@@ -1,0 +1,53 @@
+<div class="page-content" id="network" >
+        <header class="dashboard-header">
+            <h1>网络流量监控系统</h1>
+        </header>
+
+        <!-- 网络接口信息 -->
+        <table class="info-table" id="networkInterfaceTable">
+            <thead>
+                <tr>
+                    <th>接口</th>
+                    <th>地址族</th>
+                    <th>地址</th>
+                    <th>子网掩码</th>
+                    <th>广播地址</th>
+                    <th>PtP 地址</th>
+                </tr>
+            </thead>
+            <tbody id="networkInterfaceBody"></tbody>
+        </table>
+
+        <!-- 实时监控面板 -->
+        <div class="io-container">
+            <div class="io-panel">
+                <div class="metric-display">
+                    <div>
+                        <div>发送速度</div>
+                        <div>
+                            <span class="metric-value" id="networkSentSpeed">0</span>
+                            <span class="metric-unit" id="networkSentUnit">B/s</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="networkSentChart" width="500" height="200"></canvas>
+                </div>
+            </div>
+
+            <div class="io-panel">
+                <div class="metric-display">
+                    <div>
+                        <div>接收速度</div>
+                        <div>
+                            <span class="metric-value" id="networkRecvSpeed">0</span>
+                            <span class="metric-unit" id="networkRecvUnit">B/s</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="networkRecvChart" width="500" height="200"></canvas>
+                </div>
+            </div>
+        </div>
+</div>
