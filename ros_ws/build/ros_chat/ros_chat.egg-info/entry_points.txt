@@ -1,0 +1,3 @@
+[console_scripts]
+ros_chater = ros_chat.ros_chater:main
+

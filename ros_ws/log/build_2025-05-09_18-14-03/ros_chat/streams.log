@@ -1,0 +1,37 @@
+[0.338s] Invoking command in '/media/ye/E/milk_v/shared/ros_ws/src/ros_chat': PYTHONPATH=/media/ye/E/milk_v/shared/ros_ws/build/ros_chat/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/media/ye/E/milk_v/shared/ros_ws/install/ros_chat/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/ros_chat build --build-base /media/ye/E/milk_v/shared/ros_ws/build/ros_chat/build install --record /media/ye/E/milk_v/shared/ros_ws/build/ros_chat/install.log --single-version-externally-managed install_data
+[0.454s] running egg_info
+[0.454s] creating ../../build/ros_chat/ros_chat.egg-info
+[0.455s] writing ../../build/ros_chat/ros_chat.egg-info/PKG-INFO
+[0.455s] writing dependency_links to ../../build/ros_chat/ros_chat.egg-info/dependency_links.txt
+[0.455s] writing entry points to ../../build/ros_chat/ros_chat.egg-info/entry_points.txt
+[0.455s] writing requirements to ../../build/ros_chat/ros_chat.egg-info/requires.txt
+[0.455s] writing top-level names to ../../build/ros_chat/ros_chat.egg-info/top_level.txt
+[0.455s] writing manifest file '../../build/ros_chat/ros_chat.egg-info/SOURCES.txt'
+[0.457s] reading manifest file '../../build/ros_chat/ros_chat.egg-info/SOURCES.txt'
+[0.458s] writing manifest file '../../build/ros_chat/ros_chat.egg-info/SOURCES.txt'
+[0.458s] running build
+[0.458s] running build_py
+[0.458s] creating /media/ye/E/milk_v/shared/ros_ws/build/ros_chat/build
+[0.458s] creating /media/ye/E/milk_v/shared/ros_ws/build/ros_chat/build/lib
+[0.458s] creating /media/ye/E/milk_v/shared/ros_ws/build/ros_chat/build/lib/ros_chat
+[0.458s] copying ros_chat/ros_chater.py -> /media/ye/E/milk_v/shared/ros_ws/build/ros_chat/build/lib/ros_chat
+[0.458s] copying ros_chat/__init__.py -> /media/ye/E/milk_v/shared/ros_ws/build/ros_chat/build/lib/ros_chat
+[0.459s] running install
+[0.459s] running install_lib
+[0.459s] creating /media/ye/E/milk_v/shared/ros_ws/install/ros_chat/lib/python3.10/site-packages/ros_chat
+[0.460s] copying /media/ye/E/milk_v/shared/ros_ws/build/ros_chat/build/lib/ros_chat/ros_chater.py -> /media/ye/E/milk_v/shared/ros_ws/install/ros_chat/lib/python3.10/site-packages/ros_chat
+[0.460s] copying /media/ye/E/milk_v/shared/ros_ws/build/ros_chat/build/lib/ros_chat/__init__.py -> /media/ye/E/milk_v/shared/ros_ws/install/ros_chat/lib/python3.10/site-packages/ros_chat
+[0.461s] byte-compiling /media/ye/E/milk_v/shared/ros_ws/install/ros_chat/lib/python3.10/site-packages/ros_chat/ros_chater.py to ros_chater.cpython-310.pyc
+[0.462s] byte-compiling /media/ye/E/milk_v/shared/ros_ws/install/ros_chat/lib/python3.10/site-packages/ros_chat/__init__.py to __init__.cpython-310.pyc
+[0.462s] running install_data
+[0.462s] creating /media/ye/E/milk_v/shared/ros_ws/install/ros_chat/share/ament_index
+[0.462s] creating /media/ye/E/milk_v/shared/ros_ws/install/ros_chat/share/ament_index/resource_index
+[0.463s] creating /media/ye/E/milk_v/shared/ros_ws/install/ros_chat/share/ament_index/resource_index/packages
+[0.463s] copying resource/ros_chat -> /media/ye/E/milk_v/shared/ros_ws/install/ros_chat/share/ament_index/resource_index/packages
+[0.463s] copying package.xml -> /media/ye/E/milk_v/shared/ros_ws/install/ros_chat/share/ros_chat
+[0.463s] running install_egg_info
+[0.465s] Copying ../../build/ros_chat/ros_chat.egg-info to /media/ye/E/milk_v/shared/ros_ws/install/ros_chat/lib/python3.10/site-packages/ros_chat-0.0.0-py3.10.egg-info
+[0.468s] running install_scripts
+[0.479s] Installing ros_chater script to /media/ye/E/milk_v/shared/ros_ws/install/ros_chat/lib/ros_chat
+[0.480s] writing list of installed files to '/media/ye/E/milk_v/shared/ros_ws/build/ros_chat/install.log'
+[0.490s] Invoked command in '/media/ye/E/milk_v/shared/ros_ws/src/ros_chat' returned '0': PYTHONPATH=/media/ye/E/milk_v/shared/ros_ws/build/ros_chat/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/media/ye/E/milk_v/shared/ros_ws/install/ros_chat/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/ros_chat build --build-base /media/ye/E/milk_v/shared/ros_ws/build/ros_chat/build install --record /media/ye/E/milk_v/shared/ros_ws/build/ros_chat/install.log --single-version-externally-managed install_data

@@ -1,0 +1,3 @@
+[console_scripts]
+ros_charter = ros_chart.ros_charter:main
+

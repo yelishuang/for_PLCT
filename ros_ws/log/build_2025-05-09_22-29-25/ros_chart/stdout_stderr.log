@@ -1,0 +1,9 @@
+running egg_info
+creating ../../build/ros_chart/ros_chart.egg-info
+writing ../../build/ros_chart/ros_chart.egg-info/PKG-INFO
+writing dependency_links to ../../build/ros_chart/ros_chart.egg-info/dependency_links.txt
+writing entry points to ../../build/ros_chart/ros_chart.egg-info/entry_points.txt
+writing requirements to ../../build/ros_chart/ros_chart.egg-info/requires.txt
+writing top-level names to ../../build/ros_chart/ros_chart.egg-info/top_level.txt
+writing manifest file '../../build/ros_chart/ros_chart.egg-info/SOURCES.txt'
+error: package directory 'ros_chart' does not exist

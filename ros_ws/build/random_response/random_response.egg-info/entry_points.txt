@@ -1,0 +1,3 @@
+[console_scripts]
+random_responser = random_response.random_responser_function:main
+
