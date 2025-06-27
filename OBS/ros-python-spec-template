@@ -1,0 +1,101 @@
+%global __os_install_post %(echo '%{__os_install_post}' | sed -e 's!/usr/lib[^[:space:]]*/brp-python-bytecompile[[:space:]].*$!!g')
+%global __os_install_post %(echo '%{__os_install_post}' | sed -e 's!/usr/lib[^[:space:]]*/brp-python-hardlink[[:space:]].*$!!g')
+%global python3_sitelib /opt/ros/humble/lib/python3.10/site-packages
+
+Name:           ros-humble-PYTHON_PACKAGE_NAME
+Version:        X.Y.Z
+Release:        1%{?dist}
+Summary:        ROS 2 Python PACKAGE_DESCRIPTION
+
+License:        Apache-2.0
+URL:            https://github.com/ros2/PACKAGE_REPO
+Source0:        %{name}_%{version}.orig.tar.gz
+
+BuildArch:      noarch
+
+# 构建依赖
+BuildRequires:  python3-devel
+BuildRequires:  python3-setuptools
+BuildRequires:  ros-humble-ament-python
+BuildRequires:  ros-humble-ament-package
+BuildRequires:  ros-humble-python3-packages
+
+# 运行时依赖
+Requires:       python3
+Requires:       ros-humble-rclpy
+Requires:       ros-humble-std-msgs
+Requires:       ros-humble-python3-packages
+Requires:       python3-numpy
+Requires:       python3-yaml
+
+%description
+DETAILED_DESCRIPTION_OF_THE_PYTHON_PACKAGE
+This Python package provides FUNCTIONALITY_DESCRIPTION for ROS 2 Humble.
+
+%prep
+%autosetup -n UPSTREAM_PACKAGE_NAME-%{version}
+
+%build
+# 源ROS环境
+source /opt/ros/humble/setup.bash
+
+# 设置Python路径
+export PYTHONPATH=/opt/ros/humble/lib/python3.10/site-packages:$PYTHONPATH
+
+# 使用ament_python构建
+python3 setup.py build
+
+%install
+source /opt/ros/humble/setup.bash
+
+# 设置安装路径
+export PYTHONPATH=%{buildroot}/opt/ros/humble/lib/python3.10/site-packages:$PYTHONPATH
+
+# 安装Python包
+python3 setup.py install \
+    --prefix=/opt/ros/humble \
+    --install-scripts=/opt/ros/humble/bin \
+    --root=%{buildroot} \
+    --single-version-externally-managed \
+    --optimize=1
+
+# 安装资源文件
+mkdir -p %{buildroot}/opt/ros/humble/share/ament_index/resource_index/packages
+echo "" > %{buildroot}/opt/ros/humble/share/ament_index/resource_index/packages/%{name}
+
+# 安装package.xml
+install -Dm644 package.xml %{buildroot}/opt/ros/humble/share/%{name}/package.xml
+
+# 复制launch文件（如果存在）
+if [ -d launch ]; then
+    cp -r launch %{buildroot}/opt/ros/humble/share/%{name}/
+fi
+
+# 复制配置文件（如果存在）
+if [ -d config ]; then
+    cp -r config %{buildroot}/opt/ros/humble/share/%{name}/
+fi
+
+# 复制资源文件（如果存在）
+if [ -d resource ]; then
+    cp -r resource %{buildroot}/opt/ros/humble/share/%{name}/
+fi
+
+# 清理字节码文件
+find %{buildroot} -type f -name "*.pyc" -delete
+find %{buildroot} -type d -name "__pycache__" -exec rm -rf {} + 2>/dev/null || true
+
+%files
+%license LICENSE
+%doc README.md CHANGELOG.rst
+# Python模块
+%{python3_sitelib}/*
+# 可执行脚本
+/opt/ros/humble/bin/*
+# 共享文件
+/opt/ros/humble/share/%{name}/
+/opt/ros/humble/share/ament_index/
+
+%changelog
+* Sat Jun 28 2025 Your Name <your.email@example.com> - X.Y.Z-1
+- Initial packaging of ros-humble-PYTHON_PACKAGE_NAME

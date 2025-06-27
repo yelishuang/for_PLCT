@@ -1,0 +1,93 @@
+%global __os_install_post %(echo '%{__os_install_post}' | sed -e 's!/usr/lib[^[:space:]]*/brp-python-bytecompile[[:space:]].*$!!g')
+%global __os_install_post %(echo '%{__os_install_post}' | sed -e 's!/usr/lib[^[:space:]]*/brp-python-hardlink[[:space:]].*$!!g')
+
+Name:           ros-humble-PACKAGE_NAME
+Version:        X.Y.Z
+Release:        1%{?dist}
+Summary:        ROS 2 PACKAGE_DESCRIPTION
+
+License:        Apache-2.0
+URL:            https://github.com/ros2/PACKAGE_REPO
+Source0:        %{name}_%{version}.orig.tar.gz
+
+# 构建依赖
+BuildRequires:  ros-humble-ament-cmake
+BuildRequires:  ros-humble-ament-cmake-ros
+BuildRequires:  ros-humble-rclcpp
+BuildRequires:  ros-humble-std-msgs
+BuildRequires:  cmake >= 3.8
+BuildRequires:  gcc-c++
+BuildRequires:  pkgconfig
+
+# 运行时依赖
+Requires:       ros-humble-rclcpp
+Requires:       ros-humble-std-msgs
+Requires:       ros-humble-ros-workspace
+
+%description
+DETAILED_DESCRIPTION_OF_THE_PACKAGE
+This package provides FUNCTIONALITY_DESCRIPTION for ROS 2 Humble.
+
+%package        devel
+Summary:        Development files for %{name}
+Requires:       %{name}%{?_isa} = %{version}-%{release}
+Requires:       ros-humble-ament-cmake
+
+%description    devel
+The %{name}-devel package contains libraries and header files for
+developing applications that use %{name}.
+
+%prep
+%autosetup -n UPSTREAM_PACKAGE_NAME-%{version}
+
+%build
+# 源ROS环境
+source /opt/ros/humble/setup.bash
+
+# CMake配置
+%cmake \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DBUILD_TESTING=OFF \
+    -DCMAKE_PREFIX_PATH=/opt/ros/humble \
+    -DCMAKE_INSTALL_PREFIX=/opt/ros/humble \
+    -DAMENT_PREFIX_PATH=/opt/ros/humble
+
+# 构建
+%cmake_build
+
+%install
+source /opt/ros/humble/setup.bash
+%cmake_install
+
+# 安装钩子文件
+mkdir -p %{buildroot}/opt/ros/humble/share/ament_index/resource_index/packages
+touch %{buildroot}/opt/ros/humble/share/ament_index/resource_index/packages/%{name}
+
+# 清理不需要的文件
+find %{buildroot} -name "*.la" -delete
+find %{buildroot} -name "__pycache__" -type d -exec rm -rf {} + 2>/dev/null || true
+
+%files
+%license LICENSE
+%doc README.md CHANGELOG.rst
+# 库文件
+/opt/ros/humble/lib/*.so.*
+# 可执行文件
+/opt/ros/humble/lib/%{name}/
+# 共享文件
+/opt/ros/humble/share/%{name}/
+/opt/ros/humble/share/ament_index/
+
+%files devel
+# 头文件
+/opt/ros/humble/include/%{name}/
+# CMake文件
+/opt/ros/humble/share/%{name}/cmake/
+/opt/ros/humble/share/%{name}/environment/
+# 开发库
+/opt/ros/humble/lib/*.so
+/opt/ros/humble/lib/pkgconfig/*.pc
+
+%changelog
+* Sat Jun 28 2025 Your Name <your.email@example.com> - X.Y.Z-1
+- Initial packaging of ros-humble-PACKAGE_NAME
