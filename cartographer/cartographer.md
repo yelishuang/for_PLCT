@@ -1,59 +1,132 @@
-#  编译 Cartographer ROS（riscv架构）
+# openEuler运行Cartographer完整指南
 
-## 系统及其要求
-系统版本：openeluler 24.03(riscv)
-成功安装ros2相关包。
+## 概述
 
-## 构建与安装
-为了在openEuler上构建 Cartographer ROS，我们推荐使用 colcon 。为了更快的构建，我们还推荐使用 Ninja。以下使用colon。
-在使用 ROS Humble 的 openEuler 上，使用以下命令安装上述工具：
-```
-sudo dnf update
-sudo dnf install python3-colcon-common-extensions python3-rosdep ninja-build
-```
-一般来说安装ros2会安装这些工具，注意riscv默认源没有这些工具，也可以使用pip3安装。
+本文档记录了在openEuler系统上安装和运行Google Cartographer SLAM算法的完整过程。Cartographer是一个系统，可在多个平台和传感器配置中提供实时同时定位和建图（SLAM）。
 
-安装工具后，在 ‘ros2_ws’ 中创建一个新的 cartographer_ros 工作区。
-```
-mkdir -p ros2_ws/src
-cd ros2_ws/src
-git clone https://gitee.com/src-openeuler/cartographer_ros.git
-cd cartographer_ros
-git checkout humble
-tar xf ros-humble-cartographer-ros_2.0.9000.orig.tar.gz
-tar xf ros-humble-cartographer-ros-msgs_2.0.9000.orig.tar.gz
-tar xf ros-humble-cartographer-rviz_2.0.9000.orig.tar.gz
-```
+## 系统环境
 
-![运行截图](./src/1.png)
+- **操作系统**: openEuler (RISC-V 64位架构)
+- **ROS版本**: ROS 2 Humble
+- **架构**: riscv64
 
+## 安装过程
 
-现在需要给 cartographer_ros 打上补丁。
-```
-cd ros-humble-cartographer-ros-2.0.9000/
-patch -p1 < ../cartographer-ros-adapt-glog-0.6.0.patch
-patch -p1 < ../cartographer-ros-fix-multiple-definition-error.patch
-patch -p1 < ../cartographer-ros-fix-absl.patch
-```
-还有rviz的补丁
-```
-cd ros-humble-cartographer-ros-2.0.9000/
-patch -p1 < ../cartographer-ros-adapt-glog-0.6.0.patch
-patch -p1 < ../cartographer-ros-fix-multiple-definition-error.patch
-patch -p1 < ../cartographer-ros-fix-absl.patch
+### 1. 准备安装包
+
+由于构建还没有合并到主分支，选择直接下载预编译的RPM包进行安装：
+
+```bash
+[openeuler@openeuler-riscv64 shared]$ ls
+cartographer_ros2_bag
+pad.txt
+ros-humble-cartographer-1.0.0-3.oe2403.riscv64.rpm
+ros-humble-cartographer-ros-2.0.9003-1.oe2403.riscv64.rpm
 ```
 
-![运行截图](./src/2.png)
+### 2. 执行安装
 
+使用dnf包管理器安装Cartographer相关包：
 
-构建并且安装
+```bash
+[openeuler@openeuler-riscv64 shared]$ sudo dnf install ./ros-humble-cartographer-*.rpm ./ros-humble-cartographer-ros-*.rpm
 ```
-cd ../../       # 现在你应该在 ros2_ws/下面
-colcon build    # 这将花去非常多的时间，don't panic.
+
+### 3. 安装结果
+
+```bash
+Last metadata expiration check: 3:04:29 ago on Wed 09 Jul 2025 12:11:49 PM CST.
+Dependencies resolved.
+================================================================================
+ Package                      Arch     Version              Repository     Size
+================================================================================
+Installing:
+ ros-humble-cartographer      riscv64  1.0.0-3.oe2403       @commandline  6.9 M
+ ros-humble-cartographer-ros  riscv64  2.0.9003-1.oe2403    @commandline  1.5 M
+
+Transaction Summary
+================================================================================
+Install  2 Packages
+
+Total size: 8.4 M
+Installed size: 67 M
+Is this ok [y/N]: y
+Downloading Packages:
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                        1/1 
+  Installing       : ros-humble-cartographer-1 [========================= ] 1/2[11948.644710][ T1653] capability: warning: `dnf' uses 32-bit capabilities (legacy support in use)
+  Installing       : ros-humble-cartographer-1.0.0-3.oe2403.riscv64         1/2 
+  Installing       : ros-humble-cartographer-ros-2.0.9003-1.oe2403.riscv6   2/2 
+  Verifying        : ros-humble-cartographer-1.0.0-3.oe2403.riscv64         1/2 
+  Verifying        : ros-humble-cartographer-ros-2.0.9003-1.oe2403.riscv6   2/2 
+
+Installed:
+  ros-humble-cartographer-1.0.0-3.oe2403.riscv64                                
+  ros-humble-cartographer-ros-2.0.9003-1.oe2403.riscv64                         
+
+Complete!
 ```
 
-![运行截图](./src/3.png)
-![运行截图](./src/4.png)
-![运行截图](./src/5.png)
+**结论**: 安装成功完成！
+
+## 基本测试
+
+### 1. 验证安装
+
+检查已安装的Cartographer相关包：
+
+```bash
+[openeuler@openeuler-riscv64 ~]$ dnf list installed | grep cartographer
+ros-humble-cartographer.riscv64                                                1.0.0-3.oe2403                  @@commandline       
+ros-humble-cartographer-ros.riscv64                                            2.0.9003-1.oe2403               @@commandline       
+ros-humble-cartographer-ros-debuginfo.riscv64                                  2.0.9000-2.oe2403               @openEulerROS-humble
+ros-humble-cartographer-ros-debugsource.riscv64                                2.0.9000-2.oe2403               @openEulerROS-humble
+ros-humble-cartographer-ros-msgs.riscv64                                       2.0.9000-1.oe2403               @openEulerROS-humble
+ros-humble-cartographer-rviz-debuginfo.riscv64                                 2.0.9000-1.oe2403               @openEulerROS-humble
+ros-humble-cartographer-rviz-debugsource.riscv64                               2.0.9000-1.oe2403               @openEulerROS-humble
+```
+
+### 2. 检查可执行文件
+
+查看cartographer_ros包提供的可执行文件：
+
+```bash
+[openeuler@openeuler-riscv64 ~]$ ros2 pkg executables cartographer_ros
+cartographer_ros cartographer_assets_writer
+cartographer_ros cartographer_node
+cartographer_ros cartographer_occupancy_grid_node
+cartographer_ros cartographer_offline_node
+cartographer_ros cartographer_pbstream_map_publisher
+cartographer_ros cartographer_pbstream_to_ros_map
+cartographer_ros cartographer_rosbag_validate
+```
+
+#### 可执行文件说明
+
+- **cartographer_node**: 主要的SLAM节点
+- **cartographer_assets_writer**: 地图资源写入工具
+- **cartographer_occupancy_grid_node**: 占据栅格地图节点
+- **cartographer_offline_node**: 离线建图节点
+- **cartographer_pbstream_map_publisher**: 发布pbstream格式地图
+- **cartographer_pbstream_to_ros_map**: pbstream到ROS地图格式转换
+- **cartographer_rosbag_validate**: rosbag数据验证工具
+
+### 3. 运行2D建图测试
+
+使用demo数据包运行2D SLAM测试：
+
+```bash
+ros2 launch cartographer_ros demo_backpack_2d.launch.py bag_filename:=${HOME}/shared/cartographer_ros2_bag
+```
+
+## 运行结果
+
+### RViz可视化界面
+
+![Cartographer 2D SLAM运行结果](screenshot_cartographer_rviz.png)
 
 
