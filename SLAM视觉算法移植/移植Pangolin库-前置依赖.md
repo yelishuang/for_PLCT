@@ -130,6 +130,7 @@
    # 构建核心库
    cmake --build .
    ```
+   ![构建成功截图](Pangolin构建成功.png)
 
 2. **关键配置选项说明**
    - `BUILD_EXAMPLES`: 构建示例程序（开启用于测试）
@@ -137,167 +138,35 @@
    - `BUILD_TOOLS`: 构建工具（如VideoViewer）
    - `BUILD_SHARED_LIBS`: 构建共享库vs静态库
 
-### 阶段四：编译问题解决
-
-#### 预期问题与解决方案
-
-1. **组件构建失败**
-   - **问题**: 某些组件因依赖缺失无法构建
-   - **解决**: Pangolin采用组件化架构，缺失依赖的组件会被自动跳过
-   - **策略**: 检查cmake输出的"Found and Enabled"行，确认核心功能已启用
-
-2. **OpenGL支持问题**
-   - **问题**: RISC-V平台OpenGL硬件加速有限
-   - **解决**: 使用Mesa软件渲染（llvmpipe）
-   - **验证**: 运行`glxinfo`检查OpenGL支持情况
-
-3. **编译链接问题**
-   - **问题**: 库文件路径或版本不匹配
-   - **解决**: 使用pkg-config检查库配置
-   - **调试**: 使用`ldd`检查生成库的依赖关系
-
-4. **Python绑定问题**
-   - **问题**: 交叉编译环境下Python路径混乱
-   - **解决**: 初期禁用Python支持，专注核心功能
-
-5. **内存和性能问题**
-   - **问题**: RISC-V设备资源限制
-   - **解决**: 
-     - 使用`BUILD_SHARED_LIBS=OFF`减少内存占用
-     - 禁用不必要的功能模块
-     - 调整OpenGL缓冲区大小
-
-### 阶段五：功能验证
+### 阶段四：功能验证
 
 1. **构建验证**
    ```bash
-   # 检查cmake配置输出
-   grep "Found and Enabled" build/CMakeCache.txt
-   
    # 验证核心库编译
-   ls build/src/
+   ls build/*
    ```
+   ![验证核心库编译](./验证编译.png)
 
 2. **基础功能测试**
    ```bash
-   # 如果启用了示例程序
-   cd build
+   cd build/examples
    # 测试简单显示
-   ./examples/SimpleDisplay/SimpleDisplay
+   ./SimpleDisplay/SimpleDisplay
    # 测试多显示窗口
-   ./examples/SimpleMultiDisplay/SimpleMultiDisplay
+   ./SimpleMultiDisplay/SimpleMultiDisplay
    # 测试绘图功能
-   ./examples/SimplePlot/SimplePlot
+   ./SimplePlot/SimplePlot
    ```
+   ![测试简单显示](./SimpleDisplay.png)
+   ![测试多显示窗口](./SimpleMultiDisplay.png)
+   ![测试绘图功能](./SimplePlot.png)
 
-3. **核心API测试**
-   - OpenGL上下文创建
-   - 窗口管理和事件处理
-   - 基本几何图形绘制
-   - 视口操作
-
-4. **集成测试准备**
+3. **安装**
    ```bash
-   # 安装到系统目录或指定路径
-   cmake --build build --target install
-   # 验证pkg-config配置
-   pkg-config --cflags --libs pangolin
+   sudo cmake --install .
    ```
 
-5. **最小化测试程序**
-   创建简单的测试程序验证Pangolin基本功能：
-   ```cpp
-   #include <pangolin/pangolin.h>
-   int main() {
-       pangolin::CreateWindowAndBind("Test", 640, 480);
-       glEnable(GL_DEPTH_TEST);
-       // 简单的绘制循环
-       while(!pangolin::ShouldQuit()) {
-           glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-           pangolin::FinishFrame();
-       }
-       return 0;
-   }
-   ```
 
-## 风险评估与应对
+### 总结与展望
 
-### 高风险项
-1. **OpenGL驱动兼容性**
-   - 风险: RISC-V平台OpenGL支持不完整
-   - 应对: 准备软件渲染方案
-
-2. **依赖库缺失**
-   - 风险: 某些依赖库在RISC-V平台不可用
-   - 应对: 源码编译或寻找替代库
-
-### 中风险项
-1. **性能问题**
-   - 风险: 软件渲染性能不足
-   - 应对: 优化渲染参数，降低质量要求
-
-2. **内存使用**
-   - 风险: RISC-V设备内存限制
-   - 应对: 优化内存使用，减少缓存
-
-## 时间规划
-
-### 第1周：环境搭建
-- 配置交叉编译环境
-- 安装依赖库
-- 获取源码
-
-### 第2周：编译适配
-- 修复编译错误
-- 解决架构兼容性问题
-- 完成基础编译
-
-### 第3周：功能验证
-- 运行基础测试
-- 验证核心功能
-- 性能调优
-
-### 第4周：集成测试
-- 与ORB-SLAM3集成测试
-- 问题修复和优化
-- 文档整理
-
-## 成功标准
-
-1. **编译成功**: 能够在openEuler 24.03 RISC-V虚拟机上成功编译Pangolin
-2. **功能正常**: 核心显示和交互功能工作正常
-3. **性能可接受**: 满足ORB-SLAM3的基本性能要求
-4. **稳定性良好**: 长时间运行无崩溃
-
-## 后续工作
-
-1. **优化工作**
-   - 针对RISC-V架构的特定优化
-   - 内存使用优化
-   - 渲染性能优化
-
-2. **维护工作**
-   - 定期更新Pangolin版本
-   - 跟踪上游修复
-   - 维护RISC-V补丁
-
-3. **社区贡献**
-   - 向上游提交RISC-V支持补丁
-   - 分享移植经验
-   - 建立RISC-V版本维护机制
-
-## 备选方案
-
-如果Pangolin移植遇到重大困难，可考虑以下替代方案：
-
-1. **轻量级替代库**
-   - OpenCV的highgui模块
-   - SDL2 + OpenGL
-   - 自定义简化显示库
-
-2. **无图形界面版本**
-   - 修改ORB-SLAM3使用无头模式
-   - 数据输出到文件
-   - 后处理可视化
-
-这个移植方案提供了从环境搭建到最终验证的完整流程，同时考虑了可能遇到的技术挑战和解决方案。
+本文档详细阐述了Pangolin库在openEuler 24.03 RISC-V架构上的移植方案，包括环境准备、依赖分析、CMake配置以及功能验证等关键步骤。通过成功移植并验证Pangolin库，我们为后续ORB-SLAM3等依赖Pangolin的计算机视觉和机器人学项目在RISC-V平台上的顺利部署奠定了坚实的基础。下一步工作将聚焦于ORB-SLAM3的移植与优化，以期充分发挥RISC-V架构在该领域的潜力。
