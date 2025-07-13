@@ -1,0 +1,129 @@
+# ORB-SLAM3 移植到 openEuler 24.03 RISC-V 详细流程
+
+## 一、项目概述
+
+### 1.1 移植目标
+将ORB-SLAM3视觉SLAM系统成功移植到openEuler 24.03 RISC-V架构上，确保基本功能正常运行。ORB-SLAM3是目前最先进的实时SLAM库之一，支持视觉、视觉-惯性和多地图SLAM，适用于单目、双目和RGB-D相机。
+
+### 1.2 主要挑战
+- RISC-V架构特性差异
+- 依赖库的RISC-V支持
+- 性能优化需求
+- 可能的代码适配
+
+### 1.3 移植意义
+
+将ORB-SLAM3移植到openEuler RISC-V平台具有重要的实际价值。首先，这将验证RISC-V架构在运行复杂视觉算法方面的实际能力，为RISC-V在机器人、无人机等领域的应用提供关键技术支撑。其次，成功的移植将使openEuler RISC-V版本具备完整的视觉SLAM功能，提升其在边缘计算和嵌入式设备市场的竞争力。从技术角度看，移植过程中积累的经验，包括依赖库适配、性能优化、架构特定问题的解决方案等，将为后续其他大型项目的RISC-V移植提供宝贵参考。此外，由于RISC-V的开源特性和较低的授权成本，基于RISC-V的SLAM解决方案在成本敏感的应用场景中具有明显优势。最终，这项工作不仅能推动RISC-V生态系统的完善，还能为国产处理器在智能感知领域的应用探索可行路径。
+
+## 二、环境准备阶段
+
+### 2.1 系统环境检查
+```bash
+# 确认系统版本
+cat /etc/os-release
+uname -a
+
+# 检查编译工具链
+gcc --version
+g++ --version
+cmake --version
+
+# 检查可用内存和存储
+free -h
+df -h
+```
+
+### 2.2 基础开发工具安装
+```bash
+# 更新系统包
+sudo dnf update -y
+
+# 安装基础开发工具
+sudo dnf install -y git wget vim cmake cmake-gui
+sudo dnf install -y gcc-c++ python3-devel
+```
+
+## 三、依赖库准备阶段
+
+### 3.1 检查和安装系统级依赖
+
+#### 3.1.1 基础库
+```bash
+# 安装基础依赖
+sudo dnf install -y libjpeg-devel libpng-devel libtiff-devel
+sudo dnf install -y libGL-devel libGLU-devel
+sudo dnf install -y libX11-devel libXi-devel libXmu-devel
+```
+
+#### 3.1.2 Eigen3 (线性代数库)
+```bash
+# 检查是否有预编译包
+sudo dnf search eigen3
+
+# 直接安装
+sudo dnf install -y eigen3-devel
+
+```
+
+#### 3.1.3 OpenCV (计算机视觉库)
+```bash
+# 检查是否有预编译包
+sudo dnf search opencv
+
+# 直接安装
+sudo dnf install -y opencv
+```
+
+#### 3.1.4 Pangolin (可视化库)
+```bash
+见  移植Pangolin库-前置依赖.md
+```
+
+## 四、ORB-SLAM3获取与初步分析
+
+### 4.1 获取源代码
+```bash
+# 克隆ORB-SLAM3
+git clone https://github.com/UZ-SLAMLab/ORB_SLAM3.git
+cd ORB_SLAM3
+
+```
+
+### 4.2 修复部分导致编译的问题
+
+```bash
+# 更新 C++ 标准支持标志
+HECK_CXX_COMPILER_FLAG("-std=c++11" COMPILER_SUPPORTS_CXX11) --》 HECK_CXX_COMPILER_FLAG("-std=c++11" COMPILER_SUPPORTS_CXX14)
+
+# 显示图像
+修改./Examples/Monocular/mono_euroc.cc中：
+ORB_SLAM3::System SLAM(argv[1],argv[2],ORB_SLAM3::System::MONOCULAR, false);  --》 ORB_SLAM3::System SLAM(argv[1],argv[2],ORB_SLAM3::System::MONOCULAR, true);
+
+## `-march=native` 编译参数在RISC-V架构上不被支持
+
+修改DBoW2:
+sed -i 's/-march=native//g' Thirdparty/DBoW2/CMakeLists.txt
+
+修改g2o:
+sed -i 's/-march=native//g' Thirdparty/g2o/CMakeLists.txt
+
+修改Sophus:
+sed -i 's/-march=native//g' Thirdparty/Sophus/CMakeLists.txt
+
+修改ORB_SLAM3
+sed -i 's/-march=native//g' ./CMakeLists.txt
+
+```
+
+### 4.3 自动编译
+
+```bash
+./build.sh
+
+```
+
+![DBoW2编译成功](./DBoW2编译成功.png)
+
+![g2o编译成功](./g2o编译成功.png)
+
+![Sophus编译成功](./Sophus编译成功.png)
