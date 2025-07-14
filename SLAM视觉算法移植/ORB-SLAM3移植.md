@@ -149,5 +149,5 @@ EuRoC 数据集包含视觉惯性数据，适合测试视觉惯性 SLAM，包括
 
 ### 4.2 进行简单测试
 
-![c测试demo图片](./ORB-SLAM3测试结果.jpg)
+![ORB-SLAM3测试](./ORB-SLAM3测试.gif)
 
