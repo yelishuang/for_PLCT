@@ -92,8 +92,9 @@ cd ORB_SLAM3
 ### 4.2 修复部分导致编译的问题
 
 ```bash
-# 更新 C++ 标准支持标志
-HECK_CXX_COMPILER_FLAG("-std=c++11" COMPILER_SUPPORTS_CXX11) --》 HECK_CXX_COMPILER_FLAG("-std=c++11" COMPILER_SUPPORTS_CXX14)
+# 更新 CakeList文件
+见本目录下的CMakeList文件，主要更新修复有关“C++”标准设置和移除“-march=native“以适配ricv架构
+
 
 # 显示图像
 修改./Examples/Monocular/mono_euroc.cc中：
@@ -110,8 +111,10 @@ sed -i 's/-march=native//g' Thirdparty/g2o/CMakeLists.txt
 修改Sophus:
 sed -i 's/-march=native//g' Thirdparty/Sophus/CMakeLists.txt
 
-修改ORB_SLAM3
-sed -i 's/-march=native//g' ./CMakeLists.txt
+# std::chrono::monotonic_clock 不是C++标准库的一部分
+find Examples -type f -exec sed -i 's/std::chrono::monotonic_clock/std::chrono::steady_clock/g' {} +
+find Examples_old -type f -exec sed -i 's/std::chrono::monotonic_clock/std::chrono::steady_clock/g' {} +
+
 
 ```
 
@@ -127,3 +130,24 @@ sed -i 's/-march=native//g' ./CMakeLists.txt
 ![g2o编译成功](./g2o编译成功.png)
 
 ![Sophus编译成功](./Sophus编译成功.png)
+
+![ORB-SLAM3编译成功](./ORB-SLAM3编译成功.png)
+
+## 五、ORB-SLAM3测试
+
+### 4.1 获取EuRoC 测试数据集
+
+EuRoC 数据集包含视觉惯性数据，适合测试视觉惯性 SLAM，包括 Machine Hall 和 Vicon Room 序列。数据格式为 ROS bag 或 ASL Dataset Format，包含立体图像、IMU 和地面真相。
+
+- **步骤**：
+  1. 访问官网：https://projects.asl.ethz.ch/datasets/doku.php?id=kmavvisualinertialdatasets
+  2. 选择序列（推荐：Machine Hall 01-05 “easy” 到 “difficult”，Vicon Room 1 01-03）。
+  3. 下载 ROS bag 或 ASL zip 文件。例如：
+     - Machine Hall 01 (easy): http://robotics.ethz.ch/~asl-datasets/ijrr_euroc_mav_dataset/machine_hall/MH_01_easy/MH_01_easy.bag (ROS bag) 或 MH_01_easy.zip (ASL)。
+     - 类似地下载其他序列，如 MH_02_easy、V1_01_easy 等。
+  4. 解压并放置在 ORB-SLAM3/Data/EuRoC/ 下。
+
+### 4.2 进行简单测试
+
+![c测试demo图片](./ORB-SLAM3测试结果.jpg)
+
