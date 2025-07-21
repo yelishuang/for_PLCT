@@ -75,9 +75,9 @@ sudo dnf install -y opencv
 ```
 
 #### 3.1.4 Pangolin (可视化库)
-```bash
-见  移植Pangolin库-前置依赖.md
-```
+
+见本目录下“移植Pangolin库-前置依赖.md”
+
 
 ## 四、ORB-SLAM3获取与初步分析
 
@@ -149,5 +149,26 @@ EuRoC 数据集包含视觉惯性数据，适合测试视觉惯性 SLAM，包括
 
 ### 4.2 进行简单测试
 
-![ORB-SLAM3测试](./ORB-SLAM3测试.gif)
+单目摄像头测试：
+
+```bash
+./Examples/Monocular/mono_euroc ./Vocabulary/ORBvoc.txt ./Examples/Monocular/EuRoC.yaml /home/openeuler/shared/Datasets/EuRoC/MH01 ./Examples/Monocular/EuRoC_TimeStamps/MH01.txt dataset-MH01_mono
+```
+![单目摄像头测试](./单目摄像头测试.gif)
+
+
+双目摄像头测试：
+
+```bash
+./Examples/Stereo/stereo_euroc ./Vocabulary/ORBvoc.txt ./Examples/Stereo/EuRoC.yaml /home/openeuler/shared/Datasets/EuRoC/V101 ./Examples/Stereo/EuRoC_TimeStamps/V101.txt dataset-V101_stereo
+```
+![双目摄像头测试](./双目摄像头测试.gif)
+
+
+单目+惯性导航 (Monocular-Inertial) 测试:
+```bash
+./Examples/Monocular-Inertial/mono_inertial_euroc ./Vocabulary/ORBvoc.txt ./Examples/Monocular-Inertial/EuRoC.yaml /home/openeuler/shared/Datasets/EuRoC/V101 ./Examples/Monocular-Inertial/EuRoC_TimeStamps/V101.txt dataset-V101_monoi
+```
+![单目+惯性导航测试](./单目+惯性导航测试.gif)
+
 
