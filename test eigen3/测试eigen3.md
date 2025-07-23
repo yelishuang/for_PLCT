@@ -184,9 +184,11 @@ qemu-system-x86_64 \
 进入openEuler系统后，使用您创建的账户登录。打开终端，执行以下命令：
 
 ```bash
-# 安装UKUI桌面环境
-sudo dnf -y install ukui
-# 设置系统默认以图形化界面启动
+# 更新系统软件
+sudo dnf update
+# 进入openEuler系统后，输入以下命令安装dde桌面环境：
+sudo yum install dde
+# 设置以图形化界面启动
 sudo systemctl set-default graphical.target
 # 重启系统以应用更改
 sudo reboot
@@ -312,6 +314,5 @@ chmod +x vm-manager.sh
 
 现在，您只需执行 `./vm-manager.sh` 即可方便地启动和管理您的 openEuler 虚拟机。
 
-![启动效果](./启动效果.png) 
-
+![成功启动虚拟机](./成功启动虚拟机.png)
 
