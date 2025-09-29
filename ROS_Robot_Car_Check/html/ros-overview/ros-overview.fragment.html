@@ -1,0 +1,129 @@
+<!-- ROS 概览与健康（ROS 2） -->
+<div id="rosov-root" data-page="ros-overview">
+  <header class="rosov-header">
+    <div>
+      <h1 class="rosov-title">ROS 概览与健康</h1>
+      <div class="rosov-subtitle">连接状态 · 核心指标 · 诊断告警 · TF 概览</div>
+    </div>
+    <div class="header-actions">
+      <button id="btnRosReconnect" class="btn small">重连</button>
+      <div id="rosov-status" class="status-chip">● 离线</div>
+    </div>
+  </header>
+
+  <!-- 顶部：连接/域信息 -->
+  <section class="card info-card">
+    <div class="info-grid">
+      <div class="info-item">
+        <div class="label">桥接</div>
+        <div class="value" id="bridgeType">rosbridge / 自研</div>
+      </div>
+      <div class="info-item">
+        <div class="label">域 (ROS_DOMAIN_ID)</div>
+        <div class="value" id="rosDomain">—</div>
+      </div>
+      <div class="info-item">
+        <div class="label">主机</div>
+        <div class="value" id="rosHost">—</div>
+      </div>
+      <div class="info-item">
+        <div class="label">发现</div>
+        <div class="value" id="rosDiscovery">DDS / Discovery Server</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KPI + 速率小图 -->
+  <section class="card kpi-card">
+    <div class="kpi-grid">
+      <div class="kpi">
+        <div class="kpi-label">节点</div>
+        <div class="kpi-value"><span id="kpiNodes">0</span></div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">话题</div>
+        <div class="kpi-value"><span id="kpiTopics">0</span></div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">WARN</div>
+        <div class="kpi-value warn"><span id="kpiWarn">0</span></div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">ERROR</div>
+        <div class="kpi-value danger"><span id="kpiError">0</span></div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">平均频率</div>
+        <div class="kpi-value"><span id="kpiHz">0</span><span class="unit">Hz</span></div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">平均带宽</div>
+        <div class="kpi-value"><span id="kpiBw">0</span><span class="unit">KB/s</span></div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">录包状态</div>
+        <div class="kpi-value" id="bagStatus">未开始</div>
+      </div>
+      <div class="kpi kpi-spark">
+        <div class="kpi-label">消息速率趋势</div>
+        <canvas id="sparkHz" height="46"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <!-- 下方：诊断 + TF -->
+  <main class="rosov-grid">
+    <!-- 左：诊断 -->
+    <section class="card diag-card">
+      <div class="section-head">
+        <div class="section-title">诊断与健康</div>
+        <div class="section-actions">
+          <select id="diagFilter" class="select small">
+            <option value="ALL">全部</option>
+            <option value="OK">OK</option>
+            <option value="WARN">WARN</option>
+            <option value="ERROR">ERROR</option>
+          </select>
+          <button id="btnDiagRefresh" class="btn small">刷新</button>
+        </div>
+      </div>
+      <div class="diag-kpis">
+        <span class="badge ok">OK <b id="diagOk">0</b></span>
+        <span class="badge warn">WARN <b id="diagWarn">0</b></span>
+        <span class="badge danger">ERROR <b id="diagError">0</b></span>
+      </div>
+      <div id="diagList" class="diag-list">
+        <div class="placeholder slim">暂无诊断消息。</div>
+      </div>
+      <div class="diag-foot muted">仅展示最近 10 条。更多详情请前往“通信监控/日志”。</div>
+    </section>
+
+    <!-- 右：TF 概览 -->
+    <aside class="card tf-card">
+      <div class="section-head">
+        <div class="section-title">TF 概览</div>
+        <div class="section-actions">
+          <button id="btnTfRefresh" class="btn small">刷新</button>
+        </div>
+      </div>
+      <div class="tf-kpis">
+        <div class="tf-item">
+          <div class="label">帧数量</div>
+          <div class="value" id="tfFrames">0</div>
+        </div>
+        <div class="tf-item">
+          <div class="label">根帧</div>
+          <div class="value" id="tfRoot">—</div>
+        </div>
+        <div class="tf-item">
+          <div class="label">最近更新时间</div>
+          <div class="value" id="tfUpdated">—</div>
+        </div>
+      </div>
+      <div class="tf-tree-wrap">
+        <ul id="tfTree" class="tf-tree"></ul>
+      </div>
+      <div class="muted tf-tip">本页仅做 TF 结构概览与更新指示，3D 可视化请使用 RViz / Foxglove。</div>
+    </aside>
+  </main>
+</div>

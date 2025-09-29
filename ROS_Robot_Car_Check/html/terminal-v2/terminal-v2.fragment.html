@@ -1,0 +1,59 @@
+<!-- 终端 v2：嵌入片段，由 terminal-v2.js 自动初始化 -->
+<div id="termv2-root" data-page="terminal-v2">
+  <header class="term-header">
+    <div>
+      <h1 class="term-title">终端 (v2)</h1>
+      <div class="term-subtitle">WebSocket 直连 PTY · 支持粘贴/快捷键/尺寸自适应</div>
+    </div>
+    <div id="term-status" class="status-chip">● 离线</div>
+  </header>
+
+  <!-- 工具栏（简约） -->
+  <section class="term-toolbar card">
+    <div class="left">
+      <button id="btnReconnect" class="btn small">重连</button>
+      <button id="btnClear" class="btn small">清屏</button>
+      <button id="btnCtrlC" class="btn small">Ctrl+C</button>
+      <button id="btnCtrlD" class="btn small">Ctrl+D</button>
+    </div>
+    <div class="right">
+      <label class="hint">字体
+        <select id="fontSize" class="select small">
+          <option value="12">12</option>
+          <option value="13">13</option>
+          <option value="14" selected>14</option>
+          <option value="15">15</option>
+          <option value="16">16</option>
+        </select>
+      </label>
+      <label class="hint">主题
+        <select id="themeSelect" class="select small">
+          <option value="dark" selected>深色</option>
+          <option value="light">浅色</option>
+        </select>
+      </label>
+    </div>
+  </section>
+
+  <!-- 终端视口 -->
+  <main class="term-main card">
+    <div id="term-viewport" class="viewport" tabindex="0" aria-label="Web 终端">
+      <pre id="term-screen" class="screen"></pre>
+      <div id="term-cursor" class="cursor"></div>
+    </div>
+
+    <!-- 隐藏输入：捕获键盘/粘贴（移动端也可唤起软键盘） -->
+    <textarea id="term-input" class="ghost-input" autocapitalize="off" autocomplete="off" spellcheck="false"></textarea>
+  </main>
+
+  <footer class="term-foot">
+    <div class="foot-left">
+      <span id="term-dim">0×0</span>
+      <span class="sep">·</span>
+      <span class="muted">复制：鼠标选中即复制（浏览器原生），粘贴：Ctrl+V</span>
+    </div>
+    <div class="foot-right">
+      <span class="muted">协议：WebSocket → 后端 PTY</span>
+    </div>
+  </footer>
+</div>

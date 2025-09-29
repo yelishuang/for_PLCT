@@ -1,0 +1,93 @@
+<!-- ROS-AI 指挥官：对话下达任务 · 计划确认 · 执行监控 -->
+<div id="roscmd-root" data-page="ros-ai-commander">
+  <header class="roscmd-header">
+    <div class="title-wrap">
+      <div class="brand-glow"></div>
+      <h1 class="title">ROS-AI 指挥官</h1>
+      <div class="subtitle">自然语言下达任务 · 计划确认 · 实时执行与安全控制</div>
+    </div>
+    <div class="header-actions">
+      <span id="statusMode" class="status-chip">MODE: MANUAL</span>
+      <span id="statusArm" class="status-chip warn">DISARMED</span>
+      <span id="statusEstop" class="status-chip ok">E-STOP: CLEAR</span>
+      <button id="btnArm" class="btn small">解锁</button>
+      <button id="btnEstop" class="btn small danger">急停</button>
+    </div>
+  </header>
+
+  <main class="roscmd-grid">
+    <!-- 左：对话与计划 -->
+    <section class="chat card">
+      <div id="chatScroll" class="chat-scroll">
+        <div id="chatList" class="chat-list">
+          <div class="msg ai">
+            <div class="avatar">🧭</div>
+            <div class="bubble">
+              <div class="bubble-inner">
+                我是 <b>ROS-AI 指挥官</b>。直接告诉我任务：<br/>
+                <code>从起点出发 → 前往房间A → 环视拍照 → 返回充电座</code><br/>
+                我会生成<b>可执行计划卡</b>，你确认后我再执行。
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 输入区 -->
+      <div class="composer">
+        <div class="quick">
+          <button class="chip" data-prompt="去点A巡检并拍3张照片，然后回到起点。">巡检+拍照</button>
+          <button class="chip" data-prompt="沿着走廊巡线一圈，发现阻挡就绕行。">巡线绕障</button>
+          <button class="chip" data-prompt="录制 /camera/image_raw 与 /odom 30 秒，在任务结束时上传。">任务中录制</button>
+        </div>
+        <div class="compose-row">
+          <textarea id="chatInput" class="input" rows="1" placeholder="描述你的任务…（Shift+Enter 换行，Enter 发送）"></textarea>
+          <button id="btnSend" class="btn send">发送</button>
+        </div>
+        <div class="hints">
+          <label class="switch"><input id="chkStream" type="checkbox" checked><span>流式响应</span></label>
+          <span class="muted">API：<code>/api/ai/chat</code>（生成计划） · <code>/api/agent/plan/execute</code>（执行计划）</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 右：任务监控与上下文 -->
+    <aside class="side card">
+      <!-- 任务面板 -->
+      <section class="side-sec">
+        <div class="side-title">当前任务</div>
+        <div id="missionPanel" class="mission">
+          <div class="placeholder slim">暂无任务。发送指令并确认计划后开始执行。</div>
+        </div>
+      </section>
+
+      <!-- 时间线 -->
+      <section class="side-sec">
+        <div class="side-title">执行时间线</div>
+        <div id="timeline" class="timeline">
+          <div class="placeholder slim">等待任务开始…</div>
+        </div>
+      </section>
+
+      <!-- 机器人状态 -->
+      <section class="side-sec">
+        <div class="side-title">机器人状态</div>
+        <div class="kv">
+          <div><span>位置</span><b id="telePose">x:0.00 y:0.00 θ:0°</b></div>
+          <div><span>电量</span><b id="teleBatt">—%</b></div>
+          <div><span>速度</span><b id="teleVel">— m/s</b></div>
+        </div>
+        <div class="tele-grid">
+          <div class="mini-card">
+            <div class="label">里程计</div>
+            <canvas id="sparkOdom" height="42"></canvas>
+          </div>
+          <div class="mini-card">
+            <div class="label">避障事件</div>
+            <canvas id="sparkAvoid" height="42"></canvas>
+          </div>
+        </div>
+      </section>
+    </aside>
+  </main>
+</div>

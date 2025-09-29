@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>存储管理 (v2)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="./storage-v2.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="page-header">
+      <div class="title-wrap">
+        <h1 class="title">存储管理 (v2)</h1>
+        <div class="subtitle">概览容量与健康，实时观察读写负载，执行必要的维护操作</div>
+      </div>
+      <div id="storageStatus" class="status-chip online">● 监控就绪</div>
+    </header>
+
+    <main class="main-grid">
+      <!-- 左：概览 + 表格 -->
+      <section class="left-column">
+        <section class="summary-card card">
+          <div class="kpis">
+            <div class="kpi">
+              <div class="kpi-title">总容量</div>
+              <div class="kpi-value"><span id="capTotal">-</span></div>
+            </div>
+            <div class="kpi">
+              <div class="kpi-title">可用空间</div>
+              <div class="kpi-value"><span id="capFree">-</span></div>
+            </div>
+            <div class="kpi">
+              <div class="kpi-title">根分区使用率</div>
+              <div class="kpi-value"><span id="rootUsage">-</span></div>
+            </div>
+            <div class="kpi">
+              <div class="kpi-title">最高温度</div>
+              <div class="kpi-value"><span id="maxTemp">N/A</span></div>
+            </div>
+          </div>
+
+          <div class="charts">
+            <div class="chart-card">
+              <div class="chart-title">读速率</div>
+              <div class="current"><span id="readNow">0</span><span class="unit">B/s</span></div>
+              <canvas id="readChart" height="120"></canvas>
+            </div>
+            <div class="chart-card">
+              <div class="chart-title">写速率</div>
+              <div class="current"><span id="writeNow">0</span><span class="unit">B/s</span></div>
+              <canvas id="writeChart" height="120"></canvas>
+            </div>
+          </div>
+        </section>
+
+        <section class="devices-card card">
+          <div class="table-head">
+            <div class="table-title">设备与分区</div>
+            <div class="table-actions">
+              <button id="btnRefresh" class="btn small">刷新</button>
+              <button id="btnExport" class="btn small ghost">导出诊断</button>
+            </div>
+          </div>
+
+          <div id="tableStates" class="table-states">
+            <div id="stateIdle"    class="state">尚未加载</div>
+            <div id="stateLoading" class="state hidden">正在加载…</div>
+            <div id="stateEmpty"   class="state hidden">没有可显示的设备</div>
+            <div id="stateError"   class="state hidden">加载失败，请稍后重试</div>
+          </div>
+
+          <div class="table-wrap">
+            <table class="table" aria-label="磁盘与分区信息">
+              <thead>
+                <tr>
+                  <th>设备</th>
+                  <th>挂载点</th>
+                  <th>类型</th>
+                  <th>总容量</th>
+                  <th>已用</th>
+                  <th>可用</th>
+                  <th>使用率</th>
+                  <th>健康</th>
+                </tr>
+              </thead>
+              <tbody id="diskRows"></tbody>
+            </table>
+          </div>
+        </section>
+      </section>
+
+      <!-- 右：实时面板 -->
+      <aside class="right-column">
+        <section class="realtime card">
+          <div class="realtime-header">
+            <div class="realtime-title">实时 I/O 流</div>
+            <div class="realtime-actions">
+              <button id="btnRtPause" class="btn small">暂停</button>
+              <button id="btnRtClose" class="btn small ghost">关闭</button>
+            </div>
+          </div>
+          <div id="rtPlaceholder" class="placeholder slim">尚未接收实时数据。</div>
+          <div id="rtList" class="rt-list"></div>
+        </section>
+      </aside>
+    </main>
+  </div>
+
+  <!-- 使用原生 ES 模块装配 -->
+  <script type="module" src="./storage-v2.js"></script>
+</body>
+</html>

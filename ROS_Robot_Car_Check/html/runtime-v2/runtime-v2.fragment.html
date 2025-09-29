@@ -1,0 +1,156 @@
+<!-- 运行中心（Runtime v2） -->
+<div id="rtv2-root" data-page="runtime-v2">
+  <!-- 顶部：标题 + 概览 KPI -->
+  <header class="rtv2-header">
+    <div>
+      <h1 class="rtv2-title">运行中心 (v2)</h1>
+      <div class="rtv2-subtitle">服务 · 进程 · 用户 — 观测与必要治理</div>
+    </div>
+    <div id="rtv2-guard" class="guard off" title="维护模式：关闭">维护模式：关闭</div>
+  </header>
+
+  <section class="card kpi-card">
+    <div class="kpi-grid">
+      <div class="kpi">
+        <div class="kpi-label">服务</div>
+        <div class="kpi-value"><span id="kpiSvcActive">0</span> 活跃 / <span id="kpiSvcFailed">0</span> 失败</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">资源</div>
+        <div class="kpi-value">CPU <span id="kpiCPU">0%</span> · MEM <span id="kpiMEM">0%</span></div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">登录用户</div>
+        <div class="kpi-value"><span id="kpiUsers">0</span> 可登录 / <span id="kpiLocked">0</span> 锁定</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">近 5 分钟事件</div>
+        <div class="kpi-value"><span id="kpiEvents">0</span> 条</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 主体：左（列表） + 右（详情/日志/操作） -->
+  <main class="rtv2-grid">
+
+    <section class="rtv2-left">
+
+      <!-- 分页签：服务/进程/用户 -->
+      <nav class="tabs">
+        <button class="tab active" data-tab="svc">服务</button>
+        <button class="tab" data-tab="proc">进程</button>
+        <button class="tab" data-tab="user">用户</button>
+        <div class="tabs-actions">
+          <input id="rtv2-search" class="search" placeholder="搜索（服务名 / 进程 / 用户）">
+          <button id="rtv2-refresh" class="btn small">刷新</button>
+        </div>
+      </nav>
+
+      <!-- 状态条 -->
+      <div class="state-bar">
+        <span id="sIdle" class="state">尚未加载</span>
+        <span id="sLoading" class="state hidden">正在加载…</span>
+        <span id="sEmpty" class="state hidden">暂无数据</span>
+        <span id="sError" class="state hidden">加载失败</span>
+      </div>
+
+      <!-- 列表：服务 -->
+      <section id="listSvc" class="card list-card">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>服务</th>
+              <th>状态</th>
+              <th>开机自启</th>
+              <th>说明</th>
+            </tr>
+          </thead>
+          <tbody id="svcRows"></tbody>
+        </table>
+      </section>
+
+      <!-- 列表：进程 -->
+      <section id="listProc" class="card list-card hidden">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>PID</th>
+              <th>进程</th>
+              <th>CPU%</th>
+              <th>MEM%</th>
+              <th>RSS</th>
+              <th>启动时间</th>
+            </tr>
+          </thead>
+          <tbody id="procRows"></tbody>
+        </table>
+      </section>
+
+      <!-- 列表：用户 -->
+      <section id="listUser" class="card list-card hidden">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>用户</th>
+              <th>UID</th>
+              <th>主组</th>
+              <th>锁定</th>
+              <th>最近登录</th>
+            </tr>
+          </thead>
+          <tbody id="userRows"></tbody>
+        </table>
+      </section>
+
+    </section>
+
+    <!-- 右侧：详情 + 操作 + 日志/事件 -->
+    <aside class="rtv2-right">
+
+      <!-- 详情 / 操作 -->
+      <section class="card detail-card">
+        <div class="section-head">
+          <div class="section-title" id="detailTitle">详情</div>
+          <div class="section-actions">
+            <!-- 操作区会按 tab 切换 -->
+            <div id="opsSvc" class="ops">
+              <button id="btnSvcStart"  class="btn small">启动</button>
+              <button id="btnSvcStop"   class="btn small">停止</button>
+              <button id="btnSvcRestart"class="btn small">重启</button>
+              <button id="btnSvcEnable" class="btn small ghost">启用自启</button>
+              <button id="btnSvcDisable"class="btn small ghost">禁用自启</button>
+            </div>
+            <div id="opsProc" class="ops hidden">
+              <button id="btnProcTerm" class="btn small">结束 (TERM)</button>
+              <button id="btnProcKill" class="btn small danger">强杀 (KILL)</button>
+              <button id="btnProcSnap" class="btn small ghost">诊断快照</button>
+            </div>
+            <div id="opsUser" class="ops hidden">
+              <button id="btnUserAdd"    class="btn small">新增用户</button>
+              <button id="btnUserLock"   class="btn small">锁定</button>
+              <button id="btnUserUnlock" class="btn small">解锁</button>
+              <button id="btnUserPwd"    class="btn small ghost">重置密码</button>
+              <button id="btnUserKey"    class="btn small ghost">管理 SSH Key</button>
+            </div>
+          </div>
+        </div>
+        <div id="detailBody" class="detail-body muted">请选择左侧列表中的一项查看详情。</div>
+      </section>
+
+      <!-- 日志 / 事件流 -->
+      <section class="card log-card">
+        <div class="section-head">
+          <div class="section-title" id="logTitle">最近日志 / 事件</div>
+          <div class="section-actions">
+            <button id="btnLogMore" class="btn small ghost">更多</button>
+            <button id="btnLogClear" class="btn small">清空</button>
+          </div>
+        </div>
+        <div id="logList" class="log-list">
+          <div class="placeholder slim">尚无日志/事件。</div>
+        </div>
+      </section>
+
+    </aside>
+  </main>
+</div>

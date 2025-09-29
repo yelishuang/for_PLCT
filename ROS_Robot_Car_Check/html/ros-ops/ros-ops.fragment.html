@@ -1,0 +1,132 @@
+<!-- 采集与配置（ROS 2）：录包 + 参数快照/对比 + QoS 只读 -->
+<div id="rosops-root" data-page="ros-ops">
+  <header class="rosops-header">
+    <div>
+      <h1 class="rosops-title">采集与配置</h1>
+      <div class="rosops-subtitle">录包控制 · 任务进度 · 参数快照与对比 · QoS 查看</div>
+    </div>
+    <div class="header-actions">
+      <button id="btnOpsRefresh" class="btn small">刷新</button>
+      <div id="rosops-status" class="status-chip">● 离线</div>
+    </div>
+  </header>
+
+  <main class="rosops-grid">
+    <!-- 左列：录包控制 + 任务面板 -->
+    <section class="left-col">
+      <!-- 录包控制 -->
+      <section class="card bag-card">
+        <div class="section-head">
+          <div class="section-title">录包控制</div>
+          <div class="section-actions">
+            <span id="bagStateBadge" class="badge">未开始</span>
+          </div>
+        </div>
+
+        <div class="bag-grid">
+          <div class="bag-filter">
+            <div class="field">
+              <label class="label">快速过滤</label>
+              <input id="topicSearch" class="search" placeholder="按名称/类型过滤话题">
+            </div>
+            <div class="field">
+              <label class="label">选择话题（复选）</label>
+              <div id="topicList" class="topic-list">
+                <div class="placeholder slim">加载中…</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bag-opts">
+            <div class="field">
+              <label class="label">时长上限（秒）</label>
+              <input id="limitSeconds" class="input" type="number" min="1" value="60">
+            </div>
+            <div class="field">
+              <label class="label">大小上限（MB）</label>
+              <input id="limitSize" class="input" type="number" min="1" value="256">
+            </div>
+            <div class="field">
+              <label class="label">输出目录</label>
+              <input id="outputDir" class="input" placeholder="/data/bags">
+            </div>
+
+            <div class="action-row">
+              <button id="btnBagStart" class="btn">开始录制</button>
+              <button id="btnBagStop" class="btn danger" disabled>停止录制</button>
+            </div>
+
+            <div class="progress-row">
+              <div class="progress-bar"><span id="bagProgress" style="width:0%"></span></div>
+              <div id="bagMeta" class="muted small">未开始</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 任务面板 -->
+      <section class="card tasks">
+        <div class="section-head">
+          <div class="section-title">录包任务</div>
+          <div class="section-actions">
+            <button id="btnTaskClear" class="btn small ghost">清除已完成</button>
+          </div>
+        </div>
+        <div id="taskList" class="task-list">
+          <div class="placeholder slim">暂无任务。</div>
+        </div>
+      </section>
+    </section>
+
+    <!-- 右列：参数快照/对比 + QoS 只读 -->
+    <section class="right-col">
+      <!-- 参数快照 -->
+      <section class="card params-card">
+        <div class="section-head">
+          <div class="section-title">参数快照与对比</div>
+          <div class="section-actions">
+            <input id="paramSearch" class="search small" placeholder="搜索节点/参数名">
+            <button id="btnSnapNow" class="btn small">生成快照</button>
+            <button id="btnSnapDiff" class="btn small ghost">对比两次</button>
+            <button id="btnSnapExport" class="btn small ghost">导出 JSON</button>
+          </div>
+        </div>
+
+        <div class="params-grid">
+          <div class="snap-list">
+            <div class="field">
+              <label class="label">快照列表</label>
+              <ul id="snapList" class="list"></ul>
+            </div>
+          </div>
+          <div class="param-view">
+            <div class="field">
+              <label class="label">参数浏览（选中一个快照）</label>
+              <div id="paramTree" class="param-tree">
+                <div class="placeholder slim">未选择快照。</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="diffPanel" class="diff-panel hidden">
+          <div class="section-subtitle">对比结果</div>
+          <div id="diffList" class="diff-list"></div>
+        </div>
+      </section>
+
+      <!-- QoS 查看（只读） -->
+      <section class="card qos-card">
+        <div class="section-head">
+          <div class="section-title">QoS 查看（只读）</div>
+          <div class="section-actions">
+            <input id="qosSearch" class="search small" placeholder="按话题过滤">
+          </div>
+        </div>
+        <div id="qosList" class="qos-list">
+          <div class="placeholder slim">加载中…</div>
+        </div>
+      </section>
+    </section>
+  </main>
+</div>

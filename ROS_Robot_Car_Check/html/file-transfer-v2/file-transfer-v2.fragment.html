@@ -1,0 +1,112 @@
+<!-- 文件传输 v2：双栏互传（右侧=开发板，左侧=本机/工作区） -->
+<div id="ftv2-root" data-page="file-transfer-v2">
+  <header class="ftv2-header">
+    <div>
+      <h1 class="ftv2-title">文件传输 (v2)</h1>
+      <div class="ftv2-subtitle">双栏浏览 · 拖拽互传 · 命令栏 · 任务进度</div>
+    </div>
+    <div id="ftv2-status" class="status-chip">● 就绪</div>
+  </header>
+
+  <main class="ftv2-grid">
+    <!-- 左：本机（浏览器侧工作区/本地目录挂载） -->
+    <section class="pane left" data-side="left">
+      <div class="pane-head">
+        <div class="pane-title">本机 / 工作区</div>
+        <div class="pane-actions">
+          <button class="btn small" id="btnMountLocal">挂载本地文件夹</button>
+          <input id="inputLocalDir" type="file" webkitdirectory multiple class="hidden" />
+          <button class="btn small ghost" id="btnLeftRefresh">刷新</button>
+        </div>
+      </div>
+
+      <div class="addrbar">
+        <div class="crumbs" id="leftCrumbs"></div>
+        <div class="addr-actions">
+          <button class="icon-btn" id="leftUp" title="上一级">⬆️</button>
+          <button class="icon-btn" id="leftHome" title="工作区根">🏠</button>
+        </div>
+      </div>
+
+      <div class="table-wrap" id="leftTableWrap">
+        <table class="table" aria-label="本机文件">
+          <thead>
+            <tr>
+              <th>名称</th>
+              <th>大小</th>
+              <th>修改时间</th>
+            </tr>
+          </thead>
+          <tbody id="leftRows"></tbody>
+        </table>
+        <div class="placeholder" id="leftEmpty">未挂载本地目录或当前为空。点击“挂载本地文件夹”。</div>
+      </div>
+    </section>
+
+    <!-- 右：开发板文件系统 -->
+    <section class="pane right" data-side="right">
+      <div class="pane-head">
+        <div class="pane-title">开发板</div>
+        <div class="pane-actions">
+          <button class="btn small" id="btnRightRefresh">刷新</button>
+          <button class="btn small ghost" id="btnNewFolder">新建文件夹</button>
+          <button class="btn small ghost" id="btnUpload">上传到此处</button>
+          <input id="inputUpload" type="file" multiple class="hidden" />
+        </div>
+      </div>
+
+      <div class="addrbar">
+        <div class="crumbs" id="rightCrumbs"></div>
+        <div class="addr-actions">
+          <button class="icon-btn" id="rightUp" title="上一级">⬆️</button>
+          <button class="icon-btn" id="rightHome" title="根目录">🏠</button>
+        </div>
+      </div>
+
+      <div class="table-wrap" id="rightTableWrap">
+        <table class="table" aria-label="开发板文件">
+          <thead>
+            <tr>
+              <th>名称</th>
+              <th>大小</th>
+              <th>修改时间</th>
+            </tr>
+          </thead>
+          <tbody id="rightRows"></tbody>
+        </table>
+        <div class="placeholder hidden" id="rightEmpty">空目录。</div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 命令栏 -->
+  <section class="cmdbar card">
+    <div class="cmd-left">
+      <span class="muted">支持</span>
+      <code>cd</code>、
+      <code>cp</code>、
+      <code>mv</code>、
+      <code>rm</code>、
+      <code>mkdir</code>
+      <span class="muted">，示例：</span>
+      <code>cp left:/work/a.txt right:/home/root/</code>
+    </div>
+    <div class="cmd-right">
+      <input id="cmdInput" class="cmd-input" placeholder="输入命令并回车执行；输入 help 查看说明">
+      <button id="cmdRun" class="btn small">执行</button>
+    </div>
+  </section>
+
+  <!-- 任务面板 -->
+  <section class="tasks card">
+    <div class="tasks-head">
+      <div class="tasks-title">传输任务</div>
+      <div class="tasks-actions">
+        <button id="taskClearDone" class="btn small ghost">清除已完成</button>
+      </div>
+    </div>
+    <div id="taskList" class="task-list">
+      <div class="placeholder slim">暂无任务。</div>
+    </div>
+  </section>
+</div>
