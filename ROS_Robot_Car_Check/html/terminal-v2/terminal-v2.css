@@ -1,0 +1,66 @@
+:root{
+  --bg:#eef2f7; --card:#12161c; --border:#2a303b; --muted:#9aa6b2;
+  --text:#e5ecf5; --accent:#4a90e2; --ok:#22c55e; --warn:#f59e0b; --danger:#ef4444;
+  --radius:12px; --shadow:0 10px 28px rgba(0,0,0,.28); --topbar:48px;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, "Cascadia Mono", "Liberation Mono", Consolas, "Courier New", monospace;
+}
+
+#termv2-root{padding:calc(8px + var(--topbar)) 16px 20px; color:#0b1220; background:var(--bg); font-family:ui-sans-serif,system-ui,PingFang SC,Microsoft YaHei,Arial,sans-serif}
+.card{background:var(--card); border:1px solid var(--border); border-radius:var(--radius); box-shadow:var(--shadow); color:var(--text)}
+.term-header{display:flex;justify-content:space-between;align-items:flex-end;margin:8px 0 10px}
+.term-title{margin:0;font-size:24px}
+.term-subtitle{color:#58657a;font-size:13.5px;margin-top:6px}
+
+.status-chip{padding:6px 12px;border-radius:999px;border:1px solid #cbd5e1;background:#fff;color:#0b1220}
+.status-chip.online{background:#e8fff2;border-color:#bbf7d0;color:#047857}
+.status-chip.connecting{background:#fff7ed;border-color:#fed7aa;color:#9a3412}
+.status-chip.error{background:#fef2f2;border-color:#fecaca;color:#991b1b}
+
+.term-toolbar{display:flex;align-items:center;justify-content:space-between;padding:8px 10px;margin-bottom:10px}
+.btn{height:32px;padding:0 12px;border:1px solid var(--border);border-radius:8px;background:#1f2630;color:#dbe7ff;cursor:pointer}
+.btn.small{height:30px;font-size:13px}
+.btn:hover{filter:brightness(1.06)} .btn:active{transform:translateY(1px)}
+.select.small{height:30px;background:#0f141b;border:1px solid var(--border);color:#e5ecf5;border-radius:8px}
+.hint{color:#b6c2d6;margin-left:8px}
+.sep{margin:0 8px;color:#94a3b8}
+
+.term-main{display:flex;flex-direction:column;height:calc(100vh - 240px);min-height:460px;position:relative;overflow:hidden}
+.viewport{flex:1;overflow:auto;padding:10px 12px; background: #0b1016; border-bottom:1px solid var(--border); position:relative}
+.screen{margin:0; font-family:var(--mono); font-size:14px; line-height:1.4; white-space:pre-wrap; word-break:break-word; color:var(--text)}
+.cursor{position:absolute;width:8px;height:1.2em;background:#e5ecf5;opacity:.85;animation:blink 1s step-end infinite;pointer-events:none}
+@keyframes blink{50%{opacity:.1}}
+
+.ghost-input{position:absolute;left:-9999px;top:-9999px;opacity:0;width:0;height:0}
+.term-foot{display:flex;justify-content:space-between;align-items:center;margin-top:8px;color:#94a3b8}
+.muted{color:#94a3b8}
+
+.theme-light .card{background:#f6f7fb;color:#0b1220;border-color:#e5e7eb}
+.theme-light .viewport{background:#ffffff;border-color:#e5e7eb}
+.theme-light .screen{color:#0b1220}
+.theme-light .cursor{background:#0b1220}
+
+/* 简易 ANSI 颜色（前景） */
+.ansi-fg-30{color:#0b1220}
+.ansi-fg-31{color:#ef4444}
+.ansi-fg-32{color:#22c55e}
+.ansi-fg-33{color:#eab308}
+.ansi-fg-34{color:#3b82f6}
+.ansi-fg-35{color:#a855f7}
+.ansi-fg-36{color:#06b6d4}
+.ansi-fg-37{color:#e5ecf5}
+.ansi-fg-90{color:#9aa6b2}
+.ansi-fg-91{color:#f87171}
+.ansi-fg-92{color:#4ade80}
+.ansi-fg-93{color:#fde047}
+.ansi-fg-94{color:#60a5fa}
+.ansi-fg-95{color:#c084fc}
+.ansi-fg-96{color:#67e8f9}
+.ansi-fg-97{color:#ffffff}
+
+/* 滚动条 */
+.viewport::-webkit-scrollbar{width:8px;height:8px}
+.viewport::-webkit-scrollbar-thumb{background:#2a3340;border-radius:8px}
+
+@media (max-width:1100px){
+  .term-main{height:60vh}
+}

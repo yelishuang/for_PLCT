@@ -4,7 +4,101 @@
     <meta charset="UTF-8">
     <title>服务器管理系统</title>
     <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="runtime-v2/runtime-v2.css">
+    <link rel="stylesheet" href="network-v2/network-v2.css">
+    <link rel="stylesheet" href="terminal-v2/terminal-v2.css">
+    <link rel="stylesheet" href="file-transfer-v2/file-transfer-v2.css">
+    <link rel="stylesheet" href="ros-overview/ros-overview.css">
+    <link rel="stylesheet" href="ros-comm/ros-comm.css">
+    <link rel="stylesheet" href="ros-ops/ros-ops.css">
+    <link rel="stylesheet" href="ros-ai-commander/ros-ai-commander.css">
 </head>
+
+<script>
+  function loadIframe(src, el) {
+    // 左侧菜单选中态
+    document.querySelectorAll('.submenu-item').forEach(i => i.classList.remove('active'));
+    if (el) el.classList.add('active');
+    // 内容区塞一个 iframe（让 logs-v2 的相对路径与脚本自然生效）
+    const host = document.querySelector('.content-area');
+    host.innerHTML = '<iframe src="'+src+'" style="width:100%;height:100%;border:0;"></iframe>';
+  }
+
+    (function(){
+    // 内容容器（和你现有 loadContent 注入的位置一致）
+    const getContentArea = () => document.querySelector('.content-area') || document.querySelector('#content') || document.body;
+
+    // 只加载一次的资源集合
+    window.__storageV2Loaded = window.__storageV2Loaded || { css:false, js:false };
+
+    // 动态加载 CSS（只插一次 <link>）
+    function ensureCssOnce(href){
+        if (window.__storageV2Loaded.css) return;
+        const exists = Array.from(document.styleSheets).some(ss => ss.href && ss.href.includes(href));
+        if (exists) { window.__storageV2Loaded.css = true; return; }
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = href;
+        document.head.appendChild(link);
+        window.__storageV2Loaded.css = true;
+    }
+
+    // 动态加载 ES Module（只加载一次）
+    async function ensureModuleOnce(src){
+        if (window.__storageV2Loaded.js) return;
+        // 使用 type=module 方式插入，让子模块 import 正常工作
+        await new Promise((resolve, reject) => {
+        const s = document.createElement('script');
+        s.type = 'module';
+        s.src = src;
+        s.onload = () => { window.__storageV2Loaded.js = true; resolve(); };
+        s.onerror = reject;
+        document.body.appendChild(s);
+        });
+    }
+
+    // 可选：高亮菜单激活态（若你已有 setActive，可替换调用）
+    function setActiveMenuItem(li){
+        try{
+        document.querySelectorAll('.submenu-item.active').forEach(n => n.classList.remove('active'));
+        li?.classList.add('active');
+        }catch(e){}
+    }
+
+    // 对外暴露：挂载 Storage v2
+    window.mountStorageV2 = async function(menuItem){
+        setActiveMenuItem(menuItem);
+
+        const container = getContentArea();
+        // 先显示一个轻量“加载中”
+        container.innerHTML = '<div style="padding:16px;color:#94a3b8">正在加载存储管理 v2…</div>';
+
+        try{
+        // 1) 注入片段
+        const resp = await fetch('storage-v2/storage-v2.fragment.html', { cache: 'no-cache' });
+        const html = await resp.text();
+        container.innerHTML = html;
+
+        // 2) 懒加载样式（只加载一次）
+        ensureCssOnce('storage-v2/storage-v2.css');
+
+        // 3) 懒加载入口模块（只加载一次；其内部会 import 其他模块）
+        await ensureModuleOnce('storage-v2/storage-v2.js');
+
+        // 4) 可选：滚动到内容顶端，避免被顶栏遮挡（若你有固定顶栏）
+        try{
+            const page = container.querySelector('.page');
+            if (page) page.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }catch(e){}
+        }catch(e){
+        console.error(e);
+        container.innerHTML = '<div style="padding:16px;color:#ef4444">加载失败，请重试。</div>';
+        }
+    };
+    })();
+
+</script>
+
 <body>
     <nav class="sidebar">
         <!-- 原有侧边栏内容... -->
@@ -18,11 +112,11 @@
             <div class="category-title">系统</div>
             <ul class="submenu">
                 <li class="submenu-item" onclick="loadContent('overview.html', this)">概览</li> 
-                <li class="submenu-item" onclick="loadContent('logs.html', this)" >日志</li>
-                <li class="submenu-item" onclick="loadContent('storage.html', this)" >存储</li>
-                <li class="submenu-item" onclick="loadContent('network.html', this)" >网络</li>
-                <li class="submenu-item" onclick="loadContent('services.html', this)">服务</li>
-                <li class="submenu-item" onclick="loadContent('users.html', this)">用户</li>
+                <li class="submenu-item" onclick="loadIframe('logs-v2/logs-v2.html', this)">日志（v2）</li>
+                <li class="submenu-item" onclick="mountStorageV2(this)">存储管理 v2（测试）</li>
+                <li class="submenu-item" onclick="loadContent('network-v2/network-v2.fragment.html', this)"> 网络 v2（测试）</li>
+                <li class="submenu-item" onclick="loadContent('runtime-v2/runtime-v2.fragment.html', this)">运行中心（测试）</li>
+
             </ul>
         </div>
         <hr class="divider">
@@ -30,9 +124,8 @@
         <div class="category-block">
             <div class="category-title">工具</div>
             <ul class="submenu">
-                <li class="submenu-item" onclick="loadContent('software-updates.html', this)">软件更新</li>
-                <li class="submenu-item" onclick="loadContent('terminal.html', this)">终端</li>
-                <li class="submenu-item" onclick="loadContent('file-transfer.html', this)">文件传输</li>
+                <li class="submenu-item" onclick="loadContent('terminal-v2/terminal-v2.fragment.html', this)"> 终端 v2（测试）</li>
+                <li class="submenu-item" onclick="loadContent('file-transfer-v2/file-transfer-v2.fragment.html', this)"> 文件传输 v2（测试）</li>
             </ul>
         </div>
         <hr class="divider">
@@ -40,7 +133,10 @@
         <div class="category-block">
             <div class="category-title">ROS</div>
             <ul class="submenu">
-                <li class="submenu-item" onclick="loadContent('ros-overview.html', this)">概览</li>
+                <li class="submenu-item" onclick="loadContent('ros-overview/ros-overview.fragment.html', this)"> ROS 概览 </li>
+                <li class="submenu-item" onclick="loadContent('ros-comm/ros-comm.fragment.html', this)"> 通信监控 </li>
+                <li class="submenu-item" onclick="loadContent('ros-ops/ros-ops.fragment.html', this)"> 采集与配置 </li>
+                <li class="submenu-item" onclick="loadContent('ros-ai-commander/ros-ai-commander.fragment.html', this)"> ROS-AI </li>
             </ul>
         </div>
 
@@ -74,5 +170,13 @@
         <div class="content-area"></div>
     </div>
     <script src="./script.js"></script>
+    <script src="network-v2/network-v2.js"></script>
+    <script src="runtime-v2/runtime-v2.js"></script>
+    <script src="terminal-v2/terminal-v2.js"></script>
+    <script src="file-transfer-v2/file-transfer-v2.js"></script>
+    <script src="ros-overview/ros-overview.js"></script>
+    <script src="ros-comm/ros-comm.js"></script>
+    <script src="ros-ops/ros-ops.js"></script>
+    <script src="ros-ai-commander/ros-ai-commander.js"></script>
 </body>
 </html>

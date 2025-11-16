@@ -4,20 +4,42 @@
 NGINX_CONFIG_SRC="./nginx.conf"
 HTML_DIR_SRC="./html"
 NGINX_CONFIG_DST="/etc/nginx/nginx.conf"
-NGINX_HTML_DST="/usr/share/nginx/html" 
+NGINX_HTML_DST="/usr/share/nginx/html"
 
-# 1. 安装 Nginx
-echo "正在检查 Nginx 安装..."
-if ! rpm -q nginx > /dev/null 2>&1; then
-    echo "Nginx 未安装，开始安装..."
-    sudo dnf install -y nginx
-    if [ $? -ne 0 ]; then
-        echo "安装 Nginx 失败！请检查网络或依赖关系。"
-        exit 1
-    fi
+# 检测系统类型
+if [ -f /etc/os-release ]; then
+    . /etc/os-release
+    OS=$ID
 else
-    echo "Nginx 已安装，跳过安装步骤。"
+    echo "无法检测系统类型"
+    exit 1
 fi
+
+# 根据系统类型设置包管理器和依赖包名
+case $OS in
+    "openEuler"|"centos"|"rhel"|"fedora")
+        PKG_MANAGER="dnf"
+        SYSTEM_DEPS="nginx pam pam-devel python3-pip python3-systemd"
+        ;;
+    "ubuntu"|"debian"|"raspbian")
+        PKG_MANAGER="apt"
+        SYSTEM_DEPS="nginx libpam0g libpam0g-dev python3-pip python3-systemd"
+        ;;
+    *)
+        echo "不支持的系统: $OS"
+        echo "支持的系统: openeuler, centos, rhel, fedora, ubuntu, debian, raspbian"
+        exit 1
+        ;;
+esac
+
+# 1. 安装系统依赖
+echo "正在安装系统依赖 (使用 $PKG_MANAGER)..."
+sudo $PKG_MANAGER install -y $SYSTEM_DEPS
+if [ $? -ne 0 ]; then
+    echo "系统依赖安装失败！请检查网络或软件源配置。"
+    exit 1
+fi
+echo "系统依赖安装完成。"
 
 # 2. 替换 Nginx 配置文件和 HTML 目录
 echo "正在替换 Nginx 配置文件..."
@@ -37,39 +59,43 @@ else
     echo "警告：当前目录下未找到 html 文件夹，跳过 HTML 目录替换！"
 fi
 
-# 3. 安装 pam 和 pam-devel
-echo "正在检查 pam 和 pam-devel..."
-for package in pam pam-devel; do
-    if ! rpm -q "$package" > /dev/null 2>&1; then
-        echo "$package 未安装，开始安装..."
-        sudo dnf install -y "$package"
-        if [ $? -ne 0 ]; then
-            echo "安装 $package 失败！请检查网络或依赖关系。"
-            exit 1
-        fi
-    else
-        echo "$package 已安装，跳过。"
+# 3. 安装 Python 依赖
+echo "正在安装 Python 依赖..."
+if [ -f "requirements.txt" ]; then
+    pip3 install -r requirements.txt --quiet
+    if [ $? -ne 0 ]; then
+        echo "Python 依赖安装失败！请检查 requirements.txt 文件。"
+        exit 1
     fi
-done
+    echo "Python 依赖安装完成。"
+else
+    echo "警告：未找到 requirements.txt 文件！"
+    echo "请手动安装以下 Python 包："
+    echo "  Flask flask-cors psutil python-pam pytz"
+fi
 
-# 4. 安装 Python 依赖
-echo "正在检查 Python 依赖..."
+# 4. 创建必要的数据文件
+echo "检查数据文件..."
+if [ ! -f "system_logs.db" ]; then
+    touch system_logs.db
+    chmod 666 system_logs.db
+    echo "创建 system_logs.db"
+else
+    echo "system_logs.db 已存在，跳过创建"
+fi
 
-# 需要安装的 Python 包列表
-PACKAGES=("python-pam" "Flask" "flask-cors" "websockets" "psutil")
+if [ ! -f "cursor.txt" ]; then
+    touch cursor.txt
+    chmod 666 cursor.txt
+    echo "创建 cursor.txt"
+else
+    echo "cursor.txt 已存在，跳过创建"
+fi
 
-for package in "${PACKAGES[@]}"; do
-    if ! pip list | grep "$package" &> /dev/null; then
-        echo "$package 未安装，开始安装..."
-        sudo pip3 install "$package"
-        if [ $? -ne 0 ]; then
-            echo "安装 $package 失败！请检查 Python 环境。"
-            exit 1
-        fi
-    else
-        echo "$package 已安装，跳过。"
-    fi
-done
+if [ ! -f "login.log" ]; then
+    touch login.log
+    echo "创建 login.log"
+fi
 
 # 5. 运行 login.py
 echo "正在启动 login.py..."

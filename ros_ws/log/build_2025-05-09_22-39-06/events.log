@@ -1,4 +1,0 @@
-[0.000000] (-) TimerEvent: {}
-[0.000122] (-) JobUnselected: {'identifier': 'random_response'}
-[0.000254] (-) JobUnselected: {'identifier': 'ros_chat'}
-[0.000379] (-) EventReactorShutdown: {}

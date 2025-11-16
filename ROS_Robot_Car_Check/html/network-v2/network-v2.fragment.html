@@ -1,0 +1,145 @@
+<!-- 根容器：被 loadContent 注入后由 network-v2.js 自动初始化 -->
+<div id="netv2-root" data-page="network-v2">
+  <header class="netv2-header">
+    <div>
+      <h1 class="netv2-title">网络监控 (v2)</h1>
+      <div class="netv2-subtitle">实时带宽 · 接口健康 · 路由与 DNS · 连接概览</div>
+    </div>
+    <div id="netv2-status" class="netv2-status online">● 监控就绪</div>
+  </header>
+
+  <main class="netv2-grid">
+    <!-- 左：概要 + 接口列表 + 路由/DNS +（移动过来的）折线图 -->
+    <section class="netv2-left">
+
+      <!-- 概要 KPI -->
+      <section class="card kpi-card">
+        <div class="kpi-grid">
+          <div class="kpi">
+            <div class="kpi-label">上行</div>
+            <div class="kpi-value"><span id="kpiTxNow">0</span><span class="unit">B/s</span></div>
+          </div>
+          <div class="kpi">
+            <div class="kpi-label">下行</div>
+            <div class="kpi-value"><span id="kpiRxNow">0</span><span class="unit">B/s</span></div>
+          </div>
+          <div class="kpi">
+            <div class="kpi-label">默认网关</div>
+            <div class="kpi-value" id="kpiGateway">-</div>
+          </div>
+          <div class="kpi">
+            <div class="kpi-label">DNS</div>
+            <div class="kpi-value" id="kpiDNS">-</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 接口列表 -->
+      <section class="card iface-card">
+        <div class="section-head">
+          <div class="section-title">网络接口</div>
+          <div class="section-actions">
+            <button id="btnNetRefresh" class="btn small">刷新</button>
+          </div>
+        </div>
+
+        <div class="state-bar">
+          <span id="sIdle" class="state">尚未加载</span>
+          <span id="sLoading" class="state hidden">正在加载…</span>
+          <span id="sEmpty" class="state hidden">没有检测到接口</span>
+          <span id="sError" class="state hidden">加载失败</span>
+        </div>
+
+        <div class="iface-table-wrap">
+          <table class="iface-table" aria-label="网络接口信息">
+            <thead>
+              <tr>
+                <th>接口</th>
+                <th>IPv4 / IPv6</th>
+                <th>MAC / MTU</th>
+                <th>速率</th>
+                <th>收包/错包</th>
+                <th>发包/错包</th>
+                <th>状态</th>
+              </tr>
+            </thead>
+            <tbody id="ifaceRows"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 路由与 DNS -->
+      <section class="card route-card">
+        <div class="section-head">
+          <div class="section-title">路由与 DNS</div>
+        </div>
+        <div class="route-grid">
+          <div>
+            <div class="block-title">路由表</div>
+            <ul id="routeList" class="list"></ul>
+          </div>
+          <div>
+            <div class="block-title">DNS 服务器</div>
+            <ul id="dnsList" class="list"></ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ✅ 总体带宽曲线（从右列顶部移动到左列底部） -->
+      <section class="card chart-card">
+        <div class="section-head">
+          <div class="section-title">总体带宽</div>
+          <div class="legend">
+            <span class="lg rx">下行</span>
+            <span class="lg tx">上行</span>
+          </div>
+        </div>
+        <div class="chart-current">
+          <div>下行 <span id="rxNow">0</span><span class="unit">B/s</span></div>
+          <div>上行 <span id="txNow">0</span><span class="unit">B/s</span></div>
+        </div>
+        <canvas id="netv2Chart" height="140"></canvas>
+      </section>
+
+    </section>
+
+    <!-- 右：把「活跃连接」放到上方，「实时事件」放到下方 -->
+    <aside class="netv2-right">
+
+      <!-- ✅ 活跃连接放到右上 -->
+      <section class="card conn-card">
+        <div class="section-head">
+          <div class="section-title">活跃连接（Top 10）</div>
+        </div>
+        <div class="conn-table-wrap">
+          <table class="conn-table">
+            <thead>
+              <tr>
+                <th>本地</th>
+                <th>远端</th>
+                <th>协议</th>
+                <th>进程</th>
+                <th>累计流量</th>
+              </tr>
+            </thead>
+            <tbody id="connRows"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ✅ 实时事件放到右下（刷新不会挤动上方的连接表） -->
+      <section class="card realtime-card">
+        <div class="section-head">
+          <div class="section-title">实时事件</div>
+          <div class="section-actions">
+            <button id="btnRtPause" class="btn small">暂停</button>
+            <button id="btnRtClear" class="btn small ghost">清空</button>
+          </div>
+        </div>
+        <div id="rtPlaceholder" class="placeholder slim">尚未接收实时事件。</div>
+        <div id="rtList" class="rt-list"></div>
+      </section>
+
+    </aside>
+  </main>
+</div>

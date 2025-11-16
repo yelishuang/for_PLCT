@@ -1,0 +1,78 @@
+<!-- 通信监控（ROS 2）：话题 + 节点 -->
+<div id="roscm-root" data-page="ros-comm">
+  <header class="roscm-header">
+    <div>
+      <h1 class="roscm-title">通信监控</h1>
+      <div class="roscm-subtitle">话题速览 · 实时频率/带宽 · 消息预览 · 节点邻接</div>
+    </div>
+    <div class="header-actions">
+      <button id="btnCommRefresh" class="btn small">刷新</button>
+      <div id="roscm-status" class="status-chip">● 离线</div>
+    </div>
+  </header>
+
+  <!-- 顶部标签：话题 / 节点 -->
+  <nav class="tabs">
+    <button class="tab active" data-tab="topics">话题</button>
+    <button class="tab" data-tab="nodes">节点</button>
+    <div class="tabs-actions">
+      <input id="commSearch" class="search" placeholder="搜索（名称 / 类型 / 节点）">
+    </div>
+  </nav>
+
+  <!-- 主体网格：左表 + 右侧抽屉（预览/邻接） -->
+  <main class="roscm-grid">
+
+    <!-- 话题表 -->
+    <section id="panelTopics" class="card list-card">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>话题</th>
+            <th>类型</th>
+            <th>发布者 / 订阅者</th>
+            <th class="t-center">频率 (Hz)</th>
+            <th class="t-center">带宽 (KB/s)</th>
+            <th class="t-center">QoS</th>
+            <th class="t-center">预览</th>
+          </tr>
+        </thead>
+        <tbody id="topicRows"></tbody>
+      </table>
+      <div id="topicEmpty" class="placeholder hidden">暂无话题。</div>
+    </section>
+
+    <!-- 节点表 -->
+    <section id="panelNodes" class="card list-card hidden">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>节点名</th>
+            <th>命名空间</th>
+            <th>发布 / 订阅</th>
+            <th class="t-center">CPU</th>
+            <th class="t-center">内存</th>
+            <th class="t-center">错误</th>
+            <th class="t-center">邻接</th>
+          </tr>
+        </thead>
+        <tbody id="nodeRows"></tbody>
+      </table>
+      <div id="nodeEmpty" class="placeholder hidden">暂无节点。</div>
+    </section>
+
+    <!-- 右侧抽屉：消息预览 / 邻接图 -->
+    <aside class="drawer card">
+      <div class="section-head">
+        <div class="section-title" id="drawerTitle">详情</div>
+        <div class="section-actions" id="drawerActions">
+          <!-- 按需渲染：预览控制或节点跳转 -->
+        </div>
+      </div>
+      <div id="drawerBody" class="drawer-body">
+        <div class="placeholder slim">请选择左侧列表的一项…</div>
+      </div>
+    </aside>
+
+  </main>
+</div>

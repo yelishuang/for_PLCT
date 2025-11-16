@@ -1,0 +1,98 @@
+:root{
+  /* 复用 logs-v2 的设计语言 */
+  --bg:#eef2f7;
+  --card:#1a1f27;
+  --subcard:#242a34;
+  --border:#2f3642;
+  --muted:#aab3c2;
+  --text:#e8edf7;
+  --brand:#4a90e2;
+  --brand-2:#357abd;
+  --success:#22c55e;
+  --danger:#ef4444;
+  --warn:#f59e0b;
+  --info:#3b82f6;
+  --radius:12px;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+  --fz-base:15.5px; --fz-small:13.5px;
+  --ctrl-h:40px;
+  --topbar-h:48px; /* 若有固定顶栏，可调 */
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0; background:var(--bg);
+  color:var(--text); font-size:var(--fz-base);
+  font-family:ui-sans-serif,system-ui,Segoe UI,Arial,PingFang SC,Microsoft YaHei,sans-serif;
+}
+.page{padding:calc(8px + var(--topbar-h)) 16px 20px}
+.page-header{display:flex;justify-content:space-between;align-items:flex-end;margin:8px 0 10px}
+.title{margin:0;font-size:24px;color:#0b1220}
+.subtitle{margin-top:6px;color:#58657a;font-size:var(--fz-small)}
+.status-chip{padding:7px 12px;border-radius:999px;background:#e8fff2;color:#0d7a3e;border:1px solid #bbf7d0;font-size:var(--fz-small)}
+.status-chip::before{content:"";margin-right:6px}
+
+.main-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:start}
+.left-column{display:flex;flex-direction:column;gap:10px}
+.right-column{position:sticky;top:8px}
+
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+
+/* kpi */
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:12px}
+.kpi{background:var(--subcard);border:1px solid var(--border);border-radius:10px;padding:10px 12px}
+.kpi-title{color:#b6c2d6;font-size:var(--fz-small)}
+.kpi-value{margin-top:6px;font-size:20px}
+
+/* charts */
+.charts{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:0 12px 12px}
+.chart-card{background:var(--subcard);border:1px solid var(--border);border-radius:10px;padding:10px 12px}
+.chart-title{color:#b6c2d6;font-size:var(--fz-small);margin-bottom:6px}
+.current{margin-bottom:6px}
+.current .unit{margin-left:6px;color:#b6c2d6;font-size:var(--fz-small)}
+canvas{width:100%}
+
+/* table */
+.devices-card .table-head{display:flex;align-items:center;justify-content:space-between;padding:10px 12px;border-bottom:1px solid var(--border);background:#161b22}
+.table-title{font-size:16px}
+.table-wrap{overflow:auto;max-height:56vh}
+.table{width:100%;border-collapse:collapse}
+.table th,.table td{border-bottom:1px solid var(--border);padding:10px 12px;text-align:left}
+.table thead th{position:sticky;top:0;background:#10151d;z-index:1}
+.table tbody tr:hover{background:#1f2630}
+.badge-ok{color:#10b981}
+.badge-warn{color:#f59e0b}
+.badge-bad{color:#ef4444}
+
+.table-states{padding:10px 12px;color:#b6c2d6}
+.state.hidden{display:none}
+
+/* buttons */
+.btn{height:var(--ctrl-h);padding:0 12px;background:#2a3340;color:#dbe7ff;border:1px solid var(--border);border-radius:10px;cursor:pointer;transition:.15s}
+.btn.small{height:32px;font-size:var(--fz-small)}
+.btn.ghost{background:transparent}
+.btn:hover{filter:brightness(1.06)}
+.btn:active{transform:translateY(1px)}
+
+/* realtime panel */
+.realtime-header{display:flex;align-items:center;justify-content:space-between;background:#161b22;border-bottom:1px solid var(--border);padding:10px 12px}
+.realtime-title{font-size:16px}
+.placeholder.slim{padding:12px 10px;color:#aeb7c4}
+.rt-list{max-height:calc(100vh - 160px);overflow:auto;padding:10px 12px;background:#0f141b}
+
+.rt-item{display:grid;grid-template-columns:170px 1fr;gap:8px;border:1px solid var(--border);border-left:4px solid transparent;border-radius:10px;background:#0f1720;padding:9px 12px;margin-bottom:8px}
+.rt-item.read{border-left-color:var(--info)}
+.rt-item.write{border-left-color:var(--warn)}
+.rt-time{color:#9aa6b2}
+
+/* scrollbar */
+.table-wrap::-webkit-scrollbar,.rt-list::-webkit-scrollbar{width:8px;height:8px}
+.table-wrap::-webkit-scrollbar-thumb,.rt-list::-webkit-scrollbar-thumb{background:#2a3340;border-radius:8px}
+
+/* responsive */
+@media (max-width:1100px){
+  .main-grid{grid-template-columns:1fr}
+  .right-column{position:static}
+  .table-wrap{max-height:50vh}
+}

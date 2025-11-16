@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>系统日志查询</title>
+  <link rel="stylesheet" href="logs-v2.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="page-header">
+      <div class="title-wrap">
+        <h1 class="title">系统日志查询</h1>
+        <div class="subtitle">按时间范围、级别、来源与关键词快速检索系统日志</div>
+      </div>
+      <div class="status-chip online" id="connectionStatus">● 在线</div>
+    </header>
+
+    <div class="main-grid">
+      <!-- 左列：查询 + 结果 -->
+      <section class="left-column">
+        <section class="search-card">
+          <div class="search-grid">
+            <!-- 1/3 时间范围 -->
+            <div class="field">
+              <label class="label">时间范围</label>
+              <div class="control">
+                <select id="timePreset" class="select">
+                  <option value="15m">最近 15 分钟</option>
+                  <option value="1h">最近 1 小时</option>
+                  <option value="6h">最近 6 小时</option>
+                  <option value="today">今天</option>
+                  <option value="24h" selected>过去 24 小时</option>
+                  <option value="3d">过去 3 天</option>
+                  <option value="7d">过去 7 天</option>
+                  <option value="custom">自定义</option>
+                </select>
+              </div>
+              <div id="customTimeRange" class="custom-time hidden">
+                <input type="datetime-local" id="startTime" class="input" />
+                <span class="range-sep">至</span>
+                <input type="datetime-local" id="endTime" class="input" />
+              </div>
+            </div>
+
+            <!-- 2/3 日志级别 -->
+            <div class="field">
+              <label class="label">日志级别</label>
+              <div class="level-grid">
+                <label class="level-pill level-xl error">
+                  <input type="checkbox" value="0,1,2,3" checked />
+                  <span class="pill-text">错误</span>
+                </label>
+                <label class="level-pill level-xl warn">
+                  <input type="checkbox" value="4" checked />
+                  <span class="pill-text">警告</span>
+                </label>
+                <label class="level-pill level-xl info">
+                  <input type="checkbox" value="5,6" checked />
+                  <span class="pill-text">信息</span>
+                </label>
+                <label class="level-pill level-xl debug">
+                  <input type="checkbox" value="7" />
+                  <span class="pill-text">调试</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- 3/3 服务来源（展开式多选） -->
+            <div class="field service-field">
+              <label class="label">服务来源</label>
+              <details id="service-filter" class="select-multi">
+                <summary class="select like-select" role="button" aria-haspopup="listbox">
+                  <span class="select-placeholder">选择服务（可多选）</span>
+                  <span class="select-caret" aria-hidden="true"></span>
+                </summary>
+                <div class="select-dropdown">
+                  <div class="multi-options">
+                    <label class="option">
+                      <input type="checkbox" value="" checked />
+                      <span>全部</span>
+                    </label>
+                    <label class="option">
+                      <input type="checkbox" value="kernel" />
+                      <span>内核</span>
+                    </label>
+                    <label class="option">
+                      <input type="checkbox" value="systemd" />
+                      <span>systemd</span>
+                    </label>
+                    <label class="option">
+                      <input type="checkbox" value="nginx" />
+                      <span>nginx</span>
+                    </label>
+                    <label class="option">
+                      <input type="checkbox" value="sshd" />
+                      <span>sshd</span>
+                    </label>
+                    <label class="option">
+                      <input type="checkbox" value="NetworkManager" />
+                      <span>网络管理</span>
+                    </label>
+                  </div>
+                </div>
+              </details>
+            </div>
+
+            <!-- 关键词（整行：输入框 + 右侧“正则”） -->
+            <div class="field keyword-field">
+              <label class="label">关键词搜索</label>
+              <div class="keyword-row">
+                <input id="keyword" class="input keyword-input" placeholder="输入关键词或正则表达式" />
+                <label for="useRegex" class="checkbox keyword-regex">
+                  <input type="checkbox" id="useRegex" />
+                  <span>正则</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- 操作按钮（整行） -->
+            <div class="field actions">
+              <button id="searchBtn" class="btn primary">查询</button>
+              <button id="exportBtn" class="btn">导出</button>
+              <button id="clearBtn" class="btn ghost">清空</button>
+              <!-- 兼容旧脚本的隐藏占位 -->
+              <button id="realtimeBtn" class="btn" style="display:none" aria-hidden="true" tabindex="-1">实时模式</button>
+            </div>
+          </div>
+
+          <div class="search-status">
+            <span id="resultCount">共 0 条结果</span>
+            <span class="dot">•</span>
+            <span id="queryTime">查询耗时：0ms</span>
+          </div>
+        </section>
+
+        <!-- 结果卡片 -->
+        <section class="result-card" id="resultCard">
+          <div id="initialHint" class="placeholder">
+            还没有发起查询。请在上方设置条件后点击「查询」。
+          </div>
+
+          <div id="loadingIndicator" class="loading" style="display:none">
+            <div class="spinner"></div>
+            <div class="loading-text">正在加载…</div>
+          </div>
+
+          <div id="emptyState" class="empty hidden">
+            <div class="empty-title">没有匹配的日志</div>
+            <div class="empty-desc">尝试放宽时间范围、增加日志级别或去掉关键词过滤。</div>
+          </div>
+
+          <div id="logsContent" class="logs"></div>
+
+          <div id="loadMoreContainer" class="load-more hidden">
+            <button id="loadMoreBtn" class="btn wide">加载更多</button>
+          </div>
+        </section>
+      </section>
+
+      <!-- 右列：实时日志 -->
+      <aside class="right-column">
+        <section id="realtimePanel" class="realtime">
+          <div class="realtime-header">
+            <div class="realtime-title">实时日志流</div>
+            <div class="realtime-actions">
+              <button id="pauseRealtimeBtn" class="btn small">暂停</button>
+              <button id="closeRealtimeBtn" class="btn small ghost">关闭</button>
+            </div>
+          </div>
+          <div id="realtimePlaceholder" class="placeholder slim">
+            尚未接收实时日志。
+          </div>
+          <div id="realtimeContent" class="realtime-body"></div>
+        </section>
+      </aside>
+    </div>
+  </div>
+
+  <script src="logs-api.js"></script>
+  <script src="logs-v2.js"></script>
+
+</body>
+</html>
