@@ -1,0 +1,45 @@
+From 7f26ed1f55fee7d42909027ea0e03cb13d81e42a Mon Sep 17 00:00:00 2001
+From: Cody Gu <gujiaqi@iscas.ac.cn>
+Date: Sat, 13 Dec 2025 00:36:16 +0800
+Subject: [PATCH] fix(oe-ros2): apply temporary workaround for missing
+ tf2/utils.hpp on openEuler
+
+---
+ cartographer_ros/CMakeLists.txt               | 4 ++++
+ cartographer_ros/src/rosbag_validate_main.cpp | 4 ++++
+ 2 files changed, 8 insertions(+)
+
+diff --git a/cartographer_ros/CMakeLists.txt b/cartographer_ros/CMakeLists.txt
+index c192fca..7c617b5 100644
+--- a/cartographer_ros/CMakeLists.txt
++++ b/cartographer_ros/CMakeLists.txt
+@@ -234,6 +234,10 @@ target_include_directories(cartographer_rosbag_validate PRIVATE
+ if ("$ENV{ROS_DISTRO}" STRLESS "kilted")
+   target_compile_definitions(cartographer_rosbag_validate PRIVATE "-DUSE_URDF_H_FILES")
+ endif()
++# Temporary fix for openEuler ROS humble:
++# Use <tf2/utils.h> instead of <tf2/utils.hpp> to avoid compilation errors.
++# This workaround addresses header file compatibility issues in the current environment.
++target_compile_definitions(cartographer_rosbag_validate PRIVATE "-DUSE_TF2_UTILS_H_FILES")
+ target_link_libraries(cartographer_rosbag_validate
+   ${PROJECT_NAME}
+   absl::memory
+diff --git a/cartographer_ros/src/rosbag_validate_main.cpp b/cartographer_ros/src/rosbag_validate_main.cpp
+index 61e16a3..488d2cc 100644
+--- a/cartographer_ros/src/rosbag_validate_main.cpp
++++ b/cartographer_ros/src/rosbag_validate_main.cpp
+@@ -41,7 +41,11 @@
+ #else
+ #include "urdf/model.hpp"
+ #endif
++#ifdef USE_TF2_UTILS_H_FILES
++#include <tf2/utils.h>
++#else
+ #include <tf2/utils.hpp>
++#endif
+ 
+ DEFINE_string(bag_filename, "", "Bag to process.");
+ DEFINE_bool(dump_timing, false,
+-- 
+2.43.0
+
