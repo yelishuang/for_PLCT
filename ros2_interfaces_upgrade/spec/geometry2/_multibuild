@@ -1,0 +1,16 @@
+<multibuild>
+	<flavor>examples-tf2-py</flavor>
+	<flavor>geometry2</flavor>
+	<flavor>tf2</flavor>
+	<flavor>tf2-bullet</flavor>
+	<flavor>tf2-eigen</flavor>
+	<flavor>tf2-eigen-kdl</flavor>
+	<flavor>tf2-geometry-msgs</flavor>
+	<flavor>tf2-kdl</flavor>
+	<flavor>tf2-msgs</flavor>
+	<flavor>tf2-py</flavor>
+	<flavor>tf2-ros</flavor>
+	<flavor>tf2-ros-py</flavor>
+	<flavor>tf2-sensor-msgs</flavor>
+	<flavor>tf2-tools</flavor>
+</multibuild>

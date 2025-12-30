@@ -1,0 +1,15 @@
+<multibuild>
+	<flavor>actionlib-msgs</flavor>
+	<flavor>common-interfaces</flavor>
+	<flavor>diagnostic-msgs</flavor>
+	<flavor>geometry-msgs</flavor>
+	<flavor>nav-msgs</flavor>
+	<flavor>sensor-msgs</flavor>
+	<flavor>sensor-msgs-py</flavor>
+	<flavor>shape-msgs</flavor>
+	<flavor>std-msgs</flavor>
+	<flavor>std-srvs</flavor>
+	<flavor>stereo-msgs</flavor>
+	<flavor>trajectory-msgs</flavor>
+	<flavor>visualization-msgs</flavor>
+</multibuild>
